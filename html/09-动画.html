@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box1{
+            height: 100px;
+            width:100px;
+            background:green;
+            transition:background 2s ease,transform 2s ease-in 1s;
+        }
+        #box1:hover{transform: rotate(180deg) scale(.5,.5);background: red;}
+        #box2{
+            height: 100px;
+            width: 100px;
+            background: blue;
+        }
+        #box2:hover{
+            transform: rotate(180deg) scale(.5,.5);
+            background: red;
+            transition: background 2s ease,transfomr 2s ease-in 1s;
+        }
+        .box{
+            height: 100px;
+            width: 100px;
+            border:15px solid black;
+            animation:changebox 10s ease-in-out 3 alternate paused;
+        }
+        .box:hover{
+            animation-play-state:running; 
+        }
+        @keyframes changebox{
+            10% {background: red;}
+            50% {width:80px;}
+            70%{border:15px solid yellow}
+            100%{width:180px;height:180px;}
+        }
+        /* 
+        * 1. 0~1s 背景色由默认变为红色,10%{background:red
+        * 2. 0~5s 宽度由原始设定的100px变为80px(并不是1~5s之间执行) 50%{width:80px}
+        * 3. 0~7s 边框原始设定的无变为border:15px solid yellow; 70%{border:15px solid yellow}
+        * 4. 5~10s 宽度由在5s时的80px变为180px 100%{width:180px}
+        * 5. 0~10s 宽度原始设定的100px变为180px 100%{height:180px} 
+         */
+    </style>
+</head>
+<body>
+    <div id="box1">Box1</div>
+    <div id="box2">Box2</div>
+    <div class="box"></div>
+</body>
+</html>

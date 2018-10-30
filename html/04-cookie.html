@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 设置cookie
+         * @param name cookie名称
+         * @param value cookie的值
+         * @param day cookie过期时间
+         * */    
+        var setCookie=function(name,value,day){
+            if(day!==0){
+                //当设置的事件等于0时,不设置expires属性,cookie在浏览器关闭后删除
+                var expires=day*1000*60*60*24;
+                var date=new Date(+new Date()+expires);
+                document.cookie=name+"="+escape(value)+";expires="+date.toUTCString();
+            }else{
+                document.cookie=name+"="+escape(value)+";";
+            }
+            //此时没有指定路径path和域domain,当没有指定路径时默认为当前路径,domain为当前域名
+        }
+        /**
+         * 获取对应名称的cookie
+         * @param name cookie名称
+         * @return {null} 不存在,返回为null
+        */
+        var getCookie=function(name){
+            var arr;
+            var reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+            if(arr=document.cookie.name.match(reg)){
+                return unescape(arr[2]);
+            }else{
+                return null;
+            }
+        }
+        //"(^| )"匹配开头或空格,([^;]*)匹配初分号以外的任意字符,(;|$)匹配分号或者整个结尾
+
+        /**
+         * 删除cookie
+         * @param name cookie名称
+        */
+        var delCookie=function(name){
+            setCookie(name,' ',-1);
+        }
+
+        //document.cookie = "cookieName=mader; expires=Fri, 31 Dec 2017 15:59:59 GMT; path=/mydir; domain=cnblogs.com; max-age=3600; secure=true";
+        // cookieName=mader; cookie的名称和值
+        // expires cookie过期日期,如果没有定义cookie会在对话结束后过期,日期格式为new Date().toUTCString()
+        // path=''; 如果没有定义,默认为当前文档位置的路径
+        // domain='' 指定域,如果没有定义,默认为当前文档的路径的域名部分
+        // max-age=3600 文档被查看后的cookie过期时间,单位为秒
+        // secure=true cookie只会被https传输,即加密的https链接传输
+    </script>
+</body>
+</html>

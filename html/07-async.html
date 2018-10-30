@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        const fs=require('fs')    
+        const readFile=function(fileName){
+            return new Promise(function(resolve,reject){
+                fs.readFile(fileName,function(error,data){
+                    if(error) return reject(error)
+                    resolve(data)
+                })
+            })
+        }
+        const gen=function* (){
+            const f1=yield readFile('/etc/fstab')
+            const f2=yield readFile('/etc/shells')
+            console.log(f1.toString())
+            console.log(f2.toString())
+        }
+
+        //使用async
+        const asyncReadFile=async function(){
+            const f1=await readFile('/etc/fstab')
+            const f2=await readFile('/etc/shell')
+            console.log(f1.toString())
+            console.log(f2.toString())
+        }
+
+        
+
+        function timeout(ms){
+            return new Promise((resolve)=>{
+                setTimeout(resolve,ms)
+            })
+        }
+        async function asyncPrint(value,ms){
+            await timeout(ms)
+            console.log(value)
+        }
+        asyncPrint('hello world',5000)
+
+        //函数声明
+        async function foo(){}
+        //函数表达式
+        const foo=async function(){}
+        //对象的方法
+        let obj={async foo(){}}
+        obj.foo().then()
+        //Class 的方法
+        class Storage{
+            constructor(){
+                this.cachePromise=caches.open('avatars')
+            }
+            async getAvatar(name){
+                const cache=await this.cachePromise;
+                return cache.match(`/avatars/${name}.jpg`)
+            }
+        }
+        const storage=new Storage()
+        storage.getAvatar('jake').then()
+        //箭头函数
+        const foo=async ()=>{}
+        */
+
+        async function f(){
+            //等同于
+            //return 123
+            return await 123;
+        }
+        f().then(c=>console.log(v))
+
+        async function f(){
+            await Promise.reject('出错了')
+        }
+        f()
+        .then(v=>console.log(v))
+        .catch(e=>console.log(e))
+
+        async function f(){
+            await Promise.reject('出错了')
+            await Promise.resolve('hello world');//不会执行
+        }
+
+        async function f(){
+            try{
+                await Promise.reject('出错了')
+            }catch(e){
+
+            }
+            return await Promise.resolve('hello world')
+        }
+        
+        f().then(v=>console.log(v))
+
+        async function f(){
+            await Promise.reject('出错了')
+            .catch(e=>console.log(e))
+            return await Promise.resolve('hello world')
+        }
+        f().then(v=>console.log(v))
+
+        async function f(){
+            await new Promise(function(resolve,reject){
+                throw new Error('出错了')
+            })
+        }
+        f().then(v=>console.log(v))
+        .catch(e=>console.log(e))
+
+        async function f(){
+            try{
+                await new Promise(function(resolve,reject){
+                    throw new Error('出错了')
+                })
+            }catch(e){
+
+            }
+            return await('hello world')
+        }
+
+        async function mian(){
+            try{
+                const val1=await firstStep()
+                const val2=await firstStep(val1)
+                const val3=await firstStep(val1,val2)
+                console.log('Final',val3)
+            }catch(err){
+                console.log(err)
+            }
+        }
+
+        const supertarget=require('supertarget')
+        const NUM_RETRIES=3;
+        async function test(){
+            let i;
+            for(i=0;i<NUM_RETRIES;i++){
+                try{
+                    await supertarget.get('http//google.com')
+                    break;
+                }catch(err){}
+            }
+            console.log(i)
+        }
+        test()
+
+        //写法二
+        let fooPromise=getFoo()
+        let barPromise=getBar()
+        let foo=await fooPromise;
+        let bar=await barPromise;
+
+        async function dbFun(db){
+            let docs=[{},{},{}]
+            docs.forEach(function(doc){
+                await db.post(doc)
+            })
+        }
+
+        function dbFun(db){
+            let docs=[{},{},{}]
+            //可能得到错误结果
+            docs.forEach(async function(doc){
+                await db.post(doc)
+            })
+        }
+
+        async function dbFun(db){
+            let docs=[{},{},{}]
+            for(let doc of docs){
+                await db.post(doc)
+            }
+        }
+
+        async function dbFun(db){
+            let docs=[{},{},{}]
+            let promise=docs.map(doc=>db.post(doc))
+            let results=await Promise.all(promises)
+            console.log(results);
+        }
+
+        //另一种写法
+        async function dbFun(db){
+            let docs=[{},{},{}]
+            let promise=docs.map(doc=>db.post(doc))
+            let results=[]
+            for(let promise of promises){
+                results.push(await promise) 
+            }
+            console.log(results)
+        }
+
+
+        
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        Promise.prototype.finally=function(callback){
+            let P=this.constructor;
+            return this.then(
+                value=>P.resolve(callback()).then(()=>value),
+                reason=>P.resolve(callback()).then(()=>{throw reason})
+            )
+        }    
+        //先做一个函数先把callback解决,在执行后续的then函数返回最终的结果,
+        //代码逻辑:先执行一个then用于执行回调函数,然后在下一个then中用于终结结果
+
+        //把加载图片封装为一个promise
+        const preloadImag=function(path){
+            return new Promise(function(resolve,reject){
+                const image=new Image();
+                image.onload=resolve;
+                image.onerror=reject;
+                image.src=path;
+            })
+        }
+
+        Promise.try(
+            console.log('try1')
+        )
+        console.log('try2')
+    </script>
+</body>
+</html>
