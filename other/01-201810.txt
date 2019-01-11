@@ -1,0 +1,1147 @@
+needPic
+
+isCross
+
+<img src="{{= hasCache(v_1.m_url)}}" imgU="{{= v_1.m_url}}" onerror="imgError(this)" onload="loadImg(this)" alt="" imageId="{{= v_1.image_id}}">
+
+{{? !v.is_sell}}
+<span class="type buy">买</span>
+{{??}}
+<span class="type sell">卖</span>
+{{?}}
+
+beauticianArr
+
+beauticianIndex
+
+5215233347032
+
+2018-09-26
+
+"10031"
+"孙洋钰"
+
+18:00
+19:00
+
+if (_this.data.trade_type=='skin'){//皮肤管理中心可以使用多张优惠券
+        _this.edit_coupon(post_data_w, dataset_w)
+      }
+
+enabled
+
+disabled
+
+this.data.cartData[0].supplier_id
+
+is_skin
+
+pages/member/index
+
+getMember
+
+callback
+
+首页onLoad中调用 -> util.checkMemberCopy在该方法中调用 -> app.getMember该方法中调用 -> wx.login -> callback接口
+
+exist_login_type
+
+app.check_mobile_account();
+
+product_id=4602
+
+checkIsSupportSoterAuthentication
+
+member_id
+
+shop_id
+
+var the_path='';
+var shop_id=wx.getStorageSync('SHOP_ID');
+if (app.globalData.member && app.globalData.member.member_id && shop_id) {
+	the_path = '/pages/category/page/page?s=201&m_id=' + app.globalData.member.member_id + '&shop_id=' + shop_id +'&shareTime='+new Date().getTime();
+} else {
+	the_path = '/pages/category/page/page?s=201'
+}
+return {
+	title: this.data.title,
+	path: the_path
+};
+		
+if(options.shop_id){
+	wx.setStorageSync('_shop_id', options.shop_id)
+}
+if (options.shareTime) {
+	wx.setStorageSync('shareTime', options.shareTime);
+}
+if (options.m_id) {
+	wx.setStorageSync('m_id', options.m_id);
+}
+if (options.flag) {
+	wx.setStorageSync('flag', options.flag);
+}
+if (options.shop_id) {
+	wx.setStorageSync('myshop_id', options.shop_id);
+}
+pages/index/index
+
+onShareAppMessage
+
+onLoad
+
+const util = require('../../utils/util.js');
+
+const app=getApp();
+
+'&shareTime=' + new Date().getTime();
+
+var params={
+	url:'/pages/category/page/page',
+	title: this.data.title
+}
+util.shareAppMessage(params);
+
+util.storageShareData(options);
+
+gallery--待定
+groupbooking/product
+groupbooking/share
+groupbooking/share/product/product
+	
+微店:vshop/home/index
+		
+1.分享设置
+2.onLoad设置
+3.util设置
+4.app设置
+5.具体参数设置
+
+需要添加分享的页面
+
+//店铺主页
+pages/membership/shop/index
+
+测试
+产品详情
+分类
+首页
+
+商品分享
+一种是其他链接分享
+
+3600000 * 24
+需要修改时间
+
+weui-bor
+weui-bor
+
+{ url: '/pages/product/product', product_id: options.product_id}
+
+4710242416527
+
+添加复制功能
+
+强制添加跳转
+
+{{member.store_name}}
+
+member.is_guide=='true'
+
+member.is_guide=='true'
+
+<li class="item sigleRecommond">
+	<span class="del-flag glyphicon glyphicon-remove"></span>
+	<a class="singleLink" href="空表" title="空白" target="_blank">
+		<span class="icon-box" style="background-color: rgb(32, 184, 173); box-shadow: rgba(32, 184, 173, 0.75) 0px 10px 10px -6px;">空白</span>
+		<span class="text-links">空白</span>
+	</a>
+</li>
+
+654101199810291960  马莉	
+
+data.systeminfo.screenWidth/3
+
+icon-kefu-
+style="font-size:36rpx;"
+product_id
+
+<open-data type="userAvatarUrl"></open-data>
+
+390 product.js
+if (app.globalData.world_type.indexOf(pagedata.data_detail.trade_type) != -1) {
+	pagedata.isCross = true
+}
+  
+<view wx:if="{{isCross}}">
+  <image src="../../statics/image/public/product_rule.jpg" mode="widthFix" style="width:100%;"></image>
+</view>
+
+ <button size="mini" plain="true" style="border-width:0;" wx:if="{{item.sendnum==0 && item.status=='succ'}}">未发货</button>
+                                <button size="mini" plain="true" style="border-width:0;" wx:if="{{item.sendnum==0 && item.status!='succ'}}">已取消</button>
+                                <button size="mini" plain="true" style="border-width:0;" wx:if="{{item.sendnum>0}}">已发货</button>
+								
+注册授权错误
+
+/pages/member/setting/index
+
+cnh-wechat-dev-git
+
+/pages/gallery/gallery?brand_id=131
+自然堂
+
+149 美丽加芬
+147 美素
+3 skincode
+4 贝缇卡
+56 mariedalgar
+1 缇诗可
+55 卡姿兰
+61 深蓝彩妆
+7 璀璨印象
+199 凯芙兰
+
+imgArr
+
+1.添加订单号
+2.移动立即分享
+3.订单列表页倒计时
+3.需要设置调用接口时设置noData=true
+4.赋值使用字段有问题
+
+order_id=13215320491474
+订单号：3216093062395
+
+surplus_time
+main_order.surplus_time
+
+1.拼团订单下单未付款下拉刷新（或者重新点击链接进入）后页面没有立即付款.需要重新进入个人中心拼团订单付款.
+
+
+2.参团人点开链接付款，下面不显示价格只有“￥”.
+
+3.同一个团购商品订单,参团人的剩余时间和开团人的剩余时间不一致.相差一分钟左右.
+时间问题,需要后端配合
+
+4.团长免单功能不生效.
+后端配合,
+
+5.拼团订单参团人和开团人时间不一致之后开团人时间到期后，参团人未到期.开团人订单到期后显示拼团失败,参团人未到期付款后,失败订单变成了已成团订单.
+时间不一致,需要后端配合
+
+6.拼团订单列表点击查看需要等待三秒以上才会从“暂无相关订单”出现订单.
+已解决
+
+
+evt_submit_order
+
+countdown
+
+1.修改拼团详情计时器
+2.修改拼团订单button样式
+3.修改拼团订单时间显示效果
+4.修改拼团订单未支付
+
+surplus_people
+surplus_people_number
+activityInfo
+
+activityInfo.current_product.priceprice
+
+checkout页面
+	参数
+	activity_id
+	main_id
+	product_id
+	quantity
+	
+<view class="prompt-panel">
+</view>
+
+noMore
+
+evt_submit_order
+
+循环问题出现原因,循环调用方法,怎么产生循环调用问题,
+
+环境 行为/努力 能力/方法/战术 战略/方向/选择/信念/价值观/规条(BVR) 身份 精神
+
+1.分享设置图片
+2.添加loading
+
+{
+	"pagePath": "pages/category/page/page",
+	"text": "分类",
+	"iconPath": "statics/image/tabbar/list.png",
+	"selectedIconPath": "statics/image/tabbar/list_fill.png"
+},
+
+evt_submit
+
+"https://mall.chaoniuhui.com/m/xcxaftersales-newrequest-4009344175016-23089-product-save.html"
+
+白瓷娃娃
+
+滋源 无患子保湿滋养洗头水（中干性）
+
+product_id=284
+
+promotion_list
+
+自提专区
+非自提专区
+门店号
+
+促销规则多余的内容没有滚动,后期需要确认
+
+颜色
+#F4F4F4 
+#e6186c
+#efefef
+#ddd
+#999
+
+url="/pages/group/groupdetail/groupdetail?is_gb=true&order_id={{item.gb_id}}"
+
+sendnum
+
+order_id=4016212376120&product_id=23122&item_type=product
+
+font-size:44rpx;color:#666;position:absolute;top:50%;-webkit-transform:translate(0, -50%);transform:translate(0, -50%);line-height:50rpx;
+
+pages/member/aftersales/request/request
+
+2018-11-12
+1.商品详情页面
+	添加99包邮字段,
+	添加特价优惠字段
+2.售后申请页面
+	添加金额
+3.首页
+	添加扫一扫功能
+4.个人中心页面
+	退换货按钮点击跳转页面修改
+5.售后查询页面
+	去掉头部tab
+
+2018-11-12
+去掉售后申请,只留售后查询提示,原因是全球购商品可以通过售后申请到售后申请页面导致可以退换货
+
+潮妞会测试小程序遗留的bug
+
+1.会员购买开店礼包付款后以前可以下拉刷新跳过开店礼包活动页面进入店铺现在必须退出小程序重新进入
+2.店铺头像丢失为空白.
+3.注册后未绑定手机号用户接收到商品链接分享点击后页面响应时间要等待五秒以上.
+4.未绑定手机号用户确认订单时弹出要求绑定手机号窗口两次.
+5.店主邀请新用户为店铺粉丝功能丢失.（关注列表看不到新用户）
+
+checkout.js
+279 evt_showmodal 打开优惠券
+370 evt_couponcheck 选择优惠券
+171 sync_inused_coupons 处理优惠券结果
+
+// _this.setData({
+//     'cart_result': form_cart_data(res.data.data)
+// });
+// _this.setData({
+//     'use_coupon_id': dataset.nextact == 'remove'?'':dataset.coupon
+// });
+// _this.setData({
+//     'cart_md5': new_cart_md5
+// });
+// _this.setData({
+//     'total.order_total':res.data.data.finally_cart_amount
+// })
+ 
+// sync_inused_coupons.call(_this);
+// _this.setData({
+//     'canSelectCoupon':true
+// })
+
+hideLoading
+
+{
+	path"/pages/product/product?product_id=4112&m_id=31258&flag=codeShare&shop_id=103315&sign=4EACE23F628047DF1C4C64393DCE7025&timestamp=1496907853&time=1542180062156"
+	type:"scene"
+	width:430
+}
+
+wx.navigateBack();
+
+activity_id=7&product_id=23089
+
+pages/group/detail/detail
+
+<view class="contact-service">
+    <image src="/statics/image/public/contact-service.png" class="contact-serviceImg"></image>
+    <button open-type="contact" bindcontact="handleContact" class="contact-serviceBtn"></button>
+</view>   
+
+.contact-service{
+    position: fixed;
+    right:20rpx;
+    bottom:120rpx;
+    z-index: 30;
+    width:100rpx;
+    height: 100rpx;
+}
+.contact-service .contact-serviceImg{
+    position: absolute;
+    top:0;
+    left: 0;
+    width:100%;
+    height:100%;
+    z-index: 10;
+}
+.contact-service .contact-serviceBtn{
+    opacity: 0;
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    text-align:center;
+    line-height:48px;
+    z-index: 20;
+}
+.contact-service button.contact-serviceBtn::after{
+    border:none;
+}
+
+order_id=4418012275430&product_id=21868&item_type=product
+
+svn://svn6.apicloud.com/A6080066481658/T3C美妆
+
+dc00a5a2f6c2c84d2643fded6258291d
+
+order_id:4817350507516
+store_id:1304
+staff_id:10932
+staff_name:许昌英
+date:2018-11-19
+stime:19:00
+etime:20:00
+
+icon-fenxiang2
+
+memc_code=BBBB355689911DE800056&share_mobile=13817053601
+
+rout
+
+benter
+benter/shoplist
+benter/shopdetail
+benter/cart
+benter/checkout
+
+/pages/benter/shoplist
+
+onReachBottom: function () {
+    const _this = this;
+    let location = _this.data.location;
+    let currentPage=_this.data.currentPage;
+    if (!this.data.pager || !this.data.pager.total || !this.data.pager.current)return;
+    if (this.data.loadingMore || this.data.noData) return;
+    if (this.data.pager.total == this.data.pager.current) {
+      this.setData({
+        noMore: true
+      })
+      return;
+    } else {
+      this.setData({
+        noMore: false
+      })
+    }
+		currentPage++;
+		_this.getStoreData(location.longitude, location.latitude, currentPage)
+  },
+  
+var currentPages = getCurrentPages()
+  for (let i = 0; i < currentPages.length; i++) {
+	var currentPage = currentPages[i];
+	if (currentPage.route.indexOf('pages/member/index') != -1) {
+	  currentPage.setData({
+		'member.avatar': _this.data.member.avatar
+	  })
+	}
+  }
+  
+  半小时漫画中国史
+  
+342523198907080423
+桂行旸
+
+<!-- <scroll-view scroll-x="true" style="height:49vw;" wx:if="{{data.display_type=='swiper'}}">
+                <view class="widget-goodslist-swiper-scrollviewbox limit-list-con">
+                    <navigator style="" class="limit-item" wx:key="{{index}}" wx:for="{{data.items[0].products}}"  url="/pages/product/product?product_id={{item.product_id}}">
+                        <view class="limit-item-con">
+                            <image src="{{item.image_url}}" style="" mode="aspectFit" />
+                            <view  class="g-name text-1">{{item.name}}</view>
+                            <view  class="g-price"><text class="left">￥{{data.countdown?item.end_price:item.price | price}}</text><text class="right">￥{{item.mktprice | price}}</text></view>
+                        </view>
+                    </navigator>
+                </view>
+            </scroll-view> -->
+			data.items.length>0
+			
+swiper
+list
+grid
+gallery
+widget-goodslist
+widget-goodslist-
+goodslist-body
+
+13817053601
+http://localhost:8080/#/login/13817053601
+
+onReachBottom
+onPullDownRefresh
+
+张灿
+321283199110281228
+
+<style lang='less' scoped>
+    @import '../../assets/less/service/service_detail.less';
+</style>
+
+    
+showAlert(content,title,confirmTxt){
+    const _this=this;
+    let _content=content?content:'';
+    let _confirmTxt=confirmTxt?confirmTxt:'确认';
+    let _title=title?title:'';
+    return new Promise((resolve,reject)=>{
+        const alert=_this.$createDialog({
+            type: 'alert',
+            title: _title,
+            content: _content,
+            onConfirm: () => {
+                alert.hide();
+                resolve();
+            }
+        }).show()
+    }) 
+},
+showConfirm(content,title,confirmTxt,cancelTxt) {
+    const _this=this;
+    let _content=content?content:'';
+    let _confirmTxt=confirmTxt?confirmTxt:'确认';
+    let _cancelTxt=cancelTxt?cancelTxt:'取消';
+    let _title=title?title:'';
+    return new Promise((resolve,reject)=>{
+        const confirm=_this.$createDialog({
+            type: 'confirm',
+            title: _title,
+            content: _content,
+            confirmBtn: {
+                text: _confirmTxt,
+                active: true,
+                disabled: false,
+                href: 'javascript:;'
+            },
+            cancelBtn: {
+                text: _cancelTxt,
+                active: false,
+                disabled: false,
+                href: 'javascript:;'
+            },
+            onConfirm: () => {
+                confirm.hide()
+                resolve()
+            },
+            onCancel: () => {
+                confirm.hide()
+                reject()
+            }
+        }).show()
+    })
+    
+},
+showToast(txt,type,time){
+    let _type=type?type:'warn';
+    let _time=time?time:1000;
+    if(txt){
+        this.$createToast({
+            type: _type,
+            time: _time,
+            txt: txt
+        }).show()
+    }
+},
+showToastMask(txt){
+    var _txt=txt?txt:'Loading...';
+    this.toastMask=this.$createToast({
+        mask: true,
+        txt: _txt
+    }).show()
+},
+hideToastMask(){
+    this.toastMask.hide()
+}
+
+_this.$http.get()
+    .then((res)=>{
+
+    }).catch((err)=>{
+
+    })
+
+:data-ident="item.image_id"
+
+_this.$refs.scroll.forceUpdate();
+this.$refs.scroll.forceUpdate();
+
+/group/:id?/:num?
+/group?id=
+
+
+分享问题
+activityInfo
+main_order
+
+active_data
+
+pro_detail
+activity
+
+noParams:false,
+order: null,
+active_data: null,
+user_data: null,
+hideLoading: false,
+dialog: false,
+rout: false,
+options:{
+    gb_id:'',
+    order_id:''
+},
+order:null,
+activity:null,
+pro_detail:null,
+activityInfo:null,
+main_order:null,
+active_data:null,
+description:null
+
+req_detail
+req_detail.remarks
+delivery.delivery_items     
+area     
+consignee
+
+<error :show="noData" :msg="'暂无售后记录哦'"></error>
+<error :show="noMore" :noImg="true" :msg="'没有更多了'"></error> 
+<loading :show="!hideLoading" :inset="false" :showMask="false"></loading>
+
+拼团
+
+horizontal-scroll-list-wrap
+widget-goodslist-swiper-scrollviewbox
+limit-item
+
+
+horizontal-scroll-list-wrap'+index
+
+_this.order_id,_this.product_id,_this.item_type.item_id)
+3711201851246
+order_id=3711201851246&product_id=5&item_type=product&item_id=317
+
+aftersales_apply/3711201851246/5/317/product
+aftersales_apply/3715100322484/637/324/product
+page_prn?page_prn:request_item.sendnum
+
+order_id=3715100322484&product_id=637&item_type=product&item_id=324
+
+<img class="weui-media-box__thumb" src="../../assets/images/public/holder.png" v-else>
+
+const _this=this;
+_this.current_page = 1;
+_this.checkLogin()
+    .then(()=>{
+        _this.load_list(_this.order_type,1);
+    }).catch((err)=>{
+        console.log(err);
+    })
+
+this.$route.params.order_id
+
+setContentWidth() {
+    const _this = this;
+    let content = document.querySelector('.horizontal-scroll-list-wrap-' + _this.index + ' .cube-scroll-content'),
+        width, height;
+    if (!content) return;
+    width = 32*parseInt(_this.data.items[0].products.length)+'vw';
+    content.style.width = width;
+},
+
+<cube-scroll
+    ref="scroll"
+    :data="data.items[0].products"
+    direction="horizontal"
+    :class="['horizontal-scroll-list-wrap-'+index,'horizontal-scroll-list-wrap']">
+
+horizontal-scroll-list-wrap
+
+{/* 修改昵称 */
+  path: '/modifyName/:nickName',
+  name: 'modifyName',
+  component: modifyName,
+  meta: {
+    title: '修改昵称'
+  }
+},
+
+
+order_id=4009323268001
+
+
+尊敬的领导:
+自2018年9月10日以来，已在公司信息数据部工作近3个月，在公司领导和同时的耐心指导下，是我在较短的时间适应了公司的工作环境，也熟悉了公司的工作流程。
+现将这三个月的工作情况总结如下：
+1.非常注意向周围的老同事学习，在工作中处处留意，多看，多思考，多学习，以较快的速度熟悉这公司的情况,较好的融入到了我们的这个团队中。
+2.对工作认真负责，与同事配合默契，平时努力学习，能够在规定的事件内完成任务，保证公司的项目进度。
+3.在前端这个岗位还有很多工作，自己还要继续学习，进步，希望以后能够以优秀的自己，帮助同事服务公司。
+申请人:许友耀
+时间:2018年12月10日
+
+order_id=4012004255863
+
+order_id=3316132832155
+
+order_list
+
+order_items_group[order.order_id]
+
+order_id=4114311379458
+
+order_id=4115220438527
+
+[
+    {
+        product_id:'',
+        url:''
+    },
+    {
+        product_id:'',
+        url:''
+    }
+]
+
+售后
+    售后列表/首页 ok
+    售后详情 ok ok
+    售后申请 ok ok
+订单
+    订单首页/列表 ok
+    订单详情 ok ok
+服务
+    服务首页/列表 ok ok
+    服务门店列表 ok ok
+    服务设置 ok ok
+    服务详情 ok ok
+拼团
+    拼团列表 ok ok
+    拼团详情 
+    拼团规则 ok ok
+物流
+    物流首页 ok ok
+    物流详情 ok ok
+
+可能存在的问题
+1.跳转问题
+2.按钮样式问题:订单详情页面已经修改
+3.先屏蔽掉评价页面入口
+4.拼团详情页面还存在未知问题
+5.订单首页存在拖动问题 ok
+6.物流详情页面存在多图片滚动问题
+7.订单详情页面和订单首页loading处理
+8.下拉刷新 ok
+
+horizontal-scroll-list-wrap
+
+微信小程序-
+
+{
+    'product_return_num':1,
+    'request[description]':"这个产品包装有问题"
+    'request[image]':["http://localhost:8080/acee8f7c-6b87-48dd-9b4e-7b8f10d560a2"]
+}
+
+staffId
+staffName
+staffArr
+
+dateArr
+date
+
+timePeriodTime
+timePeriodArr
+stime
+etime
+
+请选择美容师
+请选择预约日期
+请选择预约时间
+
+4213081534199
+前台提交售后-接受申请(生成物流退货单)-确认退货单(已经收到退货商品,改变退货单为已确认)-然后回到售后申请(确认退货单后出现退款处理按钮)操作退款处理按钮-点击退款处理退款状态默认准备中生成退款单-再到财务里操作应付款的付款单.(准备状态改为支付成功保存后退款成功)-回到售后申请-售后申请完成
+
+拼团数据确认
+订单首页,加载loading
+
+display: inline-block;
+    font-size: 4vw;
+    line-height: 10vw;
+    padding: 0 1vw;
+
+border-bottom: 0.53vw solid #333;
+    color: #333;
+    font-weight: bold;
+    font-size: 4.5vw;
+
+_this.timePeriodTime='请选择预约时间';
+_this.etime='';
+_this.stime='';
+
+weui-panel__hd
+
+weui-cell__bd
+
+1.限时抢购样式
+2.拼团点击分享朋友圈是否有问题
+3.申请退款和确认收货成功提示
+4.拼团详情样式有问题
+5.立即购买弹框
+6.跳转有问题
+
+    "pages/shopkeeper/cashprofit_list/cashprofit_list",
+    "pages/shopkeeper/cashprofit_set/cashprofit_set",
+    "pages/shopkeeper/cashprofit_detail/cashprofit_detail",
+    "pages/shopkeeper/myprofit-list/myprofit-list"
+
+<view class=""></view>
+
+"pages/groupbooking/list/list",
+"pages/groupbooking/list/page/page",
+"pages/groupbooking/product/product",
+"pages/groupbooking/joingroup/join",
+"pages/groupbooking/checkout/checkout",
+"pages/groupbooking/payment/payment",
+"pages/groupbooking/payment/payresult/payresult",
+"pages/groupbooking/share/share",
+"pages/groupbooking/share/product/product",
+
+陈俊
+6222600260001072444
+交通银行
+上海支行
+
+team_sales_totle
+total
+
+start="{{old_year}}-{{curr_month}}" end="{{curr_year}}-{{curr_month}}"
+
+totalpage
+page
+
+直接推荐两个人产生销售就为共享店主
+
+夏天
+小倩
+安神
+
+看收益:店铺->结算凭证
+BA拿毛利的6%
+
+毛利:商品的销售收入(售价)减去进价后的余额,因为尚未减去商品流通费和税金,还不是净利
+系统测试：BA的提成=（实付金额-商品成本）*6%
+         BA的提成=毛利的1%
+
+毛利率:(不含税销售收入-不含税成本)/不含税销售收入
+
+共享店主:发货后成为潮店主
+
+今日订单:为已发货才算
+
+
+雅婷 1
+安神 2
+夏天 2
+阿基婷(丽婷) 新会员2
+    (男主角) 3
+    未知
+
+花花 3 潮会员 3%
+    莹莹 会员4
+    马锦荣 会员4
+
+
+
+支付成功后就升级为潮会员
+原状态为发货后为收益和潮会员
+收益和潮会员要求付款后为潮会员
+
+任何一笔订单只有两笔收益
+
+间接的潮会员有1%
+
+99以上都和以下有什么区别
+
+特提
+
+两个订单,其中一个发货,另一个没有发货,成为潮会员
+
+首次,潮会员,下面有两个会员,这个会员现在在另一个会员的邀请下,下单,另外一个会员升级为潮会员,现在他下面两个会员应该给新升级的潮会员,其中有1%的收益给老的潮会员,现在的情况给到了BA
+
+新会员2 
+
+间接共享店主会有1%的收益
+
+首单没有,下面
+
+绑定
+
+没有带走,带走会有1%的人的转走和收益的转走
+
+安神 会员1
+
+cps只是给推广者,循环一级
+
+特提和分来显示
+
+ba  共享店主
+    ba的收益
+    20块钱自购
+
+cps:分享者奖励
+
+\youyaoxu\gitlab\image-demo
+
+如果是当前商品被清楚掉了
+清楚掉之后又进入当前页面,进入当前
+
+满99免运费
+
+Object.assign(obj1,obj2)
+
+用户授权
+注册
+登录
+绑定手机号
+
+佣金收益
+商品特提
+
+1.在beforeCreated中调整链接为?#,为了支付
+2.在created中检测浏览器,存本地shareMobile,检测是否带loginCode,然后调用xcxlist生成session
+3.用户授权,拿到code然后拿到access_token
+4.调用登录,登录之前查看是否有授权页面,有则跳转,没有则检查
+
+
+授权,注册,登录,逻辑
+
+beforeCreated中逻辑:
+准备:beforeCreated中修改链接?#
+
+created中逻辑:
+1.存储sharemobile,获取loginCode,判断是否是微信浏览器
+2.xcxlist存储session
+3.有loginCode,判断是否注册,先判断是否有缓存链接,有缓存代表注册过,直接进入
+4.有loginCode,判断是否注册,先判断是否有缓存链接,没有缓存带着code去注册,注册完判断是否绑定,绑定了直接跳转到首页
+5.有loginCode,判断是否注册,先判断是否有缓存链接,没有缓存带着code去注册,注册完判断是否绑定,没有绑定,跳转到绑定页面
+6.没有loginCode,可能是微信浏览器,可能不是,是微信浏览器,判断是否注册,没有注册,跳转到授权页面,获取loginCode,从头开始走一边
+7.没有loginCode,可能是微信浏览器,可能不是,是微信浏览器,判断是否注册,有注册,直接进入首页
+8.没有loginCode,可能是微信浏览器,可能不是,是微信浏览器,判断是否注册,没有注册,跳转到授权页面,获取loginCode,从头开始走一边
+9.没有loginCode,可能是微信浏览器,可能不是,不是微信浏览器,判断是否注册,有注册,直接进入首页
+10.没有loginCode,可能是微信浏览器,可能不是,不是微信浏览器,判断是否注册,没有注册,直接进入首页,未登录
+
+mounted中逻辑
+1.获取wxjsdk
+    wx.config({
+
+    })
+    wx.ready({
+
+    })
+2.设置分享数据
+    在vuex中设置分享数据
+
+_this.searchBrandList({'brandName': value, 'currentPage':1})
+
+<!-- <picker class="picker" bindchange="bindProvinceChange" value="{{provinceIndex}}" range="{{provinceArr}}" range-key="name">
+  <view class="picker-item">{{provinceArr[provinceIndex].name}}</view>
+  <view class="picker-wrap">
+    <view class="picker-item m_b">
+      <text class="picker-itemTxt ">省区</text>
+      <text class="iconfont icon-iconfontjiantou"></text>
+    </view>
+  </view>
+</picker> -->
+<!-- <picker class="picker" bindchange="bindCityChange" value="{{cityIndex}}" range="{{cityArr}}" range-key="name">
+  <view class="picker-item">{{cityArr[cityIndex].name}}</view>
+  <view class="picker-wrap">
+    <view class="picker-item m_b">
+      <text class="picker-itemTxt">城市</text>
+      <text class="iconfont icon-iconfontjiantou"></text>
+    </view>
+  </view>
+</picker> -->
+<!-- <picker class="picker" bindchange="bindAreaChange" value="{{areaIndex}}" range="{{areaArr}}" range-key="name">
+  <view class="picker-item">{{areaArr[areaIndex].name}}</view>
+  <view class="picker-wrap">
+    <view class="picker-item">
+      <text class="picker-itemTxt">县/区</text>
+      <text class="iconfont icon-iconfontjiantou"></text>
+      </view>
+    </view>
+</picker> -->
+
+const latitude = res.latitude;
+const longitude = res.longitude;
+
+接口
+时间字段有问题
+距离可能有问题
+图片
+东阳2店
+
+路线
+切换
+地图点击,缩小切换
+省市区切换
+样式调整-门店列表样式
+
+openAllShop
+openNearByShop
+
+#00ae20
+
+明天任务:
+    1.列表页
+    2.支付页面
+    3.详情页
+
+2019年1月3日
+    去掉社区
+    "pages/community/index/index",
+    "pages/community/detail/detail",
+    "pages/community/author/author",
+    "pages/community/follow/follow",
+    "pages/community/comment/comment",
+    "pages/community/list/list",
+    "pages/community/send/send",
+
+    "pages/store/index",
+    "pages/store/detail/detail",
+    "pages/store/subject/index",
+    "pages/store/desc/desc",
+    "pages/store/my/order/list",
+    "pages/store/my/order/detail",
+
+    "pages/preselling/list/list",
+    "pages/preselling/product/product",
+    "pages/preselling/checkout/checkout",
+    "pages/preselling/checkout/balance/checkout",
+    "pages/preselling/payment/payment",
+    "pages/preselling/payment/payresult/payresult",
+    "pages/preselling/rules/rules",
+
+门店列表
+门店分类
+    各种接口
+商品详情
+    商品详情
+购物车
+    添加tab
+    列表修改为店名
+订单确认
+    添加门店信息
+支付
+    跳转
+支付后详情页
+订单列表
+订单详情
+
+13 比正常看到的大
+11
+
+2416141870473
+
+距离
+
+ <image class="avater-img" src="{{images[store.store_img_id]?images[store.store_img_id]:'/statics/image/public/holder.png'}}" mode="widthFix" bindload="load_image" data-ident="{{store.store_img_id}}"></image>
+
+ 气泡
+ 导航
+ 支付页面跳转
+
+ 2709072630555
+
+ 已提货
+ 已取消
+ 评价商品
+ 售后服务
+
+ markers
+
+ tapquantity
+ event_quantity_blur
+ tapquantity
+ event_co_trash
+
+2715343227028
+
+2716014244826
+
+_this.data.options
+
+var bindMobileResult = app.check_mobile_account();
+            if (!bindMobileResult && util.isLogin()) {
+              wx.navigateTo({
+                url: '/pages/member/signup/mobile'
+              });
+            }
+
+2117172726756
+
+
+门店详情页面
+    闪退
+门店列表
+    
+
+mapHeight: 33.5,
+nearByHeight:46,
+searchHeight: 45,
+allHeight:36,
+
+hideLoading:true
+
+提货码加复制
+
+border:1px solid #ddd;
+padding:1px 4px;
+border-radius:5px;
+margin-left:4vw;
+
+status_kvmap.status
+
+controls="{{controls}}" 
+bindcontroltap="controltap" 
+markers="{{markers}}" 
+bindmarkertap="markertap" 
+
+circles="{{circles}}" 
+bindregionchange="regionchange"
+
+active的时候看的是request
+<text wx:if="{{order.request==false}}">{{status_kvmap.ship_status[order.ship_status]}}</text>
+
+
+<text wx:else>{{status_kvmap.status[order.request.status]}}</text>
+
+订单已取消
+<block wx:if="{{order.status=='dead'}}">{{status_kvmap.order_status[order.status]}}</block>
+
+订单完成
+<block wx:if="{{order.status=='finish'}}">{{status_kvmap.order_status[order.status]}}</block>

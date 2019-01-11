@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nextPage=function(){
+            if(this.data.loadingMore){return}
+            if(this.data.noData){return}
+            if(
+                (this.data.pager.total==1 && this.data.groupOrderArr.length>=5 ) || 
+                (this.data.pager.total>1 && this.data.pager.total==this.data.currentPage)
+            ){
+
+            }
+        }
+    </script>
+</body>
+</html>

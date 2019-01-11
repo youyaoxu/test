@@ -1,0 +1,10 @@
+/*这样的注释可以输出出去吗*/
+.first-less {
+  font-size: 30px;
+  color: red;
+  margin: 0;
+  padding: 0;
+}
+.first-less .hello-world {
+  font-size: 20px;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        process.env.test=null;
+        console.log(process.env.test);//'null'
+        process.env.test=undefined;
+        console.log(process.env.test)//'undefined'
+
+        process.env.Test=1
+        delete process.env.Test;
+        console.log(process.env.Test);//undefined
+
+        process.env.TEST=1;
+        console.log(process.env.test);//1 
+
+        process.stdout.write('这是一行数据')
+        
+       process.stdin.resume()
+       var a,b;
+       process.stdout.write('请输入a的值:')
+       process.stdin.on('data',function(data){
+           if(a==undefined){
+               a=Number(data);
+               process.stdout.write('请输入b的值:')
+           }else{
+               b=Number(data)
+               process.stdout.write('结果是:'+(a+b))
+               process.exit()
+           }
+       })
+
+       process.on('exit',function(){
+           //设置一个延迟
+           setTimeout(function(){
+               console.log('主事件循环已停止,所以不会执行')
+           },0)
+           console.log('退出前执行')
+       })
+       setTimeout(function(){
+           console.log('1')
+       },500)
+       
+
+       process.on('uncaughtExcaption',function(){
+           console.log('捕获一个异常')
+       })
+       var a='123';
+       a.a();//触发异常事件
+       console.log('这句话不会显示出来')
+
+       process.on('SIGINT',function(){
+           console.log('收到sigint信号')
+       })
+       console.log('试着按下ctrl+c')
+       setTimeout(function(){
+           console.log('end')
+       },50000)
+       */
+        
+        /* 
+        const EventEmitter=require('events')
+        class MyEmitter extends EventEmitter{}
+        const myEmitter=new MyEmitter();
+        myEmitter.on('event',()=>{
+            console.log('触发事件')
+        })
+        myEmitter.emit('event')
+
+        const myEmitter=new MyEmitter()
+        myEmitter.on('event',function(a,b){
+            console.log(a,b,this,this===myEmitter)//a b myEmitter true
+        })
+        myEmitter.emit('event','a','b')
+
+        const myEmitter=new MyEmitter()
+        myEmitter.on('event',(a,b)=>{
+            console.log(a,b,this)//a b {}
+        })
+        myEmitter.emit('event','a','b') 
+        
+
+        var EventEmitter=require('events')
+        var emitter=new EventEmitter()
+        emitter.on('test1',function(){})
+        console.log(emitter.emit('test1'))
+        console.log(emitter.emit('test2'))
+        */
+
+        var EventEmitter=require('events')
+        var emitter=new EventEmitter()
+        emitter.on('test',function(){
+            
+        })
+
+    </script>
+</body>
+</html>

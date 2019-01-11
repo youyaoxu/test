@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //vscode 多行注释快捷键 alt+shift+A
+        /* 
+        @testable
+        class MyTestableClass{
+
+        }
+        function testable(target){
+            target.isTestable=true;
+        }
+        console.log(MyTestableClass.isTestable) 
+        
+
+        @decorator
+        class A{} 
+        //等同于
+        class A{}
+        A=decorator(A)||A;
+        
+
+       function testable(isTestable){
+           return function(target){
+               target.isTestable=isTestable;
+           }
+       }
+       @testable(true)
+       class MyTestableClass{}
+       MyTestableClass.isTestable//true
+
+       @testable(false)
+       class MyTestableClass{}
+       MyTestableClass.isTestable//false
+       
+
+      function testable(target){
+          target.prototype.isTestable=true;
+      }
+      @testable
+      class MyTestableClass{}
+      let obj=new MyTestableClass()
+      obj.isTestable//true
+      
+
+     function test(num1,num2){
+         return function(num1,num2){
+            return num1+num2;
+         }
+     }
+     console.log(test(1,2))\
+     
+
+    export function mixins(...list){
+        return function(target){
+            Object.assign(target.prototype,...list)
+        }
+    }
+    import {mixins} from './mixins'
+    const Foo={
+        foo(){
+            console.log('foo')
+        }
+    }
+    @mixins(Foo)
+    class MyClass{}
+    let obj=new MyClass()
+    obj.foo()
+    
+
+    const Foo={
+        foo(){console.log('foo')}
+    }
+    class MyClass{}
+    Object.assign(MyClass.prototype,Foo)
+    let obj=new MyClass()
+    obj.foo()
+
+    //实际开发中使用
+    class MyReactComponent extends React.Component{}
+    export default connect(mapStateToProps,mapDispatchToProps)(MyReactComponent);
+
+    //使用装饰器替换
+    @connect(mapStateToProps,mapDispatchToProps)
+    export default class MyReactComponent extends React.Component{}
+    
+
+    class Person{
+        @readonly
+        name(){
+            return `${this.first} ${this.last}`
+        }
+    }
+    function readonly(target,name,descriptor){
+        // descriptor:对象的原始值如下
+        // {
+        //     value:'',
+        //     enumerable:false,
+        //     configurable:true,
+        //     writable:true
+        // }
+        descriptor.writable=false;
+        return descriptor;
+    }
+    
+    readonly(Person.prototype,'name',descriptor)
+    //类似于
+    Object.defineProperty(Person.prototype,'name',descriptor)
+    
+
+   class Person{
+       @nonenumable
+       get kidCount(){return this.children.length;}
+   }
+   function nonenumable(target,name,descriptor){
+       descriptor.enumerable=false;
+       return descriptor;
+   }
+
+   //输出日志
+   class Math{
+       @log
+       add(a,b){
+           return a+b;
+       }
+   }
+   function log(target,name,descriptor){
+       var oldValue=descriptor.value;
+       descriptor.value=function(){
+           console.log(`Calling ${name} with`,arguments);
+           return oldValue.apply(this,arguments)
+       }
+       return descriptor;
+   }
+   const math=new Math()
+   math.add(1,4);
+   //@log修饰器的目的就是在执行原始的操作之前,执行一次console.log(),从而达到输出的目的
+   
+
+    @Component({
+        tag:'my-component',
+        styleUrl:'my-component.scss'
+    })
+    export class MyComponent{
+        @Prop() first:string,
+        @Prop() last:string,
+        @State() isVisible:boolean=true;
+        redner(){
+            return (
+                <p>Hello,my name is {this.first} {this.last}</p>
+            )
+        }
+    }
+
+    function dec(id){
+        console.log('evaluted', id)
+        return (target,property,descriptor)=>console.log('excuted',id)
+    }
+    class Example{
+        @dec(1)
+        @dec(2)
+        method()
+    }
+    //evaluated 1
+    //evaluated 2
+    //excuted 2
+    //excuted 1
+
+   var counter=0;
+   var add=function(){
+       counter++;
+   }
+   @add
+   function foo(){}
+
+   //实际执行的代码
+   @add
+   function foo(){}
+   var counter;
+   var add;
+   counter=0;
+   add=function(){
+       counter++;
+   }
+
+   function doSomething(name){
+       console.log('Hello'+name);
+   }
+   function loggingDecorator(wrapped){
+       return function(){
+           console.log('Strating');
+           const result=wrapped.apply(this,arguments)
+           console.log('Finished');
+           return result;
+       }
+   }
+   const wrapped=loggingDecorator(doSomething)
+    
+
+   import {autpbind} from 'core-decorator'
+   class Person{
+       @autobind
+       getPerson(){
+           return this;
+       }
+   }
+   let person=new Person()
+   let getPerson=person.getPerson
+   getPerson===person//true
+
+   import {override} from 'core-decorator'
+   class Parent{
+       speak(first,second){}
+   }
+   class Child  extends Parent{
+       @override
+       speak(){}
+   }
+
+   import {override} from 'core-decorator'
+   class Person{
+       @deprecate
+       facepalm(){}
+       @deprecate('we stopped facepalming')
+       facepalmhard(){}
+   }
+   let person =new Person()
+   persn.facepalm()
+   
+
+    const Foo={
+        foo(){console.log('foo')}
+    }
+    class MyClass{}
+    Object.assign(MyClass.prototype,Foo)
+    let obj=new MyClass()
+    obj.foo()
+
+    export function mixins(...list){
+        return function (target){
+            Object.assign(target.prototype,...list);
+        }
+    }
+    import {mixins} from './mixins'
+    const Foo={
+        foo(){console.log('foo')}
+    }
+    @mixins(Foo)
+    class MyClass{}
+    let obj=new MyClass()
+    obj.foo()
+
+    class MyClass extends MyBaseClass{}
+
+    //MyClass继承了MyBaseClass,如果我们想在MyClass里面混入一个foo方法,一个办法是在MyClass和MyBaseClass之间插入一个类,这个类具有foo方法,并且继承类MyBaseClass的所有方法,然后MyClass在继承这个类
+    let MyClass=(superclass)=>class extends superclass{
+        foo(){
+            console.log('foo from myMix');
+        }
+    }
+
+    //接着,目标类再去继承这个混入类,就达到了混入foo方法的目的
+    
+
+   class MyClass extends MyMixin(MyBaseClass){
+
+   }
+   let c=new MyClass()
+   c.foo()
+
+   let Mixin1=(superclass)=>class extends superclass{
+       foo(){
+           console.loog('foo from Mixin1')
+           if(super.foo) super.foo()
+       }
+   }
+   let Mixin2=(superclass)=>class extends superclass{
+       foo(){
+           console.loog('foo from Mixin2')
+           if(super.foo) super.foo()
+       }
+   }
+   class S{
+       foo(){
+        console.loog('foo from S')
+       }
+   }
+   class C extends Mixin1(Mixin2(S)){
+       foo(){
+           console.log('foo from C');
+           super.foo()
+       }
+   }
+   new C().foo()
+   //foo from C
+   //foo from Mixin1
+   //foo from Mixin2
+   //foo from S
+
+    // 使用traits混入方法
+   import {traits} from 'traits-decorator'
+   class TFoo{
+       foo(){console.log('foo')}
+   }
+   const TBar={
+       bar(){console.log('bar');}
+   }
+   @traits(TFoo,TBar)
+   class MyClass{}
+   let obj=new MyClass()
+   obj.foo()
+   obj.bar()
+   
+
+   import {traits} from 'traits-decorator'
+   class TFoo{
+       foo(){console.log('foo')}
+   }
+   const TBar={
+       bar(){console.log('bar');},
+       foo(){console.log('foo');}
+   }
+   @traits(TFoo,TBar)
+   class MyClass{}//报错,不允许混入同名方法
+
+    import {traits} from 'traits-decorator'
+   class TFoo{
+       foo(){console.log('foo')}
+   }
+   const TBar={
+       bar(){console.log('bar');},
+       foo(){console.log('foo');}
+   }
+   @traits(TFoo,TBar::excludes('foo'))
+   class MyClass{}
+   //使用绑定运算符(::)在TBar上排除foo方法,混入时就不会报错了
+
+   import {traits} from 'traits-decorator'
+   class TFoo{
+       foo(){console.log('foo')}
+   }
+   const TBar={
+       bar(){console.log('bar');},
+       foo(){console.log('foo');}
+   }
+   @traits(TFoo,TBar::alias('foo':'aliasFoo'))
+   class MyClass{}//重命名
+   let obj=new MyClass()
+   obj.foo()
+   obj.aliasFoo()
+   obj.bar()
+
+   @traits(TExample::excludes('foo','bar')::alias({baz:'examples'}))
+   class MyClass{}
+
+*/
+
+
+
+
+    </script>
+</body>
+</html>

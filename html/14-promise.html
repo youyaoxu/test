@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function promise1(a){
+            let promise=new Promise(function(resolve,reject){
+                if(a>=10){
+                    resolve(a)
+                }else{
+                    reject(a)
+                }
+            })   
+        }
+        function promise2(){
+            let promise=new Promise(function(resolve,reject){
+                if(a>=10){
+                    return true;
+                }else{
+                    return false;
+                }
+            })   
+        }
+        function promise3(){
+            let promise=new Promise(function(resolve,reject){
+                if(a>=10){
+                    return '这是最后一个promise-success';
+                }else{
+                    return '这是最后一个promise-fail';
+                }
+            })   
+        }
+        promise1(12).then(function(res){
+            return true;
+        },function(err){
+            console.log(err);
+            return false;
+        }).then(function(res){
+            console.log(res);
+        },function(err){
+            console.log(err);
+        })
+
+    </script>
+</body>
+</html>
