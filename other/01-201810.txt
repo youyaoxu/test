@@ -1046,6 +1046,8 @@ openNearByShop
     "pages/preselling/payment/payresult/payresult",
     "pages/preselling/rules/rules",
 
+    digitmarketing
+
 门店列表
 门店分类
     各种接口
@@ -1145,3 +1147,186 @@ active的时候看的是request
 
 订单完成
 <block wx:if="{{order.status=='finish'}}">{{status_kvmap.order_status[order.status]}}</block>
+
+style="display:block;height:100%;"
+
+3115185184422
+
+aspectFill
+
+http://ishare.iask.sina.com.cn/f/22673852.html
+
+该商品尚未上架
+
+开始开发app:2019-01-14
+
+
+
+settings.json
+tapmode
+
+openPubW
+myApp
+
+"baseUrl":"https://shop.t3c.com.cn",
+
+自提/线上/全球购
+
+order_type
+
+current_page
+
+分类列表
+scanlist
+
+sku
+
+pageData.store_data = store_data;
+pageData.domestic_data = domestic_data;
+pageData.cross_data = cross_data;
+
+data_list
+scan_code
+
+
+8809505541047
+快递
+
+https://mall.chaoniuhui.com/m/xcxztitem-scan_store_product-8809505541047-0003.html
+
+https://shop.t3c.com.cn
+https://mall.chaoniuhui.com
+
+            
+ class="product_img" imgId="{{= item.image_id}}" src="{{= it.images[item.image_id] ? it.images[item.image_id] : '../../images/public/holder.png'}}"  
+
+_this.openPubW('shopping/payment','订单支付',{order_id:temp[2],closeCur:true})        
+
+
+获取图片的多种方式
+    1.直接使用onload的方式加载图片
+    2.对于编译类型的可以使用自动调用方法的方式加载图片 
+        setProductImg:function(){
+                var eles = document.getElementsByClassName('product_img'),_this = this;
+                for(var i = 0; i<eles.length;i++){
+                    (function (e,id){
+                        var hasCache = _this.hasCache(id),images = _this.assign({},_this.data.images);
+                        if(hasCache){
+                            images[id] = hasCache;
+                            _this.data.images = images;
+                        }else{
+                            _this.getImg(id,'',function(path){
+                                images[id] = path;
+                                _this.data.images = images;
+                            })
+                        }
+                    })(eles[i],eles[i].getAttribute('imgId'))
+                }
+            }, 
+    3.小程序中可以使用直接在方法上面加异步回调的方式来改变,以为数据改变会自动渲染
+item-image-pic
+
+it.order_items_group[order.order_id]
+
+.catch(function(err){
+                        _this.stopFresh();
+                        console.log(err);
+                    })
+
+bug汇总
+    1.定义变量未指定类型报错?
+        定义变量的时候要指定类型
+    2.快速切换tab导致频繁刷新?
+        做一些判断,比如相等判断以及其他一些
+    3.
+
+问题汇总
+    如何打开一个弹框?
+    execScript这个方法是干嘛的?
+    frame传参怎么传参?
+    怎么获取图片获取图片?
+    get方法如何使用?
+    post方法如何使用?
+    win复层的问题?
+    如何打开一个frame?
+    如何打开一个win?
+    如何绑定事件?以及为什么要添加tapmode?以及如何设置tapmode?如何调用方法?
+    如何设置class类的切换?
+    如何实现下拉刷新问题?
+    怎么实现表单的赋值操作?
+        myApp.desc=this.value
+
+可能遇到的问题
+    1.支付问题
+
+待解决问题
+    1.订单列表,已支付,已发货,订单状态
+    2.订单详情,订单状态,同上   
+    3.  
+
+待测试问题
+    1.物流订单,物流详情,滚动区域测试
+    2.订单列表页面滚动状态测试 
+
+写法
+    1.ifelse语句
+        {{? it.hideLoading}}{{?}} 
+    2.for语句,包括对象和数组
+    3.赋值绑定语句,包括class,src属性,值绑定,以及其他一些绑定后期补充
+    4.
+
+想法
+    做一个工具集的插件,用于以后的开发中使用?
+    前端部署增量更新?
+    做一个doT的插件使用?
+    做一个promise插件使用?
+    图片的绑定总结方法?
+        1.html5中使用onbind和onerror绑定
+        2.在vue中
+        3.在小程序中
+        4.在doT中绑定
+            获取元素绑定
+            其他绑定方式
+
+doT实现绑定表单的操作?
+    1.表单绑定值的操作
+    2.使用其他的方式绑定数据?
+
+util
+    http    uploadFile  get     post    assign  setPrefs    getPrefs    removePrefs
+    send    on  off     toHome  openWin     openFrame   openPubW    openDrawerLayout
+    closeWin    openLogin   loginSuccess    wxAuthor    wxLogin     getUserInfo     refresh
+    stopFresh   fail    success     toast   showLoading     hideLoading     each
+    getImg  cacheImg    hasCache    getName     getUrlData  jumpTo  openMedia   openArea
+    openAlert   openInput   openPreview     offsetEle   attr    addClass    removeClass
+    toggleClass     compressImg     shareProgram
+
+order_id=3810435144027
+
+order_id=3810435144027&product_id=21560&item_type=product&item_id=842
+
+                {{? (it.noData )}}
+                <div class="noData">
+                    <img src="../../images/public/noData.png" alt="">
+                    <p>暂无订单哦</p>
+                </div>
+                {{?}}
+                {{? (it.noMore )}}
+                <div class="noData" style="padding-bottom:0;padding-top:0vw;line-height:10vw;">
+                    <p style="font-size:3.2vw;">无更多数据</p>
+                </div>
+                {{?}}
+                {{? !it.hideLoading}}
+                <div class="page-loading" style="padding:2vw 0;">
+                    <img src="../../images/public/loading.gif" alt="">
+                </div>
+                {{?}}
+
+            this.refresh(function(){
+                _this.data.current_page=1;
+                _this.getOrderList(_this.data.order_type,1);
+            })
+            _this.stopFresh();
+
+assule
+return_item_helpinfo
