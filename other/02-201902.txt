@@ -1,0 +1,214 @@
+<picker mode="date" fields="month" value="{{month}}" bindchange="bindMonthChange" class="picker" start="{{old_year}}-{{curr_month}}" end="{{curr_year}}-{{curr_month}}">
+                    <div class="picker-item "><icon class="iconfont icon-rili"></icon></div>
+                </picker>
+
+尾巴
+	myprofit_list
+		年月
+
+=='product'
+
+6222021106011535001
+
+closeCur
+<div class="foot">
+                <div class="foot-btn" tapmode onclick="myApp.cashSubmit()">下一步</div>
+            </div>
+
+计划任务
+	1.react任务继续执行,完成所有的mooc课程
+	2.aui-scroll笔记整理
+	3.h5登录整理
+	4.h5支付宝支付接口整理
+	5.h5微信支付接口整理
+	6.h5关于vuex整理
+	7.自己写一个js插件,模仿aui-scroll
+	8.aui系列插件整理
+	9.apicloud已用模块整理
+	10.继续vue的学习完成笔记
+	11.继续js的学习完成笔记
+	12.继续vue在项目中的使用
+	13.elementUI在项目中的使用
+	14.
+
+项目-发红包
+	1.什么情况下进入发红包页面
+	2.红包页面显示什么内容
+	3.有一个底,上面有一些文字
+	4.有一个弹框,弹框上有一些文字用于描述
+	5.没有人会交你怎么做,怎么做是你自己的事情
+	6.需要一个
+
+潮妞会app-共享店主
+	1.我的收益,全部显示所有的数据
+	2.收益提现详情,显示静态数据
+	3.交易记录,显示列表
+	4.收益提现设置,点击获取银行卡数据,之后跳转回来
+
+h5-vue小结
+	1.
+_this.showAlert({title:'恭喜您助力商品已发起成功',content:'邀请好友帮你助力，免费那超值商品',confirmText:'马上邀请好友助力'})
+          .then((res)=>{
+            
+          })
+
+          恭喜您助力商品已发起成功
+          邀请好友帮你助力，免费拿超值商品
+          马上邀请好友助力
+
+头像问题
+	1.头像出不来
+分享问题
+	1.图片名臣问题
+	2.其他情况分享问题
+滚动数据问题
+	没有数据
+	滚动效果
+助力值问题
+订单确认页面
+	测试
+	
+
+use_freebuy
+main_id
+
+&& res.data.redirect.match(/gbmember-orders_list/)
+
+先要判断是新用户还是老用户
+新用户直接去注册,然后是助力
+老用户不能助力,只能发起助力
+
+新用户注册好后是老用户,没有助力,现在要助力是否可以助力
+然后判断是否助力成功
+
+load_activityOrderLog
+isNew
+
+activityOrderInfo
+
+activity_id=5&isassistance=1
+
+_this.check_signup()
+
+问题:h5问题
+
+1.助力订单不能申请售后已修改
+2.
+
+
+1、登陆时提示注册，点击注册绑定手机号码成功后，后台不显示手机号码
+	绑定关系没有带, 已解决
+2、发起助力-到分享到朋友圈时为跳出弹框提示自动保存图片，并且图片也没有保存
+	可能是域名问题,已在微信后台mall环境添加下载域名,
+	需要测试
+3、分享链接给好友助力：后的商品主图不显示
+	没有https,
+	链接问题
+4、分享给新用户助力，提示注册，注册成功后没有返回助力页面
+	待定,可能是账号问题,调整测试环境
+	同问题8
+5、助力成功后，提示你也可以助力，没有到发起助力页面
+	已解决,
+	需要测试
+6、当你发起助力是：提示为你已发起助力活动，可以去邀请好友为你助力哦
+	已解决,
+	需要测试
+7、助力成功后页面区分下：如果是再次点击进入邀请助力的链接提示为：你已帮  微信名  
+	助力，不能重复参与，如果是其他人：你已帮别人助力，不能重复参与 
+	已解决,
+	需要测试
+8、分享给新用户助力是，注册页面出现问题
+	待定,同问题4
+9、兑换商品不能申请售后
+	已解决
+	需要测试
+10、兑换页面提示：商品兑换后将会扣除3个助力值兑换商品，
+且无法取消哦，是否要继续兑换！ （把需要兑换扣除的多少值提示出来）
+	赵解决
+10、助力页面里面加上一个助力兑换记录，助力值兑换扣减记录---可以做的话我这边提供页面规划
+	新需求,待定
+	后期再确认
+11、点击到助力页面后，没有返回首页的按钮，影响客户体验和转化
+	已修改,
+	需要测试
+12、提示绑定号码成功，助力成功，但是后台没有显示号码，我的助力页面没有增加助力值也没有记录
+	前半句同问题13
+	后半句已解决,
+	需要测试
+13、助力邀请进来的，都是无邀请者
+	已解决,没有带邀请关系share_mobile
+	需要测试
+
+
+0.1 问题:$http请求中的数据缓存问题
+
+
+0.2 问题:测试下拉刷新问题,解决问题
+
+0.3 问题:上来就直接在浏览中写入本地session_id
+	目的是为了后面登录使用
+
+	https://mall-onlie.oss-cn-shanghai.aliyuncs.com/0-T3CIMG/service-money-open.png
+	https://mall-onlie.oss-cn-shanghai.aliyuncs.com/0-T3CIMG/service-money-detail.png
+
+	wxid_7tup3cj9na0q21
+
+	https://mall-onlie.oss-cn-shanghai.aliyuncs.com/0-T3CIMG/service-money-open.png
+	https://mall-onlie.oss-cn-shanghai.aliyuncs.com/0-T3CIMG/service-money-icon-close.png
+	
+
+<block wx:if="{{showRedMoney}}">
+  <red-money storeName="{{redMoneyStoreName}}" bindcloseRedMoney="closeRedMoney" bindfailRedMoney="failRedMoney"></red-money>
+</block>
+
+data:{
+      showRedMoney:false,
+      redMoneyStoreName:''
+    },
+onLoad:function(){
+	this.load_redmoney();
+}
+closeRedMoney:function(){
+  this.setData({
+    showRedMoney:false
+  })
+},
+failRedMoney:function(){
+  this.closeRedMoney()
+},
+load_redmoney:function(){
+  let _this=this;
+  let url = config.BASE_URL + '/m/xcxstore-red_money.html';
+  util.$http(url).then((res) => {
+    let pageData={};
+    if (res.data.result=='success'){
+      pageData.showRedMoney=true;
+      if (res.data.data && res.data.data.store_name){
+        pageData.redMoneyStoreName = res.data.data.store_name
+      }
+       _this.setData(pageData)
+    }else{
+      pageData.showRedMoney = false;
+       _this.setData(pageData)
+       //此处要添加错误提示代码
+	  	//wx.navigateBack();
+    }
+  }).catch((err)=>{
+  	console.log(err)
+  	//此处要添加错误提示代码
+  	//wx.navigateBack();
+  })
+}
+
+.json
+{
+	"usingComponents": {
+      "red-money": "/widgets/components/redmoney/redmoney"
+    }
+}
+
+0.1 问题:真机调试模式下打开一个小程序是可以做真机调试的
+
+0.2 差什么补什么
+
+0.3 整理笔记

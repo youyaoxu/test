@@ -1330,3 +1330,1150 @@ order_id=3810435144027&product_id=21560&item_type=product&item_id=842
 
 assule
 return_item_helpinfo
+
+门店自提,checkout隐藏订单确认页面地址
+
+0.1 hello wrold
+    <?php 
+
+    ?>
+0.2 注释
+    单行注释
+    多行注释
+
+0.3 变量
+    $开头
+
+    变量作用域
+        local
+        global
+        static
+        parameter
+
+0.4 打印输出
+    $x=5;
+    $y=6;
+    $z=$x+$y;
+    echo $z;
+    
+0.5 
+
+    -webkit-filter:grayscale(100%);
+    opacity:0.8;
+
+apicloud
+0.1 config.xml
+    <widget id="A12345678901"  version="0.0.1">
+        <name>API Example</name>
+        <description>
+            API Example App.
+        </description>
+        <author email="developer@apicloud.com" href="//www.apicloud.com">
+            APICloud.SIR
+        </author>
+        <content src="index.html" />
+        <access origin="*" />
+        <preference name="windowBackground" value="#FFF" />
+        <permission name="call" />
+        <feature name="weiXin">
+            <param name="urlScheme" value="wx7779c7c063a9d4d9" />
+        </feature>
+    </widget>
+
+0.2 属性
+    id
+    version
+    sandbox
+
+0.3 元素
+    name
+    descriptor
+    author
+    content
+    access
+    preference
+    feature
+    font
+
+0.4 access
+    origin:字段名
+    <access origin="local" />
+    <access origin="http://apicloud.com" />
+
+0.5 preference
+    配置app全局背景
+        <preference name="appBackground" value="color|imageUrl" />
+    配置Window默认背景
+        <preference name="windowBackground" value="color|imageUrl" />
+    配置frame默认背景
+        <preference name="frameBackgroundColor" value="color" />
+    配置页面是否弹动
+        <preference name="pageBounce" value="false" />
+    配置页面是否显示滚动条
+        横向滚动条：
+        <preference name="hScrollBarEnabled" value="true|false" />
+        竖直滚动条：
+        <preference name="vScrollBarEnabled" value="true|false" />
+    配置启动页是否自动隐藏
+        <preference name="autoLaunch" value="true|false" />
+    配置iOS状态栏和页面是否重合（沉浸式效果）
+        <preference name="iOS7StatusBarAppearance" value="true" />
+    配置状态栏和页面是否重合（沉浸式效果）
+        <preference name="statusBarAppearance" value="true" />
+    配置应用是否全屏运行
+        <preference name="fullScreen" value="true|false" />
+    配置应用是否自动检测更新
+        <preference name="autoUpdate" value="false" />
+    配置应用是否支持增量更新、云修复
+        <preference name="smartUpdate" value="true" />
+    配置应用开启/关闭调试模式
+        <preference name="debug" value="false" />
+    配置是否允许使用第三方键盘
+        <preference name="allowKeyboardExtension" value="false" />
+    配置键盘弹出方式
+        <preference name="softInputMode" value="resize"/>
+    配置是否显示键盘上方的工具条
+        <preference name="softInputBarEnabled" value="false" />
+    配置是否允许页面默认拖拽行为
+        <preference name="dragAndDrop" value="false" />
+    配置字体
+        //配置一个值：
+        <preference name="font" value="widget/res/xingkai.ttf" />
+        //配置多个值，各值之间用竖线 | 隔开：
+        <preference name="font" value="widget/res/xingkai.ttf | widget/res/lishu.ttf" />
+    配置后台运行
+        audio
+        location
+        voip
+        newsstand-content
+        external-accessory
+        bluetooth-peripheral
+        fetch
+        remote-notification
+        //配置一个值：
+        <preference name="backgroundMode" value="audio"/>
+        //配置多个值，各值之间用竖线 | 隔开：
+        <preference name="backgroundMode" value="audio | location"/>
+    配置URL Scheme
+        配置后，外部浏览器页面里面就可以通过a标签链接打开应用：
+        <a href="myscheme://?param1=xxx&param2=xxx">测试打开应用</a>
+        <preference name="urlScheme" value="myscheme" />
+            value值必须是小写
+    配置可被检测的URL Scheme
+        //多个值之间用英文逗号隔开
+        <preference name="querySchemes" value="weixin,sinaweibo" />
+    配置网页里被禁止跳转的URL Scheme
+        // 禁止所有
+        <preference name="forbiddenSchemes" value="*" />
+        // 禁止scheme1和scheme2
+        <preference name="forbiddenSchemes" value="scheme1,scheme2" />
+        // 禁止除scheme1和scheme2以外的其它应用
+        <preference name="forbiddenSchemes" value="^scheme1,^scheme2" />
+    配置User Agent
+        //值为文件路径时，默认的User Agent会被替换成文件中的内容
+        <preference name="userAgent" value="widget://res/ua.txt" />
+        //值为普通字符串时，内容会被添加到系统默认User Agent的后面
+        <preference name="userAgent" value="APICloud" />
+    配置iTunes文件共享
+        <preference name="fileShare" value="false" />
+    配置自定义下拉刷新模块
+        <preference name="customRefreshHeader" value="UIPullRefresh" />
+    配置是否在桌面显示应用图标
+        <preference name="launcher" value="false" />
+    配置是否检查https证书是受信任的
+        <preference name="checkSslTrusted" value="false" />
+    配置是否校验应用证书
+        <preference name="appCertificateVerify" value="false" />
+
+0.6 feature
+    微信
+        <feature name="weiXin">
+            <param name="urlScheme" value="wx7779c7c063a9d4d9" />
+            <param name="apiKey" value="wx7779c7c063a9d4d9" />
+            <param name="apiSecret" value="a354f72aa1b4c2b8eaad137ac81434cd" />
+        </feature>
+    新浪微博
+        <feature name="sinaWeiBo">
+            <param name="urlScheme" value="wb1464272715" />
+            <param name="apiKey" value="1464272715" />
+        </feature>
+    百度定位
+        <feature name="baiduLocation">
+            <param name="apiKey" value="fef72715gshjelke" />
+        </feature>
+    百度地图
+        <feature name="baiduMap">
+            <param name="android_api_key" value="fef72715gshjelke" />
+            <param name="ios_api_key" value="fef72715gshjelke" />
+        </feature>
+    支付宝支付
+        <feature name="aliPay">
+            <param name="urlScheme" value="AliPay + widgetId" />
+        </feature>
+    QQ登录/分享
+        <feature name="qq">
+            <param name="urlScheme" value="tencent123345678" />
+            <param name="apiKey" value="123345678" />
+        </feature>
+    极光推送
+        <feature name="ajpush">
+            <param name="channel" value="developer-apicloud" />
+            <param name="app_key" value="2878d6d8bc2556b577a53e05" />
+        </feature>
+    融云即时通讯
+        <feature name="rongCloud">
+            <param name="appKey" value="此处填写App Key 值" />
+        </feature>
+
+0.7 permission
+    读取手机状态和身份
+        <permission name="readPhoneState" />
+    直接拨打电话
+        <permission name="call" />
+    直接发送短信
+        <permission name="sms" />
+    使用拍照和视频
+        <permission name="camera" />
+    使用录音
+        <permission name="record" />
+    访问地理位置信息
+        <permission name="location" />
+    访问文件系统
+        <permission name="fileSystem" />
+    完全的访问网络权限
+        <permission name="internet" />
+    开机启动
+        <permission name="bootCompleted" />
+    控制振动/闪光灯/屏幕休眠等硬件设备
+        <permission name="hardware" />
+    访问设备通讯录
+        <permission name="contact" />
+
+0.8 meta-data
+    <meta-data name="KKKK" value="VVVV"/>
+    字段描述：
+        name：声明meta-data键值对中的键名
+        value：声明meta-data键值对中对应的值
+0.9 key.xml
+    可以配置多个键值对,编译时,云服务器会自动加密key.xml,在应用内,可以通过api.loadSecureValue方法,获取指定可以对应的值
+    <?xml version="1.0" encoding="UTF-8"?>
+    <security>
+    <item name="key0" value="value0"/>
+    <item name="key1" value="value1"/>
+    <item name="key2" value="value2"/>
+    <item name="key3" value="value3"/>
+    </security>
+
+0.10 Android签名证书描述及使用流程
+
+0.11 iOS证书及描述文件制作流程
+
+0.12 屏幕适配原理及实现
+
+0.13 云修复使用指南
+
+0.14 版本更新
+
+0.15 启动页闪屏广告
+
+0.16 模块包说明
+    
+0.17 SuperWebview开发指南Android
+
+0.18 SuperWebview开发指南iOS
+
+0.19 如何在APICloud凭条使用腾讯X5引擎
+
+
+
+部门人员
+    大数据
+        詹旭
+        张慊
+        易冀
+        郝文琪
+    电商组
+        齐东飞
+        侯磊
+        唐世财
+        王彦辉
+        丁柯丹
+        简宇杰
+        赵璐婷
+
+    周绍峰
+    李伟群
+
+//checkout.js
+//结算页
+const config = require('../../config/config.js');
+const util = require('../../utils/util.js');
+const strip_tags = require('../../utils/striptags.js');
+const dateFormat = require('../../utils/dateformat.js');
+const app = getApp();
+
+var front_images = [];
+var back_images = [];
+
+const form_cart_data =  function(data){
+    let _return = data;
+    if(_return.promotions){
+        //格式化促销规则展示
+        if(_return.promotions.goods){
+            for (var obj_ident in  _return.promotions.goods) {
+                for (var i = 0; i < _return.promotions.goods[obj_ident].length; i++) {
+                    if(_return.promotions.goods[obj_ident][i].tag == '送赠品'){
+                        _return.promotions.goods[obj_ident][i].solution = strip_tags(_return.promotions.goods[obj_ident][i].solution).replace(/[\n|\s]/ig,'').split("【赠品】");
+                    }
+                }
+            }
+        }
+        if(_return.promotions.order){
+            for (var i = 0; i < _return.promotions.order.length; i++) {
+                if(_return.promotions.order[i].tag == '送赠品'){
+                    _return.promotions.order[i].solution = strip_tags(_return.promotions.order[i].solution).replace(/[\n|\s]/ig,'').split("【赠品】");
+                }
+            }
+        }
+    }
+    return _return;
+}
+
+
+const update_checkout = function() {
+    var _this = this;
+    util.wxRequest({
+        url: config.BASE_URL + '/m/xcxcheckout' + (_this.data.is_fastbuy ? '-fastbuy' : '') + '.html',
+        success: function(res) {
+            var pagedata = res.data;
+            if(pagedata.error){
+                return wx.showModal({
+                    title:'立即购买失败',
+                    content:pagedata.error,
+                    showCancel:false,
+                    success:function(){
+                        wx.navigateBack();
+                    }
+                });
+            }
+            if (!pagedata||!pagedata.cart_result) return;
+            // for (var i in pagedata.member_addrs) {
+            //     pagedata.member_addrs[i]['area_format'] = util.formatArea(pagedata.member_addrs[i]['area']);
+            // }
+          //身份证信息绑定  
+          if (pagedata.memberCardInfo){
+            if (pagedata.memberCardInfo.card_front_image_url){
+              pagedata.card_front_image = pagedata.memberCardInfo.card_front_image_url;
+            }
+            if (pagedata.memberCardInfo.card_back_image_url) {
+              pagedata.card_back_image = pagedata.memberCardInfo.card_back_image_url;
+            }
+            if (pagedata.memberCardInfo.card_front_image_id) {
+              pagedata.card_front_image_id = pagedata.memberCardInfo.card_front_image_id;
+            }
+            if (pagedata.memberCardInfo.card_back_image_id) {
+              pagedata.card_back_image_id = pagedata.memberCardInfo.card_back_image_id;
+            }
+          }
+            pagedata.cart_result = form_cart_data(pagedata.cart_result);
+          for (var i = 0; i < pagedata.cart_result.objects.goods.length;i++){
+            var item = pagedata.cart_result.objects.goods[i];
+            if (item.is_fastbuy) {//立即购买,按钮进来
+              if (app.globalData.world_type.indexOf(item.item.product.trade_type) != -1) {
+                _this.setData({
+                  isCross: true
+                })
+                if (item.item.product.trade_type == 'directcard') {
+                  _this.setData({
+                    needPic: true
+                  })
+                }
+              }
+            } else {//购物车进来,没有is_fastbuy字段,进入该判断
+              if (app.globalData.world_type.indexOf(item.item.product.trade_type) != -1 && item.disabled == 'false') {
+                _this.setData({
+                  isCross: true
+                })
+                if (item.item.product.trade_type == 'directcard') {
+                  _this.setData({
+                    needPic: true
+                  })
+                }
+              }
+            }
+          }
+            var num = 0;
+            for(var k in pagedata.my_av_coupons){
+                num +=1
+            }
+            pagedata.couponNum = num
+            _this.setData(pagedata);
+            if (pagedata.cart_result.integraldeduction) {
+                util.wxRequest({
+                    url: config.BASE_URL + '/openapi/integraldeduction/get_position',
+                    success: function(res) {
+                        _this.setData({
+                            'cart_result.integraldeduction.position': res.data.data.member_integral_position
+                        });
+                    }
+                });
+            }
+            sync_inused_coupons.call(_this);
+        },
+        fail: function(re) {
+            console.info(re);
+        },
+        complete: function(e) {
+            _this.setData({
+                hideLoading: true
+            });
+        }
+    });
+}
+/**
+ * 获得订单提交需要的数据
+ */
+const get_submit_data = function(pagedata) {
+    console.log(pagedata,'66666');
+    var _this=this;
+    var _return = {
+        'cart_md5': pagedata.cart_md5,
+        'invoice_title': pagedata.invoice_title,
+        'memo': pagedata.memo,
+      'card_name': pagedata.card_name ? (pagedata.card_name).trim():'',
+      'real_name': pagedata.real_name ? (pagedata.real_name).trim():'',
+      'card_front_image': pagedata.card_front_image_id ? pagedata.card_front_image_id : '',
+      'card_back_image': pagedata.card_back_image_id ? pagedata.card_back_image_id: ''
+    };
+    _return['need_invoice'] = (_return['invoice_title'] && _return['invoice_title'] != '');
+    for (var i in pagedata.member_addrs) {
+        if (pagedata.member_addrs[i].selected) {
+            _return['addr_id'] = pagedata.member_addrs[i]['addr_id'];
+            break;
+        }
+    }
+    for (var i in pagedata.dlytypes) {
+        if (pagedata.dlytypes[i].selected) {
+            _return['dlytype_id'] = pagedata.dlytypes[i]['dt_id'];
+            break;
+        }
+    }
+    for (var i in pagedata.paymentapps) {
+        if (pagedata.paymentapps[i].selected) {
+            _return['payapp_id'] = pagedata.paymentapps[i]['app_id'];
+            break;
+        }
+    }
+    var _vshop_id = wx.getStorageSync('_vshop_id');
+    if(_vshop_id){
+        _return['_vshop_id'] = _vshop_id;
+    }
+    return _return;
+
+}
+/**
+ * 同步购物车优惠券数据到pagedata
+ */
+const sync_inused_coupons = function() {
+    var used_coupons = this.data.cart_result.objects.coupon;
+    var my_av_coupons = this.data.my_av_coupons;
+    var used_coupons_data = {};
+    if (used_coupons.length) {
+        for (var i = 0; i < used_coupons.length; i++) {
+            if (used_coupons[i]['params']['in_use']) {
+                used_coupons_data[used_coupons[i]['coupon']] = used_coupons[i]['params'];
+            }
+        }
+    }
+    for (var i in my_av_coupons) {
+        if (used_coupons_data[i]) {
+            my_av_coupons[i]['in_use'] = used_coupons_data[i];
+        } else {
+            my_av_coupons[i]['in_use'] = false;
+        }
+        this.setData({
+            'my_av_coupons': my_av_coupons
+        });
+    }
+};
+const update_maddr = function(addr_selected) {
+    var _this = this;
+    for (var k in _this.data.member_addrs) {
+
+        if (_this.data.member_addrs[k].addr_id == addr_selected.addr_id) {
+            _this.data.member_addrs[k].selected = 'true';
+        } else {
+            delete(_this.data.member_addrs[k].selected);
+        }
+      _this.data.member_addrs[k].area_format = util.formatArea(_this.data.member_addrs[k].area);
+      
+    }
+    _this.setData({
+        'member_addrs': _this.data.member_addrs
+    });
+};
+
+Page({
+    data: {
+        'active_integral_panel': false,
+        'active_coupon_panel': false,
+        'is_fastbuy': false,
+        'memo':'',
+        edited:false,
+        submit_disabled:false,
+        imglist:[],
+        canSelectCoupon:true,//是否可以点击优惠券
+    },
+    onReady: function() {
+        wx.setNavigationBarTitle({
+            title: '订单确认'
+        });
+    },
+    onLoad: function(options) {
+        var _this = this;
+        if (options.is_fastbuy) {
+            this.setData({
+                'is_fastbuy': true
+            });
+        }
+        _this.setData({
+            trade_type:options.trade_type
+        })
+        util.checkMember.call(this, function() {
+            update_checkout.call(_this);
+        });
+
+    },
+    onShow: function() {
+        //地址变更处理
+        var _this = this;
+        var addr_selected = wx.getStorageSync('member_addr_selected');
+        if (!addr_selected || !addr_selected.addr_id) {
+            return;
+        }
+        if (addr_selected.addr_id)
+            util.wxRequest({
+                url: config.BASE_URL + '/m/xcxmy-receiver-edit-' + addr_selected.addr_id + '.html',
+                success: function(res) {
+                    if (!res.data.maddr) {
+                        return _this.setData({member_addrs:false});
+                    }
+                    _this.data.member_addrs = _this.data.member_addrs || {};
+                    _this.data.member_addrs[addr_selected.addr_id] = res.data.maddr;
+                    update_maddr.call(_this, addr_selected);
+                                        wx.removeStorageSync('member_addr_selected')
+                }
+            });
+    },
+    load_image: function(e) {
+        util.loadImage(this,e.currentTarget.dataset.ident,'xs');
+    },
+    evt_tapmodal: function(e) {
+        var modal_name = e.target.dataset.modalname;
+        if (!modal_name) {
+            return;
+        }
+        var _set = {};
+        _set['active_' + modal_name] = false;
+        this.setData(_set);
+        this.animation.opacity(0).step();
+        this.setData({
+            modal_animation_data: this.animation.export()
+        });
+    },
+    evt_showmodal: function(e) {
+        var modal_name = e.currentTarget.dataset.modalname;
+        // if(!this.data.my_av_coupons && modal_name == 'coupon_panel') return;
+        if (!modal_name) {
+            return;
+        }
+        var _set = {};
+        _set['active_' + modal_name] = true;
+        this.setData(_set);
+        this.animation = this.animation ? this.animation : wx.createAnimation({
+            duration: 400,
+            timingFunction: 'ease',
+        });
+        this.animation.opacity(1).step();
+        this.setData({
+            modal_animation_data: this.animation.export()
+        });
+    },
+    evt_integral_switch: function(e) {
+        var _this = this;
+        util.wxRequest({
+            url: config.BASE_URL + '/openapi/integraldeduction/cart/' + (e.detail.value ? 'enabled/true/' : ''),
+            success: function(res) {
+                update_checkout.call(_this);
+            }
+        });
+    },
+    evt_dlytypechange: function(e) {
+        var _this = this;
+        var submit_data = get_submit_data(this.data);
+        submit_data['dlytype_id'] = e.currentTarget.dataset.dtid;
+        util.wxRequest({
+            url: config.BASE_URL + '/m/xcxcheckout-check' + (_this.data.is_fastbuy ? '-fastbuy' : '') + '.html',
+            data: submit_data,
+            method: 'POST',
+            success: function(res) {
+                if (!res.data.data || res.data.error) {
+                    wx.showModal({
+                        title: '购物车异常',
+                        content: res.data.data.error,
+                        success: function(res) {
+                            update_checkout.call(_this);
+                        }
+                    });
+                } else {
+                    _this.setData(res.data.data);
+                    _this.evt_tapmodal({
+                        target: {
+                            dataset: {
+                                modalname: 'dlytype_panel'
+                            }
+                        }
+                    });
+                }
+            }
+        });
+    },
+    evt_payappchange: function(e) {
+        var _this = this;
+        var submit_data = get_submit_data(this.data);
+        submit_data['payapp_id'] = e.currentTarget.dataset.appid;
+        util.wxRequest({
+            url: config.BASE_URL + '/m/xcxcheckout-check' + (_this.data.is_fastbuy ? '-fastbuy' : '') + '.html',
+            data: submit_data,
+            method: 'POST',
+            success: function(res) {
+                if (!res.data.data || res.data.error) {
+                    wx.showModal({
+                        title: '购物车异常',
+                        content: res.data.data.error,
+                        success: function(res) {
+                            update_checkout.call(_this);
+                        }
+                    });
+                } else {
+                    _this.setData(res.data.data);
+                    _this.evt_tapmodal({
+                        target: {
+                            dataset: {
+                                modalname: 'payapp_panel'
+                            }
+                        }
+                    });
+                }
+            }
+        });
+    },
+    evt_couponcheck: function(e) {
+        var _this = this;
+        var dataset_w = e.currentTarget.dataset;
+
+        if (!dataset_w || !dataset_w.coupon || !dataset_w.nextact) {
+            return;
+        }
+        var post_data_w = (dataset_w.nextact == 'use' ? {
+            'coupon': dataset_w.coupon,
+        } : {
+            'obj_ident': 'coupon_' + dataset_w.coupon
+        });
+      if (_this.data.is_skin){//皮肤管理中心可以使用多张优惠券
+        _this.edit_coupon(post_data_w, dataset_w)
+      }else{
+        if ((_this.data.use_coupon_id || _this.data.cart_result.objects.coupon[0]) && _this.data.couponNum > 1) {
+            var coupon_id = _this.data.use_coupon_id?_this.data.use_coupon_id:_this.data.cart_result.objects.coupon[0].coupon
+            _this.edit_coupon({
+                'obj_ident': 'coupon_' + coupon_id
+            },{
+                nextact:'remove'
+            },function(){
+                _this.edit_coupon(post_data_w,dataset_w)
+            })
+        }else{
+            _this.edit_coupon(post_data_w,dataset_w)
+        }
+      }
+    },
+    edit_coupon:function(post_data,dataset,fn){
+        var _this = this;
+        if(!_this.data.canSelectCoupon ) return;
+        _this.setData({
+            'canSelectCoupon':false
+        })
+        util.wxRequest({
+            url: config.BASE_URL + '/m/xcxcart-' + dataset.nextact + '_coupon' + (_this.data.is_fastbuy ? '-fastbuy' : '') + '.html',
+            data: post_data,
+            method: 'POST',
+            success: function(res) {
+                if (!res.data.data || res.data.error) {
+                    wx.showModal({
+                        title: '使用优惠券失败',
+                        content: '优惠券使用失败原因：不满足促销条件,或存在排他促销规则'
+                    });
+
+                     _this.setData({
+                            'canSelectCoupon':true
+                    })
+                    sync_inused_coupons.call(_this);
+                } else {
+                    var new_cart_md5 = res.data.data['new_cart_md5'];
+                    delete(res.data.data['new_cart_md5']);
+                    
+                    _this.setData({
+                        'cart_result': form_cart_data(res.data.data),
+                        'use_coupon_id': dataset.nextact == 'remove'?'':dataset.coupon,
+                        'cart_md5': new_cart_md5,
+                        'total.order_total':res.data.data.finally_cart_amount,
+                        'canSelectCoupon':true
+                    })
+                    sync_inused_coupons.call(_this);
+                    if(fn){
+                        fn()
+                        return
+                    }
+                     
+                    wx.showToast({
+                        title: dataset.nextact == 'use' ? '使用成功' : '取消成功',
+                        icon: 'success'
+                    });
+                    //关闭优惠券选择面板
+                    _this.evt_tapmodal({
+                        target:{
+                            dataset:{
+                                modalname:'coupon_panel'
+                            }
+                        }
+                    });
+
+
+                }
+            }
+        });
+    },
+    evt_scancoupon: function(e) {
+        var _this = this;
+        wx.scanCode({
+            success: function(res) {
+                //{errMsg: "scanCode:ok", result: "Agetcoupon", scanType: "QR_CODE", charSet: "UTF-8"}
+                _this.setData({
+                    'coupon_input': res.result
+                });
+                _this.evt_couponiptsubmit();
+            }
+        });
+    },
+    evt_couponiptsubmit: function(e) {
+        var _this = this;
+        var coupon_input = _this.data.coupon_input;
+        if (!coupon_input) {
+            return;
+        }
+        util.wxRequest({
+            url: config.BASE_URL + '/m/xcxcart-use_coupon' + (_this.data.is_fastbuy ? '-fastbuy' : '') + '.html',
+            data: {
+                'coupon': coupon_input
+            },
+            method: 'POST',
+            success: function(res) {
+                if (!res.data.data || res.data.error) {
+                    wx.showModal({
+                        title: '使用优惠码失败',
+                        content: '优惠码使用失败未能成功使用.'
+                    });
+                    sync_inused_coupons.call(_this);
+                } else {
+                    var new_cart_md5 = res.data.data['new_cart_md5'];
+                    delete(res.data.data['new_cart_md5']);
+                    _this.setData({
+                        'cart_result': form_cart_data(res.data.data)
+                    });
+                    _this.setData({
+                        'cart_md5': new_cart_md5
+                    });
+                    _this.setData({
+                        'total.order_total':res.data.data.finally_cart_amount
+                    })
+                    sync_inused_coupons.call(_this);
+                    wx.showToast({
+                        title: '使用成功',
+                        icon: 'success'
+                    });
+                    //关闭优惠券选择面板
+                    _this.evt_tapmodal({
+                        target:{
+                            dataset:{
+                                modalname:'coupon_panel'
+                            }
+                        }
+                    });
+                }
+            }
+        });
+    },
+    evt_setpagedata: function(e) {
+        var _set = {};
+        _set[e.currentTarget.dataset.key] = e.detail.value;
+        this.setData(_set);
+    },
+    evt_blur_scoreu: function(e) {
+        var integral_val = e.detail.value,
+            _this = this;
+        if (!_this.data.cart_result.integraldeduction) {
+            return;
+        }
+        if (isNaN(integral_val) || integral_val < 0 || integral_val == _this.data.cart_result.integraldeduction.score_u) {
+            _this.setData({
+                'cart_result.integraldeduction.score_u': _this.data.cart_result.integraldeduction.score_u
+            });
+            return;
+        }
+        util.wxRequest({
+            url: config.BASE_URL + '/openapi/integraldeduction/cart/enabled/true/integral/' + integral_val,
+            success: function(res) {
+                update_checkout.call(_this);
+            }
+        });
+    },
+    evt_submit_order: function(e) {
+        var bindMobileResult=app.check_mobile_account();
+        if (!bindMobileResult){
+          wx.showModal({
+            title: '绑定手机号码',
+            content: '请先完成手机号码绑定',
+            confirmText: '去绑定',
+            cancelText: '忽略',
+            success: function (res) {
+              if (res.confirm) {
+                wx.navigateTo({
+                  url: '/pages/member/signup/mobile'
+                });
+                return false;
+              } else if (res.cancel) {
+                return false;
+              }
+            }
+          })
+          return false;
+        }
+        var _this = this;
+        _this.setData({
+            card_name:e.detail.value.cardid,
+            real_name:e.detail.value.real_name
+        });
+        var pagedata = this.data;
+        var submit_data = get_submit_data(pagedata);
+        var form_id = e.detail.formId; //模板消息用
+        //先判断身份证:号,名,图片,再判断身份证:号,名
+        if (_this.data.isCross){
+          
+                    if(!submit_data['card_name'] || submit_data['card_name'] == ''){
+                        wx.showModal({
+                            title: '提示',
+                            content: '请输入身份证号码',
+                        });
+                        return false;
+                    }
+                    if(!submit_data['real_name'] || submit_data['real_name'] == ''){
+                        wx.showModal({
+                            title: '提示',
+                            content: '请输入真实姓名',
+                        });
+                        return false;
+                    }
+          if (!_this.checkIdentity(submit_data['card_name'])) {
+            wx.showModal({
+              title: '提示',
+              content: '身份证号码格式错误',
+            });
+            return false;
+          }
+          if (_this.checkName(submit_data['real_name'])) {
+            wx.showModal({
+              title: '提示',
+              content: '真实姓名格式错误',
+            });
+            return false;
+          }
+          if (_this.data.needPic){
+            if (!submit_data['card_front_image'] || submit_data['card_front_image'] == '' || !submit_data['card_back_image'] || submit_data['card_back_image'] == '') {
+              wx.showModal({
+                title: '提示',
+                content: '请上传身份证图片',
+              });
+              return false;
+            }
+          }
+        } 
+        wx.showToast({
+            title: '正在提交',
+            icon: 'loading',
+            mask: true,
+            duration: 5000
+        });
+        // submit_data['share_member_id'] = this.data.cart_result.objects.goods[0].share_member_id?this.data.cart_result.objects.goods[0].share_member_id:0;
+        // submit_data['share_time'] = this.data.cart_result.objects.goods[0].share_time?this.data.cart_result.objects.goods[0].share_time.slice(0,10):0;
+        util.wxRequest({
+            url: config.BASE_URL + '/m/xcxorder-create' + (this.data.is_fastbuy ? '-fastbuy' : '') + '.html',
+            data: submit_data,
+            method: 'POST',
+            success: function(res) {
+                if (res.data.error) {
+                    wx.hideToast();
+                    wx.showModal({
+                        title: '订单提交失败',
+                        content: res.data.error || ''
+                    });
+                } else {
+                    let order_id = res.data.redirect.match(/payment-([\d]+)/);
+                    if (order_id) {
+                        order_id = order_id[1];
+                    }
+                    /**
+                     * 模板消息发送
+                     */
+                    // return
+                    // util.sendMsg({
+                    //     "touser": pagedata.member.openid,
+                    //     "msg_type":'AT0002',//订单创建成功消息模板(对应小程序平台模板类型ID)
+                    //     "template_id": config.TPLMSGID['AT0002'],
+                    //     "page": "/pages/member/order/detail/detail?order_id=" + order_id,
+                    //     "form_id": form_id,
+                    //     "order_id":order_id,
+                    //     "data": {
+                    //         "keyword1": {
+                    //             "value": order_id
+                    //             //（订单号）交易单号
+                    //         },
+                    //         "keyword2": {
+                    //             "value": pagedata.total.order_total
+                    //             //（订单金额,含运费）购买价格
+                    //         },
+                    //         "keyword3": {
+                    //             "value": dateFormat(new Date(),"yyyy-mm-dd HH:MM:ss")
+                    //             //（订单创建时间）购买时间
+                    //         },
+                    //         "keyword4": {
+                    //             "value": "<进入订单详情查看>"
+                    //             //（交易明细）物品名称
+                    //         }
+                    //     },
+                    //     //"emphasis_keyword": "keyword1.DATA" //高亮
+                    // });
+
+                    //清除分享数据
+                    if (wx.getStorageSync('shareData')) {
+                      let shareData = wx.getStorageSync('shareData');
+                      let productItem = _this.data.cart_result.objects.goods[0].item.product;
+                      if (shareData && shareData.product_id){
+                        if (_this.data.is_fastbuy && productItem && productItem.product_id == shareData.product_id) {
+                          wx.setStorageSync('shareData','');
+                        } 
+                      }
+                    }
+                  let shareData1 = wx.getStorageSync('shareData');
+                  console.log(shareData1);
+                    wx.redirectTo({
+                        url: '/pages/order/payment/payment?order_id=' + order_id + '&flow_success=1'
+                    });
+
+                }
+            }
+        });
+    },
+    evt_touchmovemodal: function(e) {
+
+    },
+    refreash_maddr:function(){
+        var _this = this;
+        var addr_selected = wx.getStorageSync('member_addr_selected');
+        
+        util.wxRequest({
+            url: config.BASE_URL + '/m/xcxmy-receiver-edit-' + addr_selected.addr_id + '.html',
+            success: function(res) {
+                if (!res.data.maddr.addr_id) {
+                    return _this.setData({member_addrs:false});
+                }
+
+                _this.data.member_addrs = _this.data.member_addrs || {};
+                _this.data.member_addrs[addr_selected.addr_id] = res.data.maddr;
+                update_maddr.call(_this, addr_selected);
+            }
+        });
+    },
+    evt_selimage: function(e) {
+        var _this = this;
+        wx.chooseImage({
+            count: 1,
+            sizeType: ['compressed'],
+            success: function(re) {
+                if (re.tempFilePaths && re.tempFilePaths.length) {
+                    var tempFilePaths = re.tempFilePaths;
+                }
+                var upload_task = function(tmp_file,direction,filePath){
+                    util.wxUpload({
+                        url: config.BASE_URL + '/m/xcxcomment-upload_image.html?watermark=true',
+                        filePath: tmp_file,
+                        name: 'comment_image',
+                        success: function(res) {
+                            var res_data = JSON.parse(res.data);
+                            var array = _this.data;
+                            if(!res_data || res_data.error || !res_data.data){
+                                return;
+                            }
+                            if(direction=='front'){
+                                array['card_front_image_id'] = res_data.data
+                                _this.setData({
+                                  card_front_image: filePath,
+                                })
+                            }else{
+                                array['card_back_image_id'] = res_data.data
+                                _this.setData({
+                                  card_back_image: filePath,
+                                })
+                            }
+                            wx.hideToast();
+                        }
+                    });
+                };
+                
+                if(e.target.dataset.direction=='front'){
+                    front_images = tempFilePaths;
+                    upload_task(front_images[0],'front',front_images);
+                }else{
+                    back_images = tempFilePaths;
+                    upload_task(back_images[0],'back',back_images);
+                }
+                
+                wx.showToast({
+                    title:'图片上传中',
+                    icon:"loading",
+                    mask:true,
+                    duration:10000
+                });
+                
+            }
+        })
+    },
+    evt_previewimage:function(e){
+        if(e.target.dataset.direction=='front'){
+            wx.previewImage({
+                current: e.target.dataset.src,
+                urls: this.data.card_front_image
+            })
+        }else{
+            wx.previewImage({
+                current: e.target.dataset.src,
+                urls: this.data.card_back_image
+            })
+        }
+    },
+    evt_removefrontimage:function(e){
+        var _this = this;
+        wx.showModal({
+            title: '删除身份证正面',
+            content: '确认删除？',
+            success: function(res) {
+                if (res.confirm) {
+                    _this.setData({
+                      card_front_image: '',
+                      card_front_image_id: ''
+                    })
+                }
+            }
+        });
+    },
+    evt_removebackimage:function(e){
+        var _this = this;
+        wx.showModal({
+            title: '删除身份证反面',
+            content: '确认删除？',
+            success: function(res) {
+                if (res.confirm) {
+                    _this.setData({
+                      card_back_image: '',
+                      card_back_image_id: ''
+                    })
+                }
+            }
+        });
+    },
+    //判断身份证有效性
+    checkIdentity: function (identity) {
+      var reg = /^[1-9]{1}[0-9]{14}$|^[1-9]{1}[0-9]{16}([0-9]|[xX])$/;
+      if (reg.test(identity)) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    //纯数字验证
+    checkName:function(name){
+      var reg=/^[0-9]+$/;
+      if(reg.test(name)){
+        return true;
+      }else{
+        return false;
+      }
+    }
+});
+
+
+changeBy: function(e) {
+        var type = e.currentTarget.dataset.type;
+        this.setData({
+            'optionsD.real.orderby': type
+        })
+        this.reloadSearch()
+
+    },
+
+使用doT这样的模板然后监听数据,遇到的问题
+    1.刷新数据的时候存在闪屏的可能性
+        解决办法:一次更新多个数据,减少刷新数据的次数
+    2.
+
+页面中多张图片,如何根据id获取图片
+    1.可以通过dom元素的方式获取图片
+    2.在小程序中通过
+
+
+如果你的表达式插入里面返回null,那么react会什么都不显示,相当于忽略了该表达式插入,结合条件返回的话,我们就做到显示或隐藏某些元素
+
+自定义的组件都必须要用大写字母开头,普通的html标签都用小写字母开头
+
+onClick事件中使用event,直接使用e.target.innerHTML,e.preventDefault,e.stopPropagation
+
+this.setState(),是异步的方法
+
+默认配置,
+    static defaultProps={
+        likeText:'取消',
+        unlikeText:'点赞'
+    }
+
+state是让组件控制自己的状态,props是让外部对组件自己进行配置
+    没有state的组件叫无状态组件,反之叫状态组件
+
+npx特点
+    1.临时安装可执行依赖包，不用全局安装，不用担心长期的污染。
+    2.可以执行依赖包中的命令，安装完成自动运行。
+    3.自动加载node_modules中依赖包，不用指定$PATH。
+    4.可以指定node版本、命令的版本，解决了不同项目使用不同版本的命令的问题。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
