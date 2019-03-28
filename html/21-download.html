@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>T3C商城</title>
+		<style>
+			html,body,#app{
+				height:100%;
+			}
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				background-image: url('/h5/app/bg.jpg');
+				-webkit-background-size: 100% auto;
+				background-size: 100% auto;
+			}
+			button{
+				width:50vw;
+				height: 12vw;
+				background-color: #dc0400;
+				color:#fff;
+				border-radius:2vw;
+				position:absolute;
+				bottom:30vw;
+				left:50%;
+				transform: translate(-50%,0);
+				font-size:4.5vw;
+				border:none;
+				-webkit-tap-highlight-color: transparent;
+				
+			}
+			button img{
+				width:8vw;
+				position:absolute;
+				top:50%;
+				left:9vw;
+				transform: translate(0 , -50%);
+			}
+			button span{
+				padding-left: 8vw;
+			}
+			.logo{
+				width:20vw;
+				height:20vw;
+				margin:0 auto;
+				padding-top: 25vw;
+				
+			}
+			.logo img{
+				width:100%;
+				border-radius:2vw;
+			}
+			.share{
+				width:100%;
+				height:100%;
+				background-color: rgba(0,0,0,0.5);
+				position:absolute;
+				top:0;
+				left:0;
+				z-index:99;
+				display: none;
+				
+			}
+			.show{
+				display: block;
+			}
+			.share img{
+				position:absolute;
+				right:-2vw;
+				top:4vw;
+				width:40vw;
+				
+			}
+			.share p{
+				position:absolute;
+				left:0;
+				top:65vw;
+				width:100%;
+				text-align: center;
+				font-size:5vw;
+				color:#fff;
+			}
+    </style>
+  </head>
+  <body>
+		<div class="logo">
+			<img src="/h5/app/logo_200.png" alt="">
+		</div>
+		<div class="share" onclick="toggleShare()" id="share"><img src="/h5/app/share.png" alt=""><p>点击右上角按钮，在浏览器打开</p></div>
+		<button onclick="openApp()"><img src="/h5/app/ios.png" alt="" id="img"><span id="text">Iphone版</span></button>
+  <script>
+		openApp()
+		if(!isIphone()){
+			document.getElementById('img').src = '/h5/app/android.png';
+			document.getElementById('text').innerHTML = '<span id="text">Android版</span>';
+		}
+		function toggleShare(type){
+			if(type == 'show'){
+				document.getElementById('share').style.display = 'block'
+			}else{
+				document.getElementById('share').style.display = 'none'
+			}
+		}
+		// 立即打开的按钮
+		function openApp(type){
+			var iframe = document.createElement('iframe');
+			var body = document.body;
+			iframe.style.cssText='display:none;width=0;height=0';
+			var timer = null;
+			var isInstall = true;
+			var url = {
+				open:'fendieshoptest://source=web',
+				down:{
+					ios:'https://itunes.apple.com/us/h5/app//id1410041047?l=zh&ls=1&mt=8',
+					andr:window.location.origin + '/h5/app/chaoniuhui.apk'
+				}
+			}
+			if(isIphone()){
+				body.appendChild(iframe);
+				iframe.src = url.down.ios;
+				if(/MicroMessenger/gi.test(navigator.userAgent)){
+					body.appendChild(iframe);
+					iframe.src = url.down.ios;
+				} else{
+					window.location = url.down.ios
+				}
+			}else{
+				if(/MicroMessenger/gi.test(navigator.userAgent)){
+					// 引导用户在浏览器中打开
+					toggleShare('show')
+				} else{
+				  window.location = url.down.andr
+				}
+			}
+			
+			
+			
+		}
+		function isIphone(){
+			 var u = navigator.userAgent;
+			 if(u.indexOf('Android') != -1 || u.indexOf('Linux') != -1 || u.indexOf('XiaoMi') != -1){
+				 //安卓手机
+				 	return false;
+			 }else if(u.indexOf('iPhone') != -1){
+				  //苹果手机
+				 	return true;
+			 }
+		}
+	</script>  
+  </body>
+</html>

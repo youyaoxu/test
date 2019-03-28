@@ -212,3 +212,1066 @@ load_redmoney:function(){
 0.2 差什么补什么
 
 0.3 整理笔记
+
+<view class="tool_list">
+    <navigator url="/pages/assistance/index" class="toolL"  hover-class="none">
+      <icon class='toolicon iconfont icon-pintuan'></icon>
+      <text class='toolN'>助力活动</text>
+      <icon class='goicon iconfont icon-right'></icon>
+    </navigator>
+  </view>
+
+  助力活动入口需要重新配置
+
+  有什么是不能发的
+  有什么是需要发的
+
+  如果传入的是字符串,通常处理为对象处理
+  一般的处理情况都是
+  	判断是否是字符串,函数,对象,数组
+
+  Form未完成待确认
+
+ https://cn.bing.com/images/search?view=detailV2&ccid=Xl1ybsek&id=3631189DF72C014C6DF910F33000CAA41F1A3E91&thid=OIP.Xl1ybsekAXzTK6-r4qbGLAHaL2&mediaurl=http%3a%2f%2fimg1.3lian.com%2f2015%2fw17%2f98%2fd%2f101.jpg&exph=1280&expw=800&q=%E5%AE%AB%E5%B4%8E%E9%AA%8F%E5%8A%A8%E6%BC%AB%E5%A3%81%E7%BA%B8&simid=608043178771025182&selectedIndex=4&ajaxhist=0
+
+ https://cn.bing.com/images/search?view=detailV2&ccid=tNCyXT07&id=04A51129983ACAC451E67E20E4BBD59942B1F4E1&thid=OIP.tNCyXT07FbMWLW84hUXSlAHaF9&mediaurl=http%3A%2F%2Ft1.mmonly.cc%2Fuploads%2Ftu%2F201607%2F91%2F20.jpg&exph=756&expw=940&q=%E5%AE%AB%E5%B4%8E%E9%AA%8F%E5%8A%A8%E6%BC%AB%E5%A3%81%E7%BA%B8&simid=608016962298185954&selectedindex=26&ajaxhist=0&vt=0
+
+ https://cdn.pixabay.com/photo/2019/01/13/13/43/honey-bee-3930374_960_720.jpg 1x, https://cdn.pixabay.com/photo/2019/01/13/13/43/honey-bee-3930374_1280.jpg 1.333x
+
+ https://cdn.pixabay.com/photo/2017/11/16/13/14/wedding-2954545_960_720.jpg 
+
+ https://cdn.pixabay.com/photo/2014/02/19/20/39/winter-270160_960_720.jpg
+
+ //goss3.vcg.com/creative/vcg/800/version23/VCG21gic13385683.jpg
+
+ https://cdn.pixabay.com/photo/2014/02/27/17/51/grapes-276070_960_720.jpg
+
+ 如何确保图片加载完成
+ 	onload
+ 	complete
+
+ 	先添加第一张,之后添加另一张,然后在看高度,
+ 	先添加上去之后再看效果
+
+ 	功能
+ 		跳转收藏,其他就是加载图片以及链接处理
+
+ {
+ 	"data":{
+ 		"result":"success",
+ 		
+ 	}
+ }
+
+ 图片加载知识点
+ 有懒加载
+ 有预加载
+
+ // imgs[i]=new Image();
+                    // imgs[i].src=item.imgUrl;
+                    // console.log(item.imgUrl);
+                    // if(imgs[i].complete){
+                    //     console.log("img complete",i)
+                    //     var height_left=_this.offsetEle(dom_body_left).h;
+                    //     console.log(JSON.stringify(height_left))
+                    //     var height_right=_this.offsetEle(dom_body_right).h;
+                    //     if(height_left<=height_right){
+                    //         dom_body_left.innerHTML=dom_body_left.innerHTML+_this.data.tmp_community(item);
+                    //     }else{
+                    //         dom_body_right.innerHTML=dom_body_right.innerHTML+_this.data.tmp_community(item);
+                    //     }
+                    //     continue;
+                    // }
+                    // imgs[i].onload=function(){
+                    //     // imgs[i].onload=null;
+                    //     var height_left=_this.offsetEle(dom_body_left).h;
+                    //     console.log(JSON.stringify(height_left))
+                    //     var height_right=_this.offsetEle(dom_body_right).h;
+                    //     if(height_left<=height_right){
+                    //         dom_body_left.innerHTML=dom_body_left.innerHTML+_this.data.tmp_community(item);
+                    //     }else{
+                    //         dom_body_right.innerHTML=dom_body_right.innerHTML+_this.data.tmp_community(item);
+                    //     }
+                    // }
+                }
+
+new Vue({
+	el:'#app',
+	router,
+	store,
+	template:'<App/>',
+	components:{App}
+})
+
+const group_index=()=>import (/*webpackChunkName:'group'*/'../components/group/index')
+const group_list=()=>import (/*webpackChunkName:'group'*/'../components/group/list')
+const group_detail=()=>import (/*webpackChunkName:'group'*/'../components/group/detail')
+export default[
+	{
+		path:'/group_index',
+		name:'group_index',
+		component:group_index
+	},
+	{
+		path:'/group_list',
+		name:'group_list',
+		component:group_list
+	},
+	{
+		path:'/group_detail/gb_id?/:order_id?',
+		name:'group_detail',
+		component:group_detail
+	}
+
+]
+
+import Vue from 'vue'
+import Vuex from 'vuex'
+Vue.use(Vuex)
+export default new Vuex.Store({
+	state:{
+		isLogin:false,
+		member:'',
+	},
+	getters:{},
+	mutations:{
+		login(state,options){
+			state.isLogin=true;
+			if(options.member && options.member.member_id){
+				state.member=options;
+			}
+		},
+		changeShareData(state,shareData){
+			state.shareData=shareData;
+		},
+		changeTab(state,tab){
+			if(state.selectedLabel==tab)return;
+			state.selectedLabel=tab;
+		}，
+		exitLogin（state
+	}
+})
+
+<keep-alive>
+	<router-view v-if="!$route.meta.keepAlive"></router-view>
+</keep-alive>
+
+
+App.vue
+
+import util from '@util/util'
+import wx from 'wexin-js-sdk'
+import loading from '@/components/public/loading'
+export default {
+	name:'app',
+	data(){
+		return {
+			showLoading:false,
+			showBack:false
+		}
+	},
+	components:{
+		loading
+	},
+	beforeCreate(){
+		//因为微信支付限制,在路由前#强制该为?#
+		if(window.location.href.indexOf('?#')==-1){
+			window.location.href=window.location.href.split('#')[0]+'?#'+window.location.href.split('#')[1]
+		}
+	},
+	created(){
+		const _this=this,
+			share_mobile=window.location.href.match(/share_mobile=(\d{11})/)
+		//判断是否为微信浏览器
+		let ua=navigator.userAgent.toLoaderCase()
+		let loginCode=window.location.href.match(/loginCode=((\w|\d){1,})/)?window.location.href.match(/loginCode((\w|\d){1,})/)[1]:'';
+		let queryD=this.$route.query;
+		if(queryD.from){
+			this.setStorage('from',query.from)
+		}
+		if(ua.match(/MicroMessenger/i)=='micromessenger'){
+			this.$store.commit('isWechat')
+			this.showLoading=true
+		}
+		//是否带有share_mobile有则写入缓存
+		if(share_mobil && share_mobile[1]){
+			this.setStorage('share_mobile',shareMobile[1])
+		}
+		_this.$http.get('/@/m/xcxlist.html').then((res)=>{
+			if(loginCode && _this.getStorage('authorPath',false)){
+				_this.wxLogin(loginCode,function(){
+					_this.check()
+				})
+			}else{
+				_this.check()
+			}
+		})
+	},
+	mounted(){
+		if(this.$store.state.isWechat){
+			this.getWxConfig()
+			this.$store.commit('changeShareData',{
+				title:'T3C商城',
+				link:window.location.origin+'/h5/#/',
+				success:function(){
+					console.log('分享成功')
+				},
+				cancel:function(){
+				console.log('分享取消')
+				}
+			})
+		}
+	},
+	watch:{
+		shareData(){
+			this.getWxConfig()
+		},
+		'$route.path':function(){
+			this.showBack=this.$route.path.indexOf('/index')!==0
+		}
+	},
+	computed:{
+		shareData(){
+			return this.$store.state.shareData
+		}
+	},
+	methods:{
+		wxAuthor(){
+
+		},
+		check(){
+			const _thi=this;
+			_this.checkLogin().then((res)=>{
+				_this.showLoading=false
+				if(res.login_type){
+					if(res.login_type.indexOf('mobile')==-1){
+						_this.$createToast({
+							type:'warn',
+							txt:'请绑定手机号码'
+						}).show()
+						setTimeout(function(){
+							_this.$router.push({
+								path:'/bind'
+							})
+						},2000)
+					}
+				}
+			}).catch((err)=>{
+				_this.showLoading=false
+				if(err=='bindMobile'){
+					_this.$createToast({
+						type:'warn',
+						txt:'请绑定手机号码'
+					}).show();
+					setTimeout(function(){
+						_this.$router.push({
+							path:'/bind'
+						})
+					},2000)
+				}else{
+					//进入调用微信登录
+					if(this.$store.state.isWechat){
+						this.wxAuthor()
+					}
+				}
+			})
+		},
+		wxLogin(code,callback){
+			const _this=this;
+			let share_mobile=_this.getStorea('share_mobile',true)
+			let authPath=this.getStorage('authorPath',true)
+			let fromD=this.getStorage('from',true)
+			if(authorPath){
+				this.setStorage('authorPath','')
+				this.$router.replace({
+					path:authorPath
+				})
+			}
+			
+		},
+		getWxConfig(){
+			const _this=this;
+			_this.$http.get('/@/openapi/wxjsdk/inject/eid/708974').then((res)=>{
+				_this.initWxSdk(res)
+			})
+		},
+		initWxSdk(res){
+			const _this=this;
+			wx.config({
+				debug:false,//开启调试模式,调用的所有api的返回值会在客户端alert出来,若要查看传入的参数可以在pc端打开,参数信息会通过log打出,仅在pc端时才会打印
+				appId:res.appid,//必填,公众号的唯一标识
+				timestamp:res.timestamp,//必填,生成签名的时间戳
+				nonceStr:res.noncestr,//必填,生成签名的随机串
+				signature:res.signature,//必填,签名
+				jsApiList:[
+					'onMenuShareTimeline',
+					'onMenuShareAppMessage',
+					'onMenuShareQQ',
+					'onMenuShareWeibo',
+					'onMenuShareQZone',
+					'chooseWXPay'
+				],//必填需要使用的JS接口列表
+			})
+			wx.ready(function(){
+				console.log('wx.ready')
+				let shareData=_this.shareData;
+				//朋友圈
+				wx.onMenuShareTimeline(shareData)
+				//朋友
+				wx.onMenuShareAppMessage(shareData)
+				wx.onMenuShareQQ(shareData)
+				wx.onMenuShareWeibo(shareData)
+				wx.onMenuShareQZone(shareData)
+			})
+			//config信息验证后悔执行ready方法,所有接口调用都必须在config获得结果之后,config是一个客户端的异步操作,所以如果在页面加载时就调用相关接口,则把相关接口放在ready函数中调用来却表正确执行,对于用户接触时才调用的接口,则可以直接调用,不需要放在ready函数中
+		}
+	}
+
+}
+
+08-vue-07-cubeui-04-组件-弹出层
+
+08-vue-07-cubeui-05组件-滚动
+Teein=function(){
+	this.doneList=[];
+	this.failList=[];
+	this.state='pending';
+}
+Teein.prototype={
+	constructor:'Promsie',
+	resolve:function(){
+		this.state='resolved';
+		var list=this.doneList;
+		for(var i=0,len=list.length;i<len;i++){
+			list[0].call(this)
+			list.shift();
+		}
+	},
+	reject:function(){
+		this.state='rejected';
+		var list=this.failList;
+		for(var i=0,len=list.length;i<len;i++){
+			list[0].call(this);
+			list.shift();
+		}
+	},
+	done:function(func){
+		if(typeof func==='function'){
+			this.doneList.push(func)
+		}
+		return this;
+	},
+	fail:function(func){
+		if(typeof func==='function'){
+			this.doneList.push(func);
+		}
+		return this;
+	},
+	then:function(doneFn,failFn){
+		this.done(doneFn).fail(failFn)
+		return this;
+	},
+	always:function(fn){
+		this.done(fn).fail(fn);
+		return this;
+	}
+}
+
+图片压缩,如何实现直接通过
+
+福利专区
+
+myApp.openPubW('public/render','购物须知',{'s':'shoppingnotes'})
+
+{{? it.isLogin && it.member && it.member.is_guide == 'true'}}
+            <div tapmode onclick="myApp.openPubW('public/render','福利专区',{'s':'shoppingnotes'})" class="toolL">
+                <span class='toolicon iconfont icon-gongxiang'></span>
+                <span class='toolN'>福利专区</span>
+                <span class='goicon iconfont icon-right'></span>
+            </div>
+            {{?}}
+
+<!-- <div class="{{? it.orderBy == 'buy_count'}}selected{{?}}" tapmode onClick="myApp.changeOrderBy('buy_count')">销量<span class="filterArrow"></span></div> -->
+
+https://shoptest.t3c.com.cn
+
+https://mall.chaoniuhui.com
+
+1.潮妞会app,修改会搜索页面,去掉销量分类
+2.潮妞会app,在会员中心添加福利专区入口
+3.潮妞会app,社区模块中添加图片压缩功能
+
+compressVideo
+
+videoCompression
+
+videoKit
+
+videoTool
+
+zxycamera
+
+怎么获取缓存在本地的图片,
+
+压缩图片过程:
+	先要获取图片(网络图片需要放置在一个指定的空图片的位置)
+
+	然后压缩图片
+
+	之后存储图片
+
+页面跳转
+
+首页
+http://localhost:8080/?#/index/home
+分类
+http://localhost:8080/?#/index/shop
+购物车
+http://localhost:8080/?#/index/cart
+个人中心
+http://localhost:8080/?#/index/member
+
+产品详情
+http://localhost:8080/?#/pro_detail/25945
+搜索页面
+http://localhost:8080/?#/search/search/cat_id=40_45_46_47_91
+活动页面
+http://localhost:8080/?#/render/valentine214
+
+拼团首页
+http://localhost:8080/?#/group_index/
+拼团列表页
+http://localhost:8080/?#/group_list
+拼团详情页
+http://localhost:8080/?#/group_detail/12311250732274
+拼团产品详情
+http://localhost:8080/?#/group_pro_detail/11/5
+
+服务预约
+http://localhost:8080/?#/service_index
+
+收藏
+http://localhost:8080/?#/favorite
+优惠券
+http://localhost:8080/?#/coupons
+
+专属导购
+http://localhost:8080/?#/shop_guide
+
+订单列表
+http://localhost:8080/?#/order_index/all
+订单详情
+http://localhost:8080/?#/order_detail/24309164591070
+
+拼团
+服务预约
+收藏
+优惠券
+订单
+积分
+
+
+客服系统
+
+发布笔记
+1.主要是form操作,有上传图片,标题,笔记,标签,分享至朋友圈,QQ空间,微博
+
+首页
+1.三个跳转按钮
+
+个人中心
+1.头像,昵称,会员区别,关注人数,粉丝,赞数,其他人打开还有关注按钮
+2.个人详情描述
+3.收藏和笔记
+4.笔记分类,有视频和非视频笔记
+5.列表显示,有图片,标题,头像,会员显示,昵称,收藏数
+
+明星推荐
+就是列表,有图片,标题,头像,会员显示,昵称,收藏数
+
+用户推荐
+有头像,是否是会员,昵称,粉丝数,笔记数,关注按钮
+
+首页
+1.有头像,搜索,消息
+2.分类,轮播图,
+3.推荐,分类推荐,可配置页面,可以查看更多
+
+社区消息
+1.社区消息,是否开启消息提醒,
+2.赞和收藏,评论,新增关注
+3.消息列表头像,昵称,标题
+
+发布提问
+1.问题,按钮
+
+推荐关注
+1.新的样式的推荐形式
+
+标题内容
+1.头部,标题,内容,回答数,分享按钮
+2.列表.头像,昵称,时间,简介,图片,商品推荐列表,价格
+3.战术,评论数,分享数
+
+新的形式的首页
+
+个人页
+1.头像昵称,关注按钮,分享按钮 关闭按钮
+2.提示,正在进行的直播间
+3.评论,昵称,内容
+4.聊天输入框,相关产品链接,关注数,关注按钮
+
+个人中心_推荐商品页面
+1.头像,昵称,关注按钮,分享按钮,关闭按钮
+2.推荐商品,购物车按钮,
+3.商品列表,商品图片,商品明湖曾,价格,加入购物车按钮
+
+首页_另一种形式的首页
+1.正在直播,在线关注人数,昵称,收藏数.描述
+2.直播预告,图片,标题,昵称,头衔,是否是护院,预告内容,时间,多少人想看,开播提醒
+3.精彩回顾,按钮,图片,标题,头像,昵称,收藏
+
+详情页
+1.轮播图,内容
+2.评论,笔记总评论数
+3.评论细节,头像,评论输入框
+3.显示评论,头像,昵称,时间,收藏数,评论内容
+4.查看更多评论,赞数
+
+社区功能无法再小程序中上线的原因是当前小程序经营许可中没有该项内容
+
+怕什么未来迷茫，进一步有一步的收获
+
+cart.wxml
+
+							<view class="co-foot">
+                              <view class="co-price">
+                                {{fmt.price(cart_object_goods.item.product.buy_price)}}
+                                <text>x {{cart_object_goods.quantity}} </text>
+                              </view>
+                              <view class="product-quantity">
+                                <button class="pq-minus" plain="true" data-cogindex="{{index}}" data-ident="{{cart_object_goods.obj_ident}}" data-quantity="-1"
+                                        disabled="{{cart_object_goods.quantity<2}}" bindtap="tapquantity" data-value="{{cart_object_goods.quantity}}">-</button>
+                                <input style="height:30px;box-sizing:border-box;" type="number" data-cur="{{cart_object_goods.quantity}}" data-cogindex="{{index}}" bindblur="event_quantity_blur"
+                                       data-ident="{{cart_object_goods.obj_ident}}" value="{{cart_object_goods.quantity}}"
+                                       class="pq-ipt" />
+                                <!--<input type="number" data-cur="{{cart_object_goods.quantity}}" data-cogindex="{{index}}" bindblur="event_quantity_blur"-->
+                                       <!--data-ident="{{cart_object_goods.obj_ident}}" value="{{cart_object_goods.quantity}}"-->
+                                       <!--class="pq-ipt"-->
+                                       <!--disabled="{{cart_object_goods.member_limit>=cart_object_goods.order_limit?(cart_object_goods.quantity >= cart_object_goods.order_limit?true:false):(cart_object_goods.quantity >= cart_object_goods.member_limit?true:false)}}"/>-->
+                                <button class="pq-minus" plain="true" data-quantity="+1" data-cogindex="{{index}}" data-value="{{cart_object_goods.quantity}}" bindtap="tapquantity"
+                                        data-ident="{{cart_object_goods.obj_ident}}"
+                                        disabled="{{cart_object_goods.warning}}">+</button>
+                              </view>
+                            </view>
+
+cart.wxss
+.co-price {
+  font-size:26rpx;
+  line-height: 22px;
+  color: #dc0400;
+  font-weight: lighter;
+  font-stretch: ultra-condensed;
+}
+.co-inline {
+  margin-top:1vw;
+}
+.co-foot{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+
+
+checkout.wxss
+.weui-media-box.member-addr{
+  padding:10px 15px 10px;
+}
+
+.co-inline.spec_info{
+  height:38rpx;
+  margin-top:2rpx;
+}
+
+checkout.wxml
+
+						<view class="weui-media-box__desc co-inline spec_info">
+                            <view class="co-spec">{{cart_object_goods.item.product.spec_info?cart_object_goods.item.product.spec_info:''}}</view>
+                        </view>
+                        <view class="weui-media-box__desc co-inline price">
+                            <view class="co-price">{{fmt.price(cart_object_goods.item.product.buy_price)}}</view>
+                            <view class="co-quantity">x {{cart_object_goods.quantity}}</view>
+                        </view>
+
+<!-- <input style="height:30px;box-sizing:border-box;" type="number" data-cur="{{cart_object_goods.quantity}}" data-cogindex="{{index}}" bindblur="event_quantity_blur"
+                                       data-ident="{{cart_object_goods.obj_ident}}" value="{{cart_object_goods.quantity}}"
+                                       class="pq-ipt" /> -->
+
+<view class="product-quantity">
+                <button class="pq-minus" plain="true" data-cogindex="{{index}}" data-ident="{{cart_object_goods.obj_ident}}"
+                data-quantity="-1" disabled="{{cart_object_goods.quantity<2}}" bindtap="tapquantity" data-value="{{cart_object_goods.quantity}}">-</button>
+                <input type="number" data-cur="{{cart_object_goods.quantity}}" data-cogindex="{{index}}" bindblur="event_quantity_blur"
+                data-ident="{{cart_object_goods.obj_ident}}" value="{{cart_object_goods.quantity}}" class="pq-ipt" />
+                <!--<input type="number" data-cur="{{cart_object_goods.quantity}}" data-cogindex="{{index}}" bindblur="event_quantity_blur"-->
+                <!--data-ident="{{cart_object_goods.obj_ident}}" value="{{cart_object_goods.quantity}}"-->
+                <!--class="pq-ipt"-->
+                <!--disabled="{{cart_object_goods.member_limit>=cart_object_goods.order_limit?(cart_object_goods.quantity >= cart_object_goods.order_limit?true:false):(cart_object_goods.quantity >= cart_object_goods.member_limit?true:false)}}"/>-->
+                <button class="pq-minus" plain="true" data-quantity="+1" data-cogindex="{{index}}" data-value="{{cart_object_goods.quantity}}"
+                bindtap="tapquantity" data-ident="{{cart_object_goods.obj_ident}}" disabled="{{cart_object_goods.warning}}">+</button>
+              </view>
+            </view>
+
+class="gl-item-nav"
+
+1.优化商品列表页面样式效果
+2.优化购物车页面样式效果(包括线上购物车,门店自提购物车)
+3.优化确认订单页面样式效果(包括拼团确认订单页面,门店自提确认订单页面)
+4.优化产品详情页面样式效果(包括拼团产品详情,门店自提产品详情)
+5.优化服务预约页面样式效果(包括服务列表页面,服务预约门店列表页面,服务预约设置页面)
+6.优化我的会员页面样式效果
+7.bug修复:购物车和确认订单页在齐总手机显示异常的问题
+8.bug修复:我的会员页面数据加载异常的问题(在浩哥手机上出现)
+9.福利专区名称改为 特供专区
+
+evt_couponBlur
+
+UDID
+
+后台配置系统
+	仪表盘
+	素材库
+	快速购买
+		基本配置
+		推荐管理
+		类目管理
+	商品
+	订单
+	余额宝
+	财务
+	物流
+	供应商
+	售后
+	会员
+	营销
+	助力
+	预售
+	拼团
+	店铺
+	板块
+	社区
+	内容
+	门店
+	微信
+
+对于获取位置信息这样的逻辑,需要先处理成功的代码,然后在处理失败的 代码
+
+有的时候报错也要给,有的时候报错就处理报错
+	报错要给是指存在位置信息获取失败的情况
+
+
+
+getLocation:function(fn){
+    var _this=this;
+    wx.getLocation({
+      type: 'gcj02',
+      success: function success(res) {
+        console.log("获取地理定位成功1", res);
+        clearInterval(_this.data.position_timer)
+        if (res.errMsg == 'getLocation:ok') {
+          if (fn) { fn(res, 'success') }
+        }
+      },
+      fail: function (res) {
+        console.log("获取地理位置超时1", res);
+        if (_this.data.position_count >= 10) {
+          clearInterval(_this.data.position_timer)
+          wx.showModal({
+            title: '\u6e29\u99a8\u63d0\u793a',
+            content: "请开启系统定位",
+            showCancel: false,
+            success: function () {
+              if (fn) { fn(res, 'fail') }
+            }
+          })
+        }
+      },
+      complete:function(){
+        if (_this.data.position_count >= 10) {
+          clearInterval(_this.data.position_timer)
+        }
+      }
+    })
+  },
+  getLocationNew:function(fn){
+    var _this=this;
+    wx.getLocation({
+      type: 'gcj02',
+      success: function success(res) {
+        console.log("获取地理定位成功", res);
+        if (res.errMsg == 'getLocation:ok') {
+          if(fn){fn(res,'success')}
+        }
+      },
+      fail: function (res) {
+        console.log("获取地理位置超时", res);
+        if (res.errCode == 2) {
+          // setTimeout(function(){
+          //   _this.getLocation(fn);
+          // },1000)
+          _this.setData({
+            position_count:0
+          })
+          var position_timer=setInterval(function(){
+            var position_count = _this.data.position_count+1;
+            _this.setData({
+              position_count
+            })
+            if (position_count<10){
+              _this.getLocation(fn);
+            }
+          },300)
+          _this.setData({
+            position_timer
+          })
+        } else {
+          wx.showModal({
+            title: '授权提示',
+            content: '您还未授权地理位置，打开GPS后授权方可查看信息，去授权！',
+            success: function (res) {
+              if (res.confirm) {
+                wx.openSetting({
+                  success: function (data1) {
+                    console.log(data1);
+                    if (data1) {
+                      if (data1.authSetting["scope.userLocation"] == true) {
+                        _this.getLocationNew(fn);
+                      } else {
+                        wx.showToast({
+                          title: '授权失败',
+                          icon: 'loading',
+                          duration: 2000
+                        })
+                      }
+                    }
+                  },
+                  fail: function () {
+                    console.info("设置失败返回数据");
+                  }
+                });
+              } else if (res.cancel) {
+                wx.showToast({
+                  title: '授权失败',
+                  icon: 'loading',
+                  duration: 2000
+                })
+              }
+            }
+          });
+          
+        }
+
+      }
+    })
+  },
+
+var Prom=funciton(){
+	this.doneList=[];
+	this.failList=[];
+	this.state="pending";
+}
+Prom.prototype={
+	constructor:'Promise',
+	resolve:function(){
+		this.state='resolved';
+		var list=this.doneList;
+		for(var i=0;,len=list.length;i<len;i++){
+			list[0].call(this);
+			list.shift();
+		}
+	},
+	reject:function(){
+		this.state='rejected';
+		var list=this.failList;
+		for(var i=0;,len=list.length;i<len;i++){
+			list[0].call(this);
+			list.shift();
+		}
+	},
+	done:function(fn){
+		if(typeof fn==='function'){
+			this.doneList.push(fn);
+		}
+		return this;
+	},
+	fail:function(fn){
+		if(typeof fn=='function'){
+			this.failList.push(fn)
+		}
+		return this;
+	},
+	then:function(doneFn,failFn){
+		this.done(doneFn).fail(failFn);
+		return this;
+	},
+	always:function(){
+		this.done(fn).fail(fn);
+		return this;
+	}
+}
+
+实现下载链接的实现过程
+iframe
+
+https://mall.chaoniuhui.com/console
+https://shoptest.t3c.com.cn/console
+
+subscribe 
+
+
+const set_region_val=function(param){
+	// 处理代码
+}
+module.exports={
+	//指定模块
+	searchbar:{
+		'data':{},
+		'event':{}
+	},
+	//轮播模块
+	slide:{
+
+	},
+}
+
+this.openPubW('skin/confirm_order/confirm_order','订单确认',{'is_fastbuy':true,'trade_type':'general'})
+            // this.openPubW('skin/shop_list/shop_list','选择门店')
+            // this.openPubW('skin/shop_service_list/shop_service_list','选择服务师')
+
+_this.on('selectedStore', function(val) {
+                var storeInfo = (typeof val.value == 'string') ? JSON.parse(val.value) : val.value;
+                _this.setData({
+                    store_name: storeInfo.store_name,
+                    store_bn: storeInfo.store_bn,
+                })
+            })
+
+store_info:{
+            storn_id:'',
+            storn_name:'',
+            storn_bn:'',
+        },
+        ba_info:{
+            employee_id:'',
+            name:'',
+            mobile:''
+        },
+        skin_name:'',
+        skin_tel:''
+
+        skin_m_mobile
+        skin_m_name
+
+var mobile=' 13817053601 ';
+//var mobileRex = /^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199|(147))\\d{8}$/;
+var mobileRex1 = /^1([38][0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|9[89])\d{8}$/
+if(!mobileRex1.test(mobile.trim()){
+    console.log('请输入正确格式手机号')
+}else{
+	console.log("正常")
+}
+
+{{? it.orderInfo.member_addrs}}
+        <div class="address" tapmode onclick="myApp.openPubW('member/addr','收货地址',{source:'confirmOrder','scrollEnabled':false})">
+            <div class="content">
+                <img class="icon" src="../../images/shopping/addr.png" alt="">
+                {{ for(var index in it.orderInfo.member_addrs){ }}
+                 {{? (it.addrId && (it.addrId == it.orderInfo.member_addrs[index].addr_id)) || (!it.addrId && it.orderInfo.member_addrs[index].selected)}}
+                <div class="info-con">
+                    <p class="name" data="{{= it.orderInfo.showAddrId = index}}"><span class="l">{{= it.orderInfo.member_addrs[index].name}}</span><span class="r">{{= it.orderInfo.member_addrs[index].mobile}}</span></p>
+                    <p class="addr text-2"> {{= it.orderInfo.member_addrs[index].area.split(':')[1].split('/').join('-')}} {{= it.orderInfo.member_addrs[index].addr}}</p>
+                </div>
+                {{?}} {{ } }}
+                <i class="iconfont icon-right arrow"></i>
+            </div>
+        </div>
+        {{??}}
+        <div class="address" tapmode onclick="myApp.openPubW('member/edit_addr','新增收货地址',{source:'confirmOrder'})">
+            <div class="no-addr">
+                <img class="icon" src="../../images/shopping/addr-m-c.png" alt="">
+                <p>您还没有收货地址哦, <span>去添加</span>
+                </p>
+            </div>
+        </div>
+        {{?}}
+
+let processArr = [
+	'./skin/confirm_order/confirm_order',
+	'./skin/shop_list/shop_list',
+	'./skin/shop_service_list/shop_service_list',
+	'./skin/ba_data/myprofit_list',
+	'./skin/cashprofit/cashprofit_detail',
+	'./skin/cashprofit/cashprofit_set',
+	'./skin/cashprofit/cashprofit_set_footer',
+	'./skin/cashprofit/record',
+	'./skin/cashprofit/record_con',
+
+
+];   
+
+skin_m_name:'',
+skin_m_mobile:''     
+
+发红包有什么区别?
+<div class="container" id='app' style="opacity:0;">
+
+    </div>
+
+var offset=this.offset(document.getElementsByClassName('cart-footer-holder')[0])
+var rect={
+	x:0,
+	y:api.frameHeight-offset.h+this.safeArea.top,
+	w:api.winWidth,
+	h:offset.h
+}
+api.openFrameGroup({
+	name:'cartFootGroup',
+	scrollEnabled:false,
+	rect:rect,
+	frames:[
+		{
+			name:'cart/cart_footer',
+			url:'widget://html/cart/cart_footer.html',
+			bounces:false
+		},
+		{
+			name:'shoptake/cart/cart_footer',
+			url:'widget://html/shoptake/cart/cart_footer.html',
+			bounces:false
+		}
+	]
+},function(ret,err){
+	if(ret){
+
+	}else{
+
+	}
+})    
+
+//在当前页面执行当前winName中的方法
+api.execScript({
+	name:api.winName,
+	frameName:'cart/index',
+	script:'if(window.myApp){window.myApp.toBuy()}'
+})
+
+
+<div class="other-info">
+                    {{? it.orderInfo.cart_result.promotions && it.orderInfo.cart_result.promotions.goods}}
+                    <div>
+                        {{ for(var pmKey in it.orderInfo.cart_result.promotions.goods){ }}
+                        {{? pm = it.orderInfo.cart_result.promotions.goods[pmKey]}}{{?}}
+                        <div>
+                            {{? goods.obj_ident == pmKey}}
+                            {{~ pm:promation:promationI}}
+                              {{? promation}}
+                              <div class="item-footer" >
+                                  {{? promation && promation.tag && promation.tag != '送赠品'}}
+                                  <p class="tag" style="left:0;margin-right:1vw;">{{= promation.tag}}</p>
+                                  {{?}} {{? promation && promation.tag && promation.tag != '送赠品'}}
+                                  <p class="info">{{= promation.solution}}</p>
+                                  {{?}} {{? promation.tag == '送赠品' && promation.tag}} {{~ promation.solution:v_1:i_1}} {{? v_1}}
+                                  <p class="info">[赠品]{{= v_1}}</p>
+                                  {{?}} {{~}} {{?}}
+                              </div>
+                              {{?}}
+                            {{~}}
+                            {{?}}
+                        </div>
+                        {{ } }}
+                    </div>
+                    {{?}}
+                </div>
+
+if (res.data.data.goodsList[key].detail && res.data.data.goodsList[key].detail.img_url && res.data.data.goodsList[key].detail.img_url.indexOf('http')==-1){
+              res.data.data.goodsList[key].detail.img_url = 'http:'+res.data.data.goodsList[key].detail.img_url;
+            }
+
+
+
+            <div class="other-info">
+                    {{? it.orderInfo.cart_result.promotions && it.orderInfo.cart_result.promotions.goods}}
+                    <div>
+                        {{ for(var pmKey in it.orderInfo.cart_result.promotions.goods){ }}
+                        {{? pm = it.orderInfo.cart_result.promotions.goods[pmKey]}}{{?}}
+                        <div>
+                            {{? goods.obj_ident == pmKey}}
+                            {{~ pm:promation:promationI}}
+                              {{? promation}}
+                              <div class="item-footer" >
+                                  {{? promation && promation.tag && promation.tag != '送赠品'}}
+                                  <p class="tag" style="left:0;margin-right:1vw;">{{= promation.tag}}</p>
+                                  {{?}} {{? promation && promation.tag && promation.tag != '送赠品'}}
+                                  <p class="info">{{= promation.solution}}</p>
+                                  {{?}} {{? promation.tag == '送赠品' && promation.tag}} {{~ promation.solution:v_1:i_1}} {{? v_1}}
+                                  <p class="info">[赠品]{{= v_1}}</p>
+                                  {{?}} {{~}} {{?}}
+                              </div>
+                              {{?}}
+                            {{~}}
+                            {{?}}
+                        </div>
+                        {{ } }}
+                    </div>
+                    {{?}}
+                </div>
+
+https://mall-onlie.oss-cn-shanghai.aliyuncs.com
+https://mall-onlie.oss-cn-shanghai.aliyuncs.com
+https://mall.chaoniuhui.com
+https://shoptest.t3c.com.cn
+https://t3c.oss-cn-shanghai.aliyuncs.com
+
+app.checkMember(function () {
+            var bindMobileResult = app.check_mobile_account();
+            if (!bindMobileResult && util.isLogin()) {
+              wx.navigateTo({
+                url: '/pages/member/signup/mobile'
+              });
+              return;
+            }
+          })
+          setItem:{
+          	365:{}
+          }
+
+先选择,选择好后点击按钮,confirm -> confirm ->弹出时间弹框,选择,->确认按钮
+
+{{? it.order_items}}
+        <div class="btn">
+            <button tapmode onclick="myApp.confirm()">确认预约</button>
+        </div>
+        {{?}}
+
+        order_id
+        item_id
+        member_id
+
+<div class="foot">
+            <div class="foot-btn" tapmode onclick="myApp.openNewOrder()">新开单</div>
+        </div>
+
+myApp.UIInput.closeKeyboard({
+                        id:0
+                    });
+
+{{= item.project}}
+
+当只有一页的时候需要请下数据
+
+手机号问题
+
+
+1.预约列表,空数据问题
+2.订单确认页面,数据渲染问题
+3.手机号查询数据问题,以及数据变化问题
