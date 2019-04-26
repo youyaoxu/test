@@ -339,8 +339,9 @@ $(function() {
     $(".showAgree").on("click", function() {
         $(".mask-agree").show();
     });
-    $("input,textarea,select").blur(function(){
-	document.body.scrollTop = document.documentElement.scrollTop = 0;
+    $("input,textarea,select").on('blur',function(){
+    // document.body.scrollTop = document.documentElement.scrollTop = 0;
+    window.scroll(0, 0);
 });
 });
 
