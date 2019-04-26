@@ -293,52 +293,52 @@ $(function() {
         height: htmlHeight
     });
     // 省份选择
-    $("#chooseProvince").on("change", function() {
-        var currentValue = $(this).val();
-        $("#middleValue").html(currentValue);
-    });
+    // $("#chooseProvince").on("change", function() {
+    //     var currentValue = $(this).val();
+    //     $("#middleValue").html(currentValue);
+    // });
     // 城市选择 
-    $("#chooseCities").on("change", function() {
-        var currentValue = $(this).val();
-        $("#cityWrapper").html(currentValue);
-    });
+    // $("#chooseCities").on("change", function() {
+    //     var currentValue = $(this).val();
+    //     $("#cityWrapper").html(currentValue);
+    // });
     // 是否统一条款
-    $("#isAgree").on("click", function() {
-        if ($(this).is(":checked")) {
-            $(".changeColor").css({
-                backgroundColor: "#fe7f9a"
-            });
-            // 底部按钮
-            $(".bind").on("click", function() {
-                $(".mask-bind").show();
-            });
-            // 发送短信验证码
-            $("#messageBtn").on("click", function() {
-                console.log("发送短息验证码");
-            })
-        } else {
-            $(".changeColor").css({
-                backgroundColor: "#8c8c8c"
-            });
-            $(".bind").off("click");
-            $("#messageBtn").off("click");
-        }
-    });
+    // $("#isAgree").on("click", function() {
+    //     if ($(this).is(":checked")) {
+    //         $(".changeColor").css({
+    //             backgroundColor: "#fe7f9a"
+    //         });
+    //         // 底部按钮
+    //         $(".bind").on("click", function() {
+    //             $(".mask-bind").show();
+    //         });
+    //         // 发送短信验证码
+    //         $("#messageBtn").on("click", function() {
+    //             console.log("发送短息验证码");
+    //         })
+    //     } else {
+    //         $(".changeColor").css({
+    //             backgroundColor: "#8c8c8c"
+    //         });
+    //         $(".bind").off("click");
+    //         $("#messageBtn").off("click");
+    //     }
+    // });
 
     // 浮层前往绑定
-    $("#sureBind").on("click", function() {
-        $(".mask-bind").hide();
-    });
+    // $("#sureBind").on("click", function() {
+    //     $(".mask-bind").hide();
+    // });
 
-    // 关闭条款浮层
-    $(".goBack").on("click", function() {
-        $(".mask-agree").hide();
-    });
+    // // 关闭条款浮层
+    // $(".goBack").on("click", function() {
+    //     $(".mask-agree").hide();
+    // });
 
-    // 显示条款浮层
-    $(".showAgree").on("click", function() {
-        $(".mask-agree").show();
-    });
+    // // 显示条款浮层
+    // $(".showAgree").on("click", function() {
+    //     $(".mask-agree").show();
+    // });
     $("input,textarea,select").on('blur',function(){
     // document.body.scrollTop = document.documentElement.scrollTop = 0;
     window.scroll(0, 0);
