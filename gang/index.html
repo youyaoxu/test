@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maxi、mum-scale=1.0,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <title>雅诗兰黛</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/flexable.js"></script>
+</head>
+<body>
+    <!-- 注册 -->
+    <div class="wrapper">
+        <div class="register-wrap">
+            <div class="logo">
+                <img src="./image/logo.png" alt="">
+            </div>
+            <div class="form">
+                <div class="inputText">
+                    <input type="text" placeholder="姓名">
+                </div>
+                <div class="inputText">
+                    <input type="text" placeholder="手机号">
+                </div>
+                <div class="select-wrap">
+                    <div class="left">
+                        <div class="name">省份</div>
+                        <div class="middle" id="middleValue">
+                            &nbsp;
+                        </div>
+                        <div class="info"></div>
+                        <select id="chooseProvince">
+                            <option value="请选择">请选择</option>
+                            <option value="省份001省份001省份001">省份001省份001省份001</option>
+                            <option value="省份002">省份002</option>
+                            <option value="省份003">省份003</option>
+                        </select>
+                    </div>
+                    <div class="left" style="margin-right: 0;">
+                            <div class="name">城市</div>
+                            <div class="middle" id="cityWrapper">
+                                &nbsp;
+                            </div>
+                            <div class="info"></div>
+                            <select id="chooseCities">
+                                  <option value="请选择">请选择</option>
+                                    <option value="城市001城市001城市001">城市001城市001城市001</option>
+                                    <option value="城市002">城市002</option>
+                                    <option value="城市003">城市003</option>
+                            </select>
+                    </div>
+                </div>
+                <div class="read-wrap">
+                    <input class="checkbox" id="isAgree"  type="checkbox">
+                    <div class="font">
+                        我已阅读和了解雅诗兰黛的<span class="showAgree" style="text-decoration:underline;font-weight: 700;">隐私条款，</span>并接受其中的所有条款。
+
+                    </div>
+                </div>
+                <div class="first-bind">会员绑定，首次绑定获赠100积分</div>
+            </div>
+
+            <!-- 发送验证码 开始-->
+            <div class="select-wrap  message">
+                    <div class="left">
+                        <input type="text" placeholder="验证码">
+                    </div>
+                    <div class="left changeColor" id="messageBtn">
+                        获取验证码
+                    </div>
+            </div>
+            <!-- 发送验证码 结束-->
+
+            <div class="bind changeColor">即刻绑定</div>
+
+
+        </div>
+    </div>
+    <!-- 提示浮层 -->
+    <div class="mask-bind" style="display: none;">
+        <img id="sureBind" src="./image/bingBg.jpg" alt="">
+    </div>
+     <!-- 条款 -->
+     <div class="mask-agree" style="display: none;">
+        <div class="container">
+                    <img src="./image/agreeTitle.png" style="width: 100%;margin-top: 16.5%;">
+                    <div class="content">
+                         <div class="protocol">
+                             <ul>
+                                 <li>
+                                     <p>
+                                         雅诗兰黛(Estée Lauder) 尊重您对隐私的关心并重视我们和您的关系。本隐私保护条款描述我们收集的顾客个人信息、我们如何使用该信息、我们的共享信息者、以及可供顾客选择的信息使用方式。我们也描述我们采取的信息安全措施以及顾客如何就隐私政策的实施联系我们。
+                                     </p>
+                                 </li>
+                                 <li>
+                                     <h5 class="subCaption">我们收集的信息</h5>
+                                     <p>
+                                         我们可能从不同来源取得您的个人信息。我们可能收集您在我们的商店、网站、社交平台、社交网络、移动应用软件或活动中所提供的信息。我们的产品在许多百货公司销售，我们收集您在这些百货公司向我们服务人员所提供的信息。本隐私权保护条款并不描述零售商自行收集的信息。当您访问本站、我们的社交平台、或我们的社交网络或移动应用软件，我们也会使用例如cookies、网络服务器与网络beacons科技自动收集的特定信息。
+                                     </p>
+                                 </li>
+                                 <li>
+                                     <h5 class="subCaption">您提供的信息</h5>
+                                     <p>
+                                         您可选择使用不同方式提供您的个人信息，例如当您参加促销活动或于本站或商店购买商品时。您可能提供的个人信息包括：
+                 
+                                         <dl>
+                                                 <dd>•特定信息 (例如姓名、邮寄地址、电子信箱、手机或其他电话号码)</dd>
+                                                 <dd>•年龄与生日</dd>
+                                                 <dd>•性别</dd>
+                                                 <dd>•使用者名称与密码</dd>
+                                                 <dd>•付款信息(例如您的支付卡号、卡片到期日、快递地址和账单地址)</dd>
+                                                 <dd>•您关心的肌肤问题</dd>
+                                                 <dd>•您提供的內容 (例如照片、影片、评论、文章与意见)</dd>
+                                                 <dd>•其他与本隐私条例所示之任何目的相关且必要的信息</dd>
+                                         </dl>
+                                     </p>
+                                 </li>
+                                 <li>
+                                     <h5 class="subCaption">我们如何使用信息</h5>
+                                     <p>
+                                         一经过您的同意（包括但不限于签署相关文件、访问网站、点击相关确认键以及其他可以被合理理解为您已经表示同意的方式均可被视为您已经作出了该等“同意”），我们即可以基于下列目的收集、处理、使用您提供的信息：
+                 
+                                         <dl>
+                                             
+                                                 <dd>•寄促销活动材料或其他宣传品</dd>
+                                                 <dd>•提供服务</dd>
+                                                 <dd>•进行付款和/或礼物卡交易</dd>
+                                                 <dd>•建立与管理您的线上账户</dd>
+                                                 <dd>•回应您的要求</dd>
+                                                 <dd>•宣传您参与的服务、特殊活动、竞赛、抽奖、节目、问卷与其它服务</dd>
+                                                 <dd>•经营、评估与改善我们的业务(包括发展新产品与服务；加强与改善我们的服务；管理沟通；分析产品；进行资料分析；执行会计、审核与其它內部功能)</dd>
+                                                 <dd>•遵守法规、相关业界标准与我们的政策</dd>
+                                                 <dd>•其他本隐私条款所示之目的</dd>
+                                                 <dd>•我们也可能以在收集信息时所通知的其他方式使用个人信息</dd>
+                                         </dl>
+                                     </p>
+                                 </li>
+                                 <li>
+                                     <h5 class="subCaption">自动收集的信息</h5>
+                                     <p>
+                                         除上述您提供的信息以外，当您访问本站，我们会使用例如cookies、网络服务器与网络beacons科技自动收集特定信息，该等所收集的信息为自动收集的信息。
+                                     </p>
+                                 </li>
+                                 <li>
+                                     <h5 class="subCaption">我们使用的科技</h5>
+                                     <h5 class="subCaption">Cookies、网络服务器与网络Beacons</h5>
+                                     <p>
+                                         cookies是网站传送到您的电脑或其他网络连接裝置辨识您的浏览器、储存浏览器信息或设定的文字档。您的浏览器可能告诉您，当您收到特定cookies时如何通知您以及如何限制或停用特定cookies。请注意，没有cookies您可能无法使用本站的所有功能。
+                                         <br />
+                                         <br />
+                                         通过cookies收集的信息，我们的网路服务器可能记录操作系统形式、浏览器形式、域名、与其它系统设定的细节，以及您使用的系统语言与装置位于的国家与时区。网络服务器记录也可能记录链接到我们网站的地址与您的网络链接装置的IP地址。
+                                         <br />
+                                         <br />
+                                         网站Beacons（也称为净图象和像素标签），跟踪链接和/或类似技术由几行代码构成，内嵌于我们网站的网页中。他们经常与cookies合并使用，且"网站"的用户通常不会看到。网站标记可以向第三方（比如我们的服务提供者）传递信息，并可用于跟踪客户对某些广告的反应，以便更好的设计有针对性的互动广告，并改善客户支持和可用性。
+                                     </p>
+                                 </li>
+                                 <li>
+                                     <h5 class="subCaption">第三方网站分析服务</h5>
+                                     <p>
+                                         我们可能使用第三方网站分析服务，例如AdobeSite Catalyst与/或GoogleAnalytics。这些服务供应商使用cookies、网络服务器记录与网络beacons科技帮助我们分析访问者如何使用本站。通过这些方式(包括IP地址)收集的信息会披露给这些服务提供者，他们使用这些信息来评估网站的使用。您可以停用这些分析服务来停止分析您在本站的浏览活动。您可以通过点击链接，在本站选择收集资讯的方法。某些浏览器在cookie送出时显示并允许您个别拒绝cookie存取，您可以此停用Google Analytics cookies。
+                                     </p>
+                                 </li>
+                                 <li>
+                                     <h5 class="subCaption">目标广告</h5>
+                                     <p>
+                                         我们可能与第三方的广告网络合作，在我们的网站和邮箱、第三方的网站和邮箱以及我们投放于第三方网站的广告上收集IP地址和其他通过使用cookies、网络服务器记录与网络beacons收集的信息。
+                                         <br />
+                                         <br />
+                                         他们将使用这些信息来提供根据您感兴趣的产品和服务而定制的广告（包括为并非我们关联公司的产品或服务）。您可以在我们的网站后者其他网站上看到这些广告。这一程序帮助我们管理并监控市场营销投入的效果。如您想了解更多或其他关于广告网络和他们的退出选项，请点击
+                                     </p>
+                                 </li>
+                                 <li>
+                                     <h5 class="subCaption">我们如何使用自动收集的信息</h5>
+                                     <p>
+                                         我们可能使用本站自动收集的信息传递个人化內容，供市场调查、资料分析与系统管理目的使用，例如判定您是否曾经访问过网站或是新的访客，并遵守我们的法律义务、政策与程序，包括遵守相关的业界标准与我们的条款与条件[插入条款与情况链接]。我们也可能以在收集信息时所通知的其他方式使用个人信息。
+                                     </p>
+                                 </li>
+                 
+                 
+                                 <li>
+                                     <h5 class="subCaption">我们共享的信息</h5>
+                                     <p>
+                                             除了以下说明，我们不会出租、贩卖或揭露您的个人信息。经您的同意，我们可能共享您的个人信息给：<br />
+                                             •雅诗兰黛集团公司以及我们的关联公司（但仅限于为本隐私保护条款所描述的目的）。<br />
+                                             <br />
+                                             •根据我们指示代表我们执行服务的第三方或服务供应商。除了代表我们执行服务或法规要求所必要者外，我们并不授权第三方或服务供应商使用或揭露信息。这些服务供应商例如有处理信用卡付款、完成订购、提供网络主机与行销服务的机构。<br />
+                                             <br />
+                                             •您同意的其他第三方（例如我们的社交平台可能将其所收集的信息分享给您的朋友或社交平台其他使用者）。<br />
+                                             <br />
+                                             此外，我们可能于下列情形揭露您的信息：(i)若我们依法律或法律程序有此义务，(ii)揭露给执法机关或其他政府部门，或(iii)当我们相信揭露信息是避免身体伤害或经济损失的必要或适当方法，或配合调查涉嫌或实际之诈骗或其他非法行为。<br />
+                                             <br />
+                                             我们也保留权利，可在我们销售或转让我们的全部或部分业务或资产时转移您的个人信息。若该销售或转让发生，我们将尽合理指导受让人以符合本隐私保护条款的方式使用您提供的个人信息。在该销售或转让发生后，您可以联系接受您个人信息的公司询问处理信息的相关事宜。
+                                     </p>
+                                 </li>
+                 
+                                 <li>
+                                     <h5 class="subCaption">您的权利与选择</h5>
+                                     <p>
+                                             我们提供您关于我们向您收集的个人信息的特定选择，例如我们如何使用信息以及如何与您沟通。如您不希望收到我们的电子邮件、短信或电话，或要更新您的喜好、要求我们从邮寄名单移除您的信息或提出要求，请按以下方式与我们联系。
+                                             <br />
+                                             <br />
+                                             更新您的资料<br />
+                                             您可以点击此处或发送电子邮件<br />
+                                             【ecservice@esteelauder.com.cn】审阅、更改或要求删除您的个人信息。
+                                     </p>
+                                 </li>
+                 
+                                 <li>
+                                     <h5 class="subCaption">退订和管理您的偏好</h5>
+                                     <p>
+                                         您可以选择是否接受我们发出的电邮、短信、印刷材料等通讯。您可点击您收到的我们每封电子邮件底部的"取消订阅"链接，或可以发送电子邮件至<br />
+                                         【ecservice@esteelauder.com.cn】随时更改您的选择。您可以发送电子邮件至<br />
+                                         【ecservice@esteelauder.com.cn】退订手机短信，也可以发送电子邮件至<br />
+                                         【ecservice@esteelauder.com.cn】从而选择不收到我们的邮件或电话/手机通讯及注明您的偏好。
+                                     </p>
+                                 </li>
+                 
+                 
+                                 <li>
+                                     <h5 class="subCaption">您的其他权利</h5>
+                                     <p>
+                                         我关于您的个人信息，您还可以行使以下权利：查询、请求阅览您的个人信息或请求提供您个人信息的复印件，但我们可能会向您收取合理手续费；要求补充您的个人信息或更正您个人信息中的错误；要求停止收集、处理或使用您的个人信息或要求刪除。但如果根据适用法律法规我们必須收集、处理、使用或传递您的信息，我们可以在适用法律法规允许的范围内拒绝您的要求。我们有权根据适用法律法规的规定调整您上述的权利。如您要行使上述权利，您应提供书面要求与相关的证明文件并寄送電子邮件到【ecservice@esteelauder.com.cn】
+                                     </p>
+                                 </li>
+                 
+                                 <li>
+                                     <h5 class="subCaption">拒绝与撤销同意</h5>
+                                     <p>
+                                             在您決定不提供相关信息的情況下，我们有权自行決定是否同意处理您的申请或要求的交易、账户活动与服务。此外，您可以撤销先前的同意或随时依法拒绝我们处理您的个人信息。在某些情況下，撤销您对我们使用或揭露您的个人信息的同意，表示您将无法使用我们部分商品或服务。
+                 
+                                     </p>
+                                 </li>
+                 
+                                 <li>
+                                     <h5 class="subCaption">资料转移</h5>
+                                     <p>
+                                             您同意我们可以将所收集的个人信息转移到其他国家。需要提请您注意的是，这些国家可能没有与您最初提供信息的国家相同的信息保护法律法规。当我们将您的信息转移到其他国家后，我们仍会根据本隐私保护条款保护这些信息。如果您不同意我们将您的个人信息转移到其他国家，请您根据上述条款所述的程序以书面形式通知我们您拒绝给出该等同意。
+                                     </p>
+                                 </li>
+                 
+                                 <li>
+                                     <h5 class="subCaption">儿童隐私</h5>
+                                     <p>
+                                             若您未满18岁，您可以浏览本站。但是，如您的监护人或父母沒有阅读并了解本站內容并同意您提供个人信息，您不得提供个人信息給我们（但自动收集的信息除外）。当您继续使用本站，表示您的监护人或父母已经阅读并了解本站內容并同意您在本站购物、注册账户与输入您的个人信息。本站并未直接供18岁以下儿童使用，且我们不会故意收集18岁以下儿童的信息。若我们无意间收集到未满18岁儿童的个人信息，且沒有前述监护人或父母的同意，我们将会删除该信息。
+                                     </p>
+                                 </li>
+                 
+                                 <li>
+                                     <h5 class="subCaption">我们如何保护个人信息</h5>
+                                     <p>
+                                             我们维持适当的管理、科技与实质保护措施，保护您提供的个人信息不受意外、非法或未经授权地销毁、遗失、更改、存取、揭露或使用。
+                                     </p>
+                                 </li>
+                 
+                                 <li>
+                                     <h5 class="subCaption">连接其他网站</h5>
+                                     <p>
+                                             我们的网站可能与其他网站连接以方便您使用与取得信息。这些网站可能独立运营。连接网站可能有自己的隐私通知或政策，我们强烈建议您在访问任何该等连接网站前阅读并了解其隐私通知或政策。由于您访问的该等连接网站并非我们所有或控制，因此我们对该等网站的內容、您对该等网站的使用、或该等网站的隐私政策不作任何保证或承担任何责任。
+                                     </p>
+                                 </li>
+                 
+                                 <li>
+                                     <h5 class="subCaption">您的其他权利</h5>
+                                     <p>
+                                         本隐私保护条款可能不经通知而定期更新以反映个人信息保护政策及法律法规的改变。我们会在网站发布信息通知您任何隐私保护条款的重要改变，并在隐私保护条款最上方指出最近更新的日期。
+                                     </p>
+                                 </li>
+                 
+                 
+                                 <li>
+                                     <h5 class="subCaption">联系我们</h5>
+                                     <p>
+                                         若您对本隐私保护条款有任何疑问或建议，或您想要我们更新您的喜好资讯，请寄送电子邮件到以下信箱
+                 【ecservice@esteelauder.com.cn】或致电400-820-7000
+                                     </p>
+                                 </li>
+                             </ul>
+                         </div>
+                        <button class="goBack">返回</button>
+                    </div>
+        </div>
+     </div>
+</body>
+<!-- <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> -->
+<script src="../js/jquery.min.js"></script>
+<script>
+$(function() {
+    // 强制页面的高度
+    var htmlHeight = $(window).height();
+    $("body,html").css({
+        height: htmlHeight
+    });
+    // 省份选择
+    $("#chooseProvince").on("change", function() {
+        var currentValue = $(this).val();
+        $("#middleValue").html(currentValue);
+    });
+    // 城市选择 
+    $("#chooseCities").on("change", function() {
+        var currentValue = $(this).val();
+        $("#cityWrapper").html(currentValue);
+    });
+    // 是否统一条款
+    $("#isAgree").on("click", function() {
+        if ($(this).is(":checked")) {
+            $(".changeColor").css({
+                backgroundColor: "#fe7f9a"
+            });
+            // 底部按钮
+            $(".bind").on("click", function() {
+                $(".mask-bind").show();
+            });
+            // 发送短信验证码
+            $("#messageBtn").on("click", function() {
+                console.log("发送短息验证码");
+            })
+        } else {
+            $(".changeColor").css({
+                backgroundColor: "#8c8c8c"
+            });
+            $(".bind").off("click");
+            $("#messageBtn").off("click");
+        }
+    });
+
+    // 浮层前往绑定
+    $("#sureBind").on("click", function() {
+        $(".mask-bind").hide();
+    });
+
+    // 关闭条款浮层
+    $(".goBack").on("click", function() {
+        $(".mask-agree").hide();
+    });
+
+    // 显示条款浮层
+    $(".showAgree").on("click", function() {
+        $(".mask-agree").show();
+    });
+    $("input,textarea,select").on('blur',function(){
+        // document.body.scrollTop = document.documentElement.scrollTop = 0;
+        window.scroll(0, 0);
+    });
+});
+
+</script>
+</html>
