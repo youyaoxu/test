@@ -1,0 +1,659 @@
+new_play
+
+1.
+ba_subscribe_finish 换成
+/m/skinbamember-baSubscribeFinish.html
+
+2.
+原来的这个relation_remark 改成我刚才发的新地址
+/m/skinbamember-updateRelationRemark.html
+
+不要忘记loading的路径要改
+
+接口文档管理
+a:eolinker
+https://www.eolinker.com/
+b:rap2
+http://rap2.taobao.org/
+http://mockjs.com/
+c:yapi
+https://yapi.ymfe.org/
+https://github.com/ymfe/yapi
+d:apizza
+https://apizza.net
+
+vscode使用
+	a:设置缩进为2
+	b:使用shift+alt+f格式化代码
+	c:有利于编程,方便读写
+
+<div class="head-card">
+					<div class="card-label">微信账号</div>
+					<div class="card-form">
+						<div class="form-con">
+							<div class="picker">
+								<div class="picker-item">{{= it.cardDesc}}</div>
+							</div>
+						</div>
+						<div class="form-icon">
+							<icon class="iconfont icon-right"></icon>
+						</div>
+					</div>
+				</div>
+
+{
+	product:[
+			{
+				product_id:'123',
+				nums:2
+			}
+	],
+	,member_id:90,
+	skin_m_name:'',
+	skin_m_mobile:''
+}
+
+使用对象操作数据
+1.如何使用操作对象
+2.复杂式对象操作
+
+
+<div class="body-title" tapmode onclick="myApp.selectAll()"><i class="iconfont icon-select1 {{= it.selectAllFlag?'active':''}}"></i>全选</div>
+			<div class="body-con">
+				{{? it.member}}
+				{{~ it.member:item:index}}
+				<div class="item">
+					<div class="item-select" tapmode onclick="myApp.selectSingle('{{= index}}')">
+						<span class="iconfont icon-select1 {{= item._select?'active':''}}"></span>
+					</div>
+					<div class="item-con">
+						<div class="item-avatar">
+							<img class="avatar-img"
+								src="{{= item.url && item.url.indexOf('data:') == -1?item.url:'../../../../images/public/holder.png'}}" />
+						</div>
+						<div class="item-desc">
+							<div class="desc-name text-1">旺达麻<i class="iconfont icon-bianji" tapmode
+									onclick="event.stopPropagation();myApp.editName('{{= item.member_id}}','{{= item.remark}}','{{= index}}')"></i>
+							</div>
+							<div class="desc-mobile">13819091134</div>
+							<div class="desc-use">消费次数：14</div>
+						</div>
+						<div class="item-add" tapmode onclick="myApp.openNav()">
+							<i class="iconfont icon-tianjia1"></i>
+						</div>
+					</div>
+				</div>
+				{{~}}
+				{{?}}
+			</div>
+
+openSpec: function () {
+            api.execScript({
+                name:api.winName,
+                frameName: 'shopping/pro_detail',
+                script: 'if(window.myApp){window.myApp.openSpec()}'
+            })
+        },
+				
+多图片处理
+可以通过images存储一个对象,使用对象寻找里面对应的值,渲染上去
+
+头像有点大
+
+//打开时间选择
+			openTimeSel: function () {
+				var _this = this,
+					rect;
+				rect = {
+					x: 0,
+					y: api.winHeight - api.winHeight * 0.6,
+					w: api.winWidth,
+					h: api.winHeight * 0.6
+				}
+				_this.on('timeSelected', function (val) {
+					var val = typeof val.value == 'string' ? JSON.parse(val.value) : val.value;
+					_this.data.timeInfo = val;
+					_this.off('timeSelected')
+					_this.submitConfirm();
+				})
+				_this.openShadeFrame('skin/appointment/time_select', {
+					rect: rect,
+					store_bn: _this.data.member.store_bn,
+					employee_id: _this.data.member.employee_id,
+					time: _this.data.serviceInfo[0].service_time * _this.data.serviceInfo[0].num
+				})
+			},
+
+			isMoreSKU: function (index) {
+				var _this = this,
+					product = _this.data.order_items[index].product;
+				if (product && product.detail && product.detail.spec_desc && product.detail.spec_desc.v) {
+					var v = product.detail.spec_desc.v;
+					v.map(function (item, index) {
+						if (item && item instanceof Array && item.length > 1) {
+							return true;
+						}
+					})
+				}
+				return false;
+			},
+
+
+			一键来单销售
+
+				<div class="item-add" tapmode onclick="myApp.openPubW('skin/archives/index/index','档案管理',{})">
+						<i class="iconfont icon-tianjia1"></i>
+					</div>
+
+					还有谁能知道这歌的变化改变的只有自己
+
+一键来单销售,添加确认弹框	
+日期下面添加border-bottom		
+修改tab切换字体大小
+删除
+服务单,头像
+搜索功能
+取缓存图片有问题
+输入框导致的键盘位置移动问题
+
+可以在doT中使用parseFloat(xxx).toFixed(2)
+		
+process
+
+{{= ?'':item.plan_type=='skin'?'销售计划单':item.plan_type=='product'?'商品计划单':''}}
+
+<div class="head-user">
+	<div class="user-avatar">
+		<img class="user-avatarImg" src="{{= it.images[it.member.avatar]?it.images[it.member.avatar]:'../../../../images/public/photo.png'}}" />
+	</div>
+	<div class="user-name text-1 clearfix">{{= it.member.remark}}</div>
+	<div class="user-mobile">{{= it.member.mobile}}</div>
+	<div class="user-btn">
+		<div class="user-call"><i class="iconfont icon-dianhua1"></i></div>
+		<div class="user-message"><i class="iconfont icon-msg"></i></div>
+	</div>
+</div>
+
+{{= it.images[it.member.avatar]?it.images[it.member.avatar]:'../../../../images/public/photo.png'}}
+
+
+7abf9ce11c03511516f8a4e61d0f29e0
+7abf9ce11c03511516f8a4e61d0f29e0
+
+{{= it.delItem == item.id?'move':''}}
+
+myApp.getImg(item.member.avatar)
+
+项目中遇到的问题
+a:参数实现可以使用外部传入的方式
+b:保存一些项目使用中的图片
+c:图片异步加载获取class
+d:加载中使用loading控制
+e:
+
+"../../../lib/skin/archives/day_record/day_record_detail.js
+
+1.买插板一个
+
+{{~ it.order_items:item:index }}
+
+{{= it.images[item.avatar]?it.images[item.avatar]:myApp.getImg(item.avatar)}}
+
+<p><i class="remind_tel">{{= it.orderInfo.consignee_mobile}}</i> <i class="iconfont icon-dianhua1" tapmod onclick="myApp.callPhone('{{= it.orderInfo.consignee_mobile}}')"></i><i class="icon_info iconfont icon-duanxin" tapmode onclick="myApp.openPubW('tool/ba_visit/visit_mould', '选择模板', {mobile: '{{= it.orderInfo.consignee_mobile}}'})"></i>
+        </p>
+
+{{= item.name}}
+
+../../../images/public/photo.png
+
+1.把计划制定串起来
+2.完成
+
+{{= myApp.getImg(item.url,'','','','../../../../images/public/photo.png')}}
+
+{{= parseFloat(it.workData.month_skin_total).toFixed(2) }}
+
+{{= parseFloat(it.workData.month_skin_success_total).toFixed(2) }}
+
+tapmode onclick="myApp.openPicker('sdate')"
+
+tapmode onclick="myApp.openPicker('edate')"
+
+1.
+plan
+
+
+.item {
+      width: 92vw;
+      box-sizing: border-box;
+      display: flex;
+      display: -webkit-flex;
+      height: 10vw;
+      margin: 0 4vw;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #f0f0f0;
+
+      .item-label {
+        font-size: 3.2vw;
+      }
+
+      .item-txt {
+        font-size: 3.2vw;
+      }
+    }
+
+
+    it.images[item.image_id]?it.images[item.image_id]:myApp.getImg(item.image_id,'','','','../../../../images/public/photo.png')
+
+    //手机号码处理
+    handleMobile:function(mobile){
+      return mobile.slice(0,3) + '****' + mobile.slice(7)
+    },
+
+    <div class="item-foot">
+        <div class="item item-title">
+          <div class="item-label">工作总结</div>
+        </div>
+        <div class="item-input">
+          {{? it.workData.worksummary}}
+          <div class="input">{{= it.workData.worksummary}}</div>
+          {{??}}
+          <textarea placeholder="注意客户敏感肌肤..." oninput="myApp.data.content = this.value" onfocus="myApp.onFocus();"
+            onblur="myApp.onBlur()"></textarea>
+          {{?}}
+        </div>
+      </div>
+
+      {{? !it.workData.worksummary}}
+      <div class="item-btn">
+        <div tapmode onclick="myApp.submit()">提交</div>
+      </div>
+      {{?}}
+
+
+齐冬飞 xxxxxxx
+简宇杰 15021206480 
+赵璐婷 15901906425
+侯磊   15601899016
+唐世财 18016190011
+王彦辉 13166330270
+丁柯丹 15026410790
+许友耀 13817053601
+
+工作安排
+1.门,选择一个门,要考虑价格,颜色,材质,质量,安装,时间
+2.窗,选择一个窗,同上
+3.卫生间,马桶
+
+
+图片问题:
+1.有图片加载图片
+2.没有图片
+
+
+<div class="filter-item">
+            <p class="title"><i class="iconfont icon-fenlei21"></i>查询类型</p>
+            <div class="content">
+                <ul class="clearfix type">
+                    <li class="{{= it.filterData.type.indexOf('number') != -1?'action':''}} text-1" tapmode
+                        onclick="myApp.tapType('number')">用户数量统计<p class="bg"><i class="iconfont icon-duihao"></i>
+                    </p>
+                    </li>
+                    <li class="{{= it.filterData.type.indexOf('times') != -1?'action':''}} text-1" tapmode
+                        onclick="myApp.tapType('times')">次数统计 <p class="bg"><i class="iconfont icon-duihao"></i></p>
+                    </li>
+                    <li class="{{= it.filterData.type.indexOf('rate') != -1?'action':''}} text-1" tapmode
+                        onclick="myApp.tapType('rate')">完成率  <p class="bg"><i class="iconfont icon-duihao"></i></p>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+
+
+        <div class="filter-item">
+                <p class="title"><i class="iconfont icon-fenlei21"></i>查询类型</p>
+                <div class="content">
+                    <ul class="clearfix type">
+                        <li class="{{= it.filterData.type.indexOf('number') != -1?'action':''}} text-1" tapmode
+                            onclick="myApp.tapType('number')">用户数量统计<p class="bg"><i class="iconfont icon-duihao"></i>
+                            </p>
+                        </li>
+                        <li class="{{= it.filterData.type.indexOf('times') != -1?'action':''}} text-1" tapmode
+                            onclick="myApp.tapType('times')">次数统计 <p class="bg"><i class="iconfont icon-duihao"></i></p>
+                        </li>
+                        <li class="{{= it.filterData.type.indexOf('rate') != -1?'action':''}} text-1" tapmode
+                            onclick="myApp.tapType('rate')">完成率 <p class="bg"><i class="iconfont icon-duihao"></i></p>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+
+          <div class="filter-item">
+                <p class="title"><i class="iconfont icon-fenlei21"></i>查询类型</p>
+                <div class="content">
+                    <ul class="clearfix type">
+                        <li class="{{= it.filterData.type.indexOf('number') != -1?'action':''}} text-1" tapmode onclick="myApp.tapType('number')">用户数量统计
+                            <p class="bg"><i class="iconfont icon-duihao"></i>
+                            </p>
+                        </li>
+                        <li class="{{= it.filterData.type.indexOf('times') != -1?'action':''}} text-1" tapmode onclick="myApp.tapType('times')">次数统计
+                            <p class="bg"><i class="iconfont icon-duihao"></i></p>
+                        </li>
+                        <li class="{{= it.filterData.type.indexOf('rate') != -1?'action':''}} text-1" tapmode onclick="myApp.tapType('rate')">完成率
+                            <p class="bg"><i class="iconfont icon-duihao"></i></p>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+
+            it.images[it.member_data.avatar]
+
+每日记录
+
+小结:
+样式做一个小结,不停的在总结,总结才能进步,才能有收获
+代码也是这样在不停的总结
+
+
+action
+store
+import {createStore} from 'redux';
+
+//算法
+function conuter(state=0,action){
+	switch(action.type){
+		case 'INCREMENT':
+			return state+1;
+		case 'DECREMENT':
+			return state-1;
+		default:
+			return state;
+	}
+}
+let store=createStore(counter)
+
+//可以手动触发更新,也可以绑定事件到视图层
+store.subscribe(()=>{
+	console.log(store.getState())
+})
+
+//可以改变内部state唯一的方法,是dispatch一个action
+store.dispatch({type:'INCREMENT'})
+
+Flux,CQRS,Event Sourcing
+
+三大原则
+a:单一数据源
+b:state是只读的,唯一改变state的方法是触发action,action是一个用于描述已发生事件的普通对象
+c:使用纯函数来改变state tree,你需要编写reducers
+
+Immentable
+connect()帮助器调用
+
+action:一般来说会通过store.dispatch()将action传到store
+	a:发生了什么
+
+Reducer:永远不要在克隆之前修改state
+	a:根据action来更新state的用法
+
+store
+	a:维持应用state
+	b:提供getState()方法获取state
+	c:提供dispatch(action)方法更新state
+	d:通过subscribe(listener)注册监听器
+	e:通过subscribe(listener)返回的函数注销监听器
+
+	let store=createStore(todoApp,window.state_from_server)
+
+React全家桶
+	a:React
+	b:react-redux
+	c:redux
+	d:react-router
+
+Vue全家桶
+	a:Vue
+	b:vue-router
+	c:vuex
+
+
+	https://unpkg.com/
+
+一个思想:容器组件和展示组件分离思想
+
+什么时候使用函数是写法
+	a:不使用本地state,生命周期方法,或者性能优化,否则要转为class
+
+
+做某件事情都有固定的套路
+	先找到固定套路再在原有的套路上面变化
+
+有一些操作是固定的套路
+	a:比如当前页面有按钮点击按钮之后按钮颜色变化,有
+	b:页面搜索的套路,不加的条件可以默认选择
+	c:页面套路,页面有加载loading
+
+
+问题
+	蓝利是谁?获得风息堡?
+	斯坦尼斯获得龙石岛?
+	琼恩.艾林
+
+编译器
+	CPython,官方提供的编译器,有多种编译器可以提供使用
+命令行模式
+	python
+
+退出命令行模式
+	exit()
+
+在命令行中运行python代码,有两种情况
+	a:python,进入python命令行模式下
+	b:python calc.py 执行某个路径下指定文件
+
+输出
+	a: print('hello,world')
+	b: print('a1','a2','a3')
+	c:可以有多个参数,但是多个参数之间打印的时候会有多个空格
+
+输入
+	a:input()
+	b:使用一个变量接受用户输入的数据,可以达到获取用户输入的目的
+	c:num=input()
+
+
+	<!-- <p class="b text-1"><span class="r">{{= item.name}}</span><span></span>  </p> -->
+
+	{{= item.name}}
+
+
+厨房:
+	热水器
+	抽油烟机
+	洗碗池
+	水龙头
+
+
+卫生间:
+	洗漱台
+	水龙头
+	花洒套装
+	浴霸
+	马桶(用)
+	洗衣机
+
+
+客厅:
+	灯
+	开关
+
+
+瓷砖
+	
+
+护墙板
+
+
+橱柜板
+
+for (var i = 0; i < pagedata.cart_result.objects.goods.length; i++) {
+	
+}
+
+item.is_fastbuy
+
+&& item.disabled == 'false'
+
+
+
+
+
+买剪刀
+买护膝
+买
+
+
+wechat
+
+{{?? item.voucher_type && item.voucher_type=='stockholder' && item.total_commission != 0 }}
+						<div class="middle-profit">加盟商收益</div>
+
+
+177-xxxx-6726
+
+react 
+redux
+react-redux
+react-router
+immuntable
+
+项目一：基于Linux+Nginx+MySQL+PHP搭建电商平台系统
+项目背景：为适应公司业务发展，帮助目标客户进行大规模电子商务平台建设，公司内部决定利用LNMP技术，来实现大型互联网电子商务网站架构建设和业务支持，其公司为此准备了充分调研和技术选型，决定使用基于FastCGI的LNMP系统环境。
+项目描述： 配置Nginx代理服务器，并使用Keepalived实现热备份；编制Nginx配置文件并批量化部署web服务器；配置MySQL并构建MHA高可用集群，同时对主库和从库进行读写分离；配置Redis主从同步缓存服务器；
+核心技术：Nginx；Keepalived；PHP；FastCGI；MySQL；Redis；MHA；Rsync；NFS。
+责任描述：
+1.负责根据不同服务器制作不同云服务器镜像；
+2.搭建Rsync+NFS网络存储服务器；
+3.设置Rsync服务为差异备份，减少数据流量，提高工作效率；
+4.对部署的LNMP环境进行测试，检验效果并生成技术文档。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+项目一：基于LNMP架构搭建电商平台
+项目描述：为了适应公司新的业务发展,帮助目标客户实现稳定可靠的电商平台系统,决定使用Linux下的Nginx+MySQL+PHP这种网站服务器架构技术搭建。Nginx是一个高性能的HTTP和反向代理服务器,MySQL关系型数据库管理系统,PHP后端语言,适应于Web开发,将这四种技术组合在一起,成为一个免费高效拓展性强的网站服务系统。该系统上运行业务有小程序电商业务,基于Vue的H5移动端电商业务。
+项目技术：
+1.通过Nginx技术,依赖多台服务器实现不同云服务器镜像；
+2.通过Rsync(数据镜像备份工具)和NFS(网络文件系统),搭建网络存储服务器;
+3.通过Rsync和NFS服务,挂载Web服务器到NFS,实现共享目录和差异备份,减少数据流量,提高工作效率；
+4.对部署的LNMP环境进行测试，检验效果并生成技术文档。
+
+
+1.MySQL数据库的安装,在CentOS上安装软件,建立MySQL用户,准备数据目录,初始化数据库,拷贝配置文件,修改启动脚本,把MySQL添加到服务,启动MySQL服务,查看验证MySQL服务,配置mySQL环境变量,登录MySQL测试
+2.php服务安装,创建php账号,配置编译选项,编译安装php,修改配置文件,启动php-fpm
+3.Nginx编译安装,配置编译选项,编译Nginx,启动Nginx
+4.测试php解析
+5.Nginx启动脚本和配置文件
+6.对LNMP环境测试,检验效果并生成技术文档
+ 
+
+
+项目二：基于Jenkins+Gitlab搭建自动化项目
+项目描述：GitLab是一个代码仓库，用来管理代码。Jenkins是一个自动化服务器，可以运行各种自动化构建、测试或部署任务。
+所以这两者结合起来，就可以实现开发者提交代码到GitLab，Jenkins以一定频率自动运行测试、构建和部署的任务，
+帮助开发团队更高效的集成和发布代码。
+项目技术：
+1、部署Gitlab服务器，配置组群、项目及用户，并指定仓库路径,用于权限控制和仓库存放；
+2、配置Jenkins服务器，部署Git、Git Parameter插件,用于提交审核,问题跟踪,版本控制,标签管理等等；
+3、配置Jenkins免密登陆Gitlab,便于开发者管理代码,提高效率；
+4、配置Jenkins项目构建，编写自动化部署shell脚本,便于版本控制,功能测试和新需求上线；
+
+
+
+项目三：部署网络存储服务器
+项目描述：基于Rsync在同步数据时,需要扫描所有文件进行对比,进行差量传输,当文件达到百万量级以上,非常耗时和低效,因此使用Rsync+Inotify组合来解决问题,实现实时同步,结合Inotify对源目录实时监控,只要有文件变动或新文件产生,就会立刻同步到目标目录下
+项目技术：
+1、编写Shell脚本实现服务端与客户端的自动化安装；
+2、规划存储设备，修改配置文件，发布网络存储,用于优化存储；
+3、设置Rsync服务为差异备份，从而减少数据流量，提高工作效率；
+4、编写同步脚本，验证实时同步效果，反复调试。
+
+
+
+项目三：搭建Docker测试服务器
+项目描述：随着项目数量的不断发展，项目的代码测试运行需要多套测试环境的支持，公司里只有一套测试环境，按照传统方法手工搭建测试环境费时费力，而Docker提供了轻量级的虚拟化,可以做到秒级、甚至毫秒级的启动时间。大大的节约了开发、测试、部署的时间，并且其容器技术赋予了软件独立性，使其免受外在环境差异（例如，测试和生产环境的差异）的影响，确保了代码运行环境的一致性，从而有助于减少团队间在相同基础设施上运行不同软件时的冲突。
+项目技术：
+1.准备服务器基础环境，避免Docker内镜像运行时与宿主机发生冲突；
+2.安装部署Docker-engine软件，并启动服务；
+3.按照生产环境编制镜像软件，并配置SSH公私密钥，方便从git仓库获取代码。
+4.对部署的环境进行测试，检验成果。
+
+
+
+
+项目五：网络结构部署以及优化
+项目描述：使用路由器+交换机的配置,路由器提供内网和外网的链接和VLAN(虚拟局域网)的划分,以及各种防火墙和路由功能的配置。交换机一头链接到路由器上,作为一个子网,另一头链接子网只的各台终端。划分几个子网,则从路由连出几台交换机即可。
+项目技术：
+1、 为提高主机对本公司网络服务的可靠性，需要使用多项冗余技术(例如:以太通道,双电源冗余,控制器冗余灾备,中心控制器异地容灾,DHCP服务器备份,端口聚合,灾难备份等等)；
+2、 以太通道:提高链路带宽使用以太通道；
+3、 双电源冗余:保证局域网不会因为线路故障影响网络通信使用了冗余线路；
+4、 网关冗余:为保证服务器不会因为使用单一网关而出现的单点故障影响网络通信而使用网关冗余；
+5、 端口聚合:保证到互联网的高可用接入使用冗余互联网连接。
+
+
+
+问题:
+1.看你简历之前在南京工作,目前到上海工作,为什么呀?
+2.为什么离开原公司啊?
+3.你对运维有什么看法?
+4.LNMP搭建过程中遇到的问题,a:配置错误问题,b:资源耗尽问题,c:其他原因
+5.项目中遇到哪些让你印象深刻的问题?
+	准备一个或者两个技术小点,有意义,有意思的
+6.对运维或者云计算,你有什么看法?
+7.自我介绍,准备3-5分钟,可长可短的介绍
+8.看你是非计算机相关专业,怎么接触到运维?在工作中你能适应吗?
+9.
+	
+
+
+云基础设施
+	服务,laaS
+	平台即服务,PaaS
+	软件即服务,SaaS
+
+	项目一：基于LNMP架构搭建电商平台
+项目描述：为了适应公司新的业务发展,帮助目标客户实现稳定可靠的电商平台系统,决定使用Linux下的Nginx+MySQL+PHP这种网站服务器架构技术搭建。Nginx是一个高性能的HTTP服务和反向代理软件,MySQL关系型数据库管理系统,PHP后端语言,适应于Web开发,将这四种技术组合在一起,成为一个高效拓展性强的网站服务系统。该系统上运行业务有小程序电商业务,基于Vue的H5移动端电商业务。
+项目技术： 
+1.基于不同服务器需求，制作不同云服务器镜像；
+2.配置Nginx+Keepalived热备份代理服务器；
+3.配置编译选项并安装php,修改配置文件,启动php-fpm；
+4.编制配置Nginx 文件、启动脚本并批量化部署web服务器；
+5.部署MySQL服务，并配置环境变量，构建MHA高可用集群；
+6.对部署的LNMP环境进行测试，检验效果并生成技术文档。
+
+
+
+{{? it.zeroInfo}}
+<p class="zero">今日0单人数：{{= it.zeroInfo[item.store_bn + ''].total_zero?it.zeroInfo[item.store_bn + ''].total_zero:'0'}}人</p>
+{{?}}
+
+{{??}}
+                    <p class="zero">今日0单人数：120人</p>
