@@ -25,6 +25,7 @@
     "request": "^2.88.0"
   },
   "dependencies": {
+    "blob": "0.0.5",
     "vue": "^2.5.17"
   }
 }

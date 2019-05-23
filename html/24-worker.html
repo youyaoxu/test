@@ -1,0 +1,20 @@
+<html>
+  <head></head>
+  <body>
+    <script id="worker" type="app/worker">
+    addEventListener('message',function(){
+      postMessage("work done!")
+    },false)
+  </script>
+  <script>
+    var Blob=require("blob");
+    var blob=new Blob(document.querySelector("#worker").textContent);
+    var url=window.URL.createObjectURL(blob);
+    var worker=new Worker(url);
+    worker.addEventListener('message',function(e){
+      console.log(e.data);
+    },false);
+    work.postMessage("");
+  </script>
+  </body>
+</html>
