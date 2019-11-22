@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Array.prototype.selfMap = function (fn, context) {
+    //   let arr = Array.prototype.slice.call(this);
+    //   let mappedArr = [];
+    //   for (let i = 0; i < arr.length; i++) {
+    //     mappedArr.push(fn.call(context, arr[i], i, this))
+    //   }
+    //   return mappedArr;
+    // }
+    // let arr1=[1,2,3];
+    // arr1.selfMap(function(item,index){
+    //   console.log(item)
+    // })
+
+    // function curry(fn) {
+    //   if (fn.length <= 1) return fn;
+    //   const generator = (...args) => {
+    //     if (fn.length == args.length) {
+    //       return fn(...args)
+    //     } else {
+    //       return (...args2) => {
+    //         return generator(...args, ...args2)
+    //       }
+    //     }
+    //   }
+    //   return generator;
+    // }
+    // let add = (a, b, c, d) => a + b + c + d;
+    // const curriedAdd = curry(add)
+    // console.log(curriedAdd(5,6)(7)(8))
+    // console.log(curriedAdd(5)(6)(7)(8))
+    // console.log(add(5, 6, 7, 8))
+
+    // function compose() {
+    //   var args = arguments;
+    //   var start = args.length - 1;
+    //   return function () {
+    //     var i = start;
+    //     var result = args[start].apply(this, arguments);
+    //     while (i--) result = args[i].call(this, result)
+    //     return result;
+    //   }
+    // }
+    // var toUpperCase = function (x) {
+    //   return x.toUpperCase();
+    // };
+    // var hello = function (x) {
+    //   return 'HELLO, ' + x;
+    // };
+
+    // var greet = compose(hello, toUpperCase);
+    // var name=greet('kevin')
+    // console.log(name)
+
+
+    // const fibonaccil = function (n) {
+    //   if (n < 1) throw new Error("参数有误")
+    //   if (n === 1 || n === 2) return 1;
+    //   return fibonaccil(n - 1) + fibonaccil(n - 2)
+    // }
+    // // 函数记忆
+    // const memory = function (fn) {
+    //   let obj = {}
+    //   return function (n) {
+    //     if (!obj[n]) obj[n] = fn(n)
+    //     return obj
+    //   }
+    // }
+    // const fibonaccil2 = memory(fibonaccil)(11)
+    // console.log(fibonaccil2)
+
+    const isComplexDataType=obj=>(typeof obj==='object')||typeof obj==='function'&&obj!==null
+    const selfBInd=function(bindTarget,...args1){
+      if(typeof this!=='function')
+        throw new TypeError('Bind must be called on a function')
+      let func=this
+      let boundFunc=function(...args2){
+        let args=[...args1,...args2]
+        if(new.target){
+          let res=func.apply(this,args)
+          if(isComplexDataType(res)){return res}
+          return this
+        }else{
+          func.apply(bindTarget,args)
+        }
+      }
+      this.prototype && (boundFunc.prototype=Object.create(this.prototype))
+      let desc=Object.getOwnPropertyDescriptor(func)
+      Object.defineProperties(boundFunc,{
+        length:desc.length,
+        name:Object.assign(desc.name,{
+          value:`bound${desc.name.value}`
+        })
+      })
+      return boundFunc;
+    }
+  </script>
+</body>
+
+</html>

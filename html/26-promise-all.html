@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		app={
+			p1:function(){
+				return new Promise(function(resolve,reject){
+					resolve("hello");
+				})
+			},
+			p2:function(){
+				return new Promise(function(resolve,reject){
+					resolve("world");
+				})
+			},
+			all:function(){
+				var _this=this;
+				Promise.all([_this.p1,_this.p2]).then(function(res){
+					console.log(res);
+				})
+			}
+		}
+		// app.all();
+
+		var p1=function(){
+			return new Promise(function(resolve,reject){
+				resolve("hello");
+			})
+		};
+		var p2=function(){
+			return new Promise(function(resolve,reject){
+				resolve("world");
+			})
+		};
+		var all=function(){
+			var _this=this;
+			Promise.all([p1(),p2()]).then(function(res){
+				console.log(res);
+			})
+		}
+		all();
+	</script>
+</body>
+</html>

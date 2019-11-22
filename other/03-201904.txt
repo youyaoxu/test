@@ -737,3 +737,371 @@ token:令牌
 回话令牌
 
 4.4 
+
+周四:切图完成代码
+laplace
+
+!it.inwork_time && it.outwork_time>0
+
+preview
+
+1.匿名内部类?如何使用
+2.StringBuilder和StringBuffer
+3.核心类,文件操作,IO,线程,网络,XML
+	核心类:String,StringBuilder,Date,SimpleDateFormat,Calendar,Math
+	集合,
+		List:ArrayList,LinkedList
+			ArrayList:get,set,add,addAll,remove,removeAll
+			特点:有序,可以重复
+		Set:HashSet,
+			特点:无法重复,null无效
+		Queue:
+		Map:HashMap,Entry
+
+4.异常,都有哪些?
+
+配置要自适应形式的,比如参数的传递需要使用
+indexOf进行判断,没有则选择默认的那个,不至于出错
+
+[2,4,1,5,3]
+[] [1] [2,4,5,3]
+[] [1] [2,3] [4] [5]
+[] [1] [2] [3] [4] [5]
+[1,2,3,4,5]
+
+_this.openWin('skin/shop_list/shop_list_w',{
+        to:'tool/manager_clock/repair_clock',
+        afterClose:true,
+        toTitle:'补打卡',
+      })
+
+
+{{? it.inwork_time > 0}}
+			<div class="clock_pub_info">
+				<div class="info_date">
+					<i class="info_disc"></i><span
+						class="info_time">上班打卡时间：{{= new Date(parseInt(it.inwork_time) * 1000).Format("hh:mm")}}</span>
+				</div>
+				<div class="info_address {{= (it.outwork_time)>0?'info_line':''}}">
+					{{? it.inwork_address_status=='succ'}}
+					<div class="info_wifi">
+						<i class="iconfont icon-wifi"></i>
+						<span>WIFI</span>
+					</div>
+					{{??}}
+					<div class="info_wifi_1">
+						<span>打卡地异常</span>
+					</div>
+					{{?}}
+					<div class="info_add">{{= it.inwork_address}}</div>
+					<div class="info_store">{{= it.sign_data.store_name}}</div>
+					{{? it.inwork_img}}
+					<ul class="info_img clearfix">
+						{{~ it.inwork_img:item:index}}
+						<li tapmode onclick="myApp.preview('{{= index}}','{{= item}}')"><img class="{{= item}}"
+								src="{{= it.images[item]?it.images[item]:myApp.getImg(item)}}" alt=""></li>
+						{{~}}
+					</ul>
+					{{?}}
+				</div>
+			</div>
+			{{?}}
+			{{? !it.inwork_time && it.outwork_time>0}}
+			<div class="clock_pub_info clock_pub_apply">
+				<div class="info_date">
+					<i class="info_disc"></i><span class="info_time">上班未打卡</span>
+				</div>
+				<div class="info_address {{= (it.outwork_time)>0?'info_line':''}}">
+					<div class="info_wifi_none">
+						<span class="info_wifi_btn">缺勤</span>
+						<span class="info_wifi_apply" tapmode
+							onclick="myApp.openPubW('tool/manager_clock/repair_clock','补打卡')">申请补打卡<i
+								class="iconfont icon-right"></i></span>
+					</div>
+				</div>
+			</div>
+			{{?}}
+			{{? it.outwork_time>0}}
+			<div class="clock_pub_info clock_pub_last">
+				<div class="info_date">
+					<i class="info_disc_night"></i><span
+						class="info_time">下班打卡时间：{{= new Date(parseInt(it.outwork_time) * 1000).Format("hh:mm")}}</span>
+				</div>
+				<div class="info_address info_address_night">
+					{{? it.inwork_address_status=='succ'}}
+					<div class="info_wifi info_wifi_night">
+						<i class="iconfont icon-wifi"></i>
+						<span>WIFI</span>
+					</div>
+					{{??}}
+					<div class="info_wifi_1 info_wifi_night">
+						<span>打卡地异常</span>
+					</div>
+					{{?}}
+					<div class="info_wifi"><span tapmode onclick="myApp.clockIn('out')">更新打卡</span></div>
+					<div class="info_add">{{= it.outwork_address}}</div>
+					<div class="info_store">{{= it.sign_data.store_name}}</div>
+					{{? it.outwork_img}}
+					<ul class="info_img clearfix">
+						{{~ it.outwork_img:item:index}}
+						<li tapmode onclick="myApp.preview('{{= index}}','{{= item}}')"><img class="{{= item}}"
+								src="{{= it.images[item]?it.images[item]:myApp.getImg(item)}}" alt=""></li>
+						{{~}}
+					</ul>
+					{{?}}
+					{{? it.outwork_summary}}
+					<div class="info_add">工作总结：{{= it.outwork_summary}}</div>
+					{{?}}
+				</div>
+			</div>
+			{{?}}
+
+			<div class="clock_in">
+				{{? it.inwork_time>0}}
+				<div class="morning clock_in_wrap">
+					<div class="clock_in_center">
+						<p class="clock_in_center_b">早签到</p>
+						<p>
+							{{= (it.inwork_time > 0) ? new Date(parseInt(it.inwork_time) * 1000).Format("hh:mm:ss") : (it.outwork_time > 0)?"未打卡":"上班"}}
+						</p>
+					</div>
+				</div>
+				{{?? it.outwork_time > 0}}
+				<div class="morning clock_in_wrap" tapmode onclick="myApp.openPubW('tool/manager_clock/repair_clock','补打卡')">
+					<div class="clock_in_center">
+						<p class="clock_in_center_b">早签到</p>
+						<p>
+							{{= (it.inwork_time > 0) ? new Date(parseInt(it.inwork_time) * 1000).Format("hh:mm:ss") : (it.outwork_time > 0)?"未打卡":"上班"}}
+						</p>
+					</div>
+				</div>
+				{{??}}
+				<div class="morning clock_in_wrap" tapmode onclick="myApp.clockIn('in')">
+					<div class="clock_in_center">
+						<p class="clock_in_center_b">早签到</p>
+						<p>
+							{{= (it.inwork_time > 0) ? new Date(parseInt(it.inwork_time) * 1000).Format("hh:mm:ss") : (it.outwork_time > 0)?"未打卡":"上班"}}
+						</p>
+					</div>
+				</div>
+				{{?}}
+
+				<div class="night clock_in_wrap" tapmode onclick="myApp.clockIn('out')">
+					<div class="clock_in_center">
+						<p class="clock_in_center_b">晚签退</p>
+						<p>{{= (it.outwork_time > 0) ? new Date(parseInt(it.outwork_time) * 1000).Format("hh:mm:ss") : "下班"}}</p>
+					</div>
+				</div>
+			</div>
+
+{{? it.loading}}
+		<div class="page-loading" style="padding-top:10vw">
+			<img src="../../../images/public/loading.gif" alt="">
+		</div>
+		{{??}}
+		<div>
+			<div class="ba_name"><span>{{= it.staff_name}} | {{= it.employee_id}}</span><span>区域经理</span></div>
+			<div class="ba_date">
+				<i class="iconfont icon-rili"></i>
+				<span>{{= it.today}}</span>
+			</div>
+			{{? it.inwork_time > 0}}
+			<div class="clock_pub_info">
+				<div class="info_date">
+					<i class="info_disc"></i><span
+						class="info_time">上班打卡时间：{{= new Date(parseInt(it.inwork_time) * 1000).Format("hh:mm")}}</span>
+				</div>
+				<div class="info_address {{= (it.outwork_time)>0?'info_line':''}}">
+					{{? it.inwork_address_status=='succ'}}
+					<div class="info_wifi">
+						<i class="iconfont icon-wifi"></i>
+						<span>WIFI</span>
+					</div>
+					{{??}}
+					<div class="info_wifi_1">
+						<span>打卡地异常</span>
+					</div>
+					{{?}}
+					<div class="info_add">{{= it.inwork_address}}</div>
+					<div class="info_store">{{= it.sign_data.store_name}}</div>
+					{{? it.inwork_img}}
+					<ul class="info_img clearfix">
+						{{~ it.inwork_img:item:index}}
+						<li tapmode onclick="myApp.preview('{{= index}}','{{= item}}')"><img class="{{= item}}"
+								src="{{= it.images[item]?it.images[item]:myApp.getImg(item)}}" alt=""></li>
+						{{~}}
+					</ul>
+					{{?}}
+				</div>
+			</div>
+			{{?}}
+			{{? !it.inwork_time && it.outwork_time>0}}
+			<div class="clock_pub_info clock_pub_apply">
+				<div class="info_date">
+					<i class="info_disc"></i><span class="info_time">上班未打卡</span>
+				</div>
+				<div class="info_address {{= (it.outwork_time)>0?'info_line':''}}">
+					<div class="info_wifi_none">
+						<span class="info_wifi_btn">缺勤</span>
+						<span class="info_wifi_apply" tapmode
+							onclick="myApp.openPubW('tool/manager_clock/repair_clock','补打卡')">申请补打卡<i
+								class="iconfont icon-right"></i></span>
+					</div>
+				</div>
+			</div>
+			{{?}}
+			{{? it.outwork_time>0}}
+			<div class="clock_pub_info clock_pub_last">
+				<div class="info_date">
+					<i class="info_disc_night"></i><span
+						class="info_time">下班打卡时间：{{= new Date(parseInt(it.outwork_time) * 1000).Format("hh:mm")}}</span>
+				</div>
+				<div class="info_address info_address_night">
+					{{? it.inwork_address_status=='succ'}}
+					<div class="info_wifi info_wifi_night">
+						<i class="iconfont icon-wifi"></i>
+						<span>WIFI</span>
+					</div>
+					{{??}}
+					<div class="info_wifi_1 info_wifi_night">
+						<span>打卡地异常</span>
+					</div>
+					{{?}}
+					<div class="info_wifi"><span tapmode onclick="myApp.clockIn('out')">更新打卡</span></div>
+					<div class="info_add">{{= it.outwork_address}}</div>
+					<div class="info_store">{{= it.sign_data.store_name}}</div>
+					{{? it.outwork_img}}
+					<ul class="info_img clearfix">
+						{{~ it.outwork_img:item:index}}
+						<li tapmode onclick="myApp.preview('{{= index}}','{{= item}}')"><img class="{{= item}}"
+								src="{{= it.images[item]?it.images[item]:myApp.getImg(item)}}" alt=""></li>
+						{{~}}
+					</ul>
+					{{?}}
+					{{? it.outwork_summary}}
+					<div class="info_add">工作总结：{{= it.outwork_summary}}</div>
+					{{?}}
+				</div>
+			</div>
+			{{?}}
+
+			<div class="clock_in">
+				{{? it.inwork_time>0}}
+				<div class="morning clock_in_wrap">
+					<div class="clock_in_center">
+						<p class="clock_in_center_b">早签到</p>
+						<p>
+							{{= (it.inwork_time > 0) ? new Date(parseInt(it.inwork_time) * 1000).Format("hh:mm:ss") : (it.outwork_time > 0)?"未打卡":"上班"}}
+						</p>
+					</div>
+				</div>
+				{{?? it.outwork_time > 0}}
+				<div class="morning clock_in_wrap" tapmode onclick="myApp.openPubW('tool/manager_clock/repair_clock','补打卡')">
+					<div class="clock_in_center">
+						<p class="clock_in_center_b">早签到</p>
+						<p>
+							{{= (it.inwork_time > 0) ? new Date(parseInt(it.inwork_time) * 1000).Format("hh:mm:ss") : (it.outwork_time > 0)?"未打卡":"上班"}}
+						</p>
+					</div>
+				</div>
+				{{??}}
+				<div class="morning clock_in_wrap" tapmode onclick="myApp.clockIn('in')">
+					<div class="clock_in_center">
+						<p class="clock_in_center_b">早签到</p>
+						<p>
+							{{= (it.inwork_time > 0) ? new Date(parseInt(it.inwork_time) * 1000).Format("hh:mm:ss") : (it.outwork_time > 0)?"未打卡":"上班"}}
+						</p>
+					</div>
+				</div>
+				{{?}}
+
+				<div class="night clock_in_wrap" tapmode onclick="myApp.clockIn('out')">
+					<div class="clock_in_center">
+						<p class="clock_in_center_b">晚签退</p>
+						<p>{{= (it.outwork_time > 0) ? new Date(parseInt(it.outwork_time) * 1000).Format("hh:mm:ss") : "下班"}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{?}}
+
+输出是是最好的输入
+1.最近看到自己的状态发生的变化挺大,包括心态
+
+
+'m/skinshopmanage-shop_manage_see_store_plan-' + type + '.html'
+
+
+砍价页
+
+ 帮别人砍
+- 
+
+自己砍
+
+成功砍至￥24.04
+为您节省了￥0.96
+
+border:1px solid blue;
+
+<view class="head-top-swiper">
+        <swiper 
+        class="swiper"
+        autoplay
+        interval="{{2000}}"
+        duration="{{1000}}"
+        circular
+        vertical>
+        <block wx:for="{{messList}}" wx:for-item="item" wx:key="{{item}}">
+          <swiper-item class="swiper-item">
+            <view class="text-1">{{item}}</view>
+          </swiper-item>
+        </block>
+      </swiper>
+      </view>
+
+
+
+      order_id=3811251622949
+      pages/member/order/detail/detail
+bar_id=214118575789603&activity_id=1
+
+110
+70
+
+/m/xcxbaritem-bargain_detail.html
+
+/m/xcxbarmember-bargain_detail.html
+
+
+321283199110281228 张灿
+
+新用户
+        <view class="desc-time" ></view>
+countdown
+
+activity_id=1&bar_id=214216375456885
+
+activity_id=7&bar_id=214221392235446
+
+https://mall-onlie.oss-cn-shanghai.aliyuncs.com/0-T3CIMG/service-bargain-success.png
+
+https://mall-onlie.oss-cn-shanghai.aliyuncs.com/0-T3CIMG/service-bargain-fail.png
+
+https://mall-onlie.oss-cn-shanghai.aliyuncs.com/0-T3CIMG/service-bargain-stock.png
+
+https://mall-onlie.oss-cn-shanghai.aliyuncs.com/0-T3CIMG/service-bargain-tip.png
+
+is_failure
+
+status
+
+
+
+activity_id=6&bar_id=214315052286927
+
+
+
+aspectFit
+widthFix
+
