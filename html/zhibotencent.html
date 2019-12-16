@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="//imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer-2.3.2.js" charset="utf-8"></script>
+    <style>
+        .box{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100vw;
+            height:10vw;
+            z-index:999;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="id_test_video" style="width:100vw; height:auto;"></div>
+    <div class="box"></div>
+    <script>
+        var player = new TcPlayer('id_test_video', {
+            // "m3u8": "http://playertx.chaoniuhui.com/live/anxia1126.m3u8", //请替换成实际可用的播放地址
+            "mp4":"https://mall-onlie.oss-cn-shanghai.aliyuncs.com/community/20191019/a379e92fb9513e04b9ea35041124040b.mp4",
+            "autoplay" : true,      //iOS 下 safari 浏览器，以及大部分移动端浏览器是不开放视频自动播放这个能力的
+            "poster" : "//vjs.zencdn.net/v/oceans.png",
+            "width" :  '480',//视频的显示宽度，请尽量使用视频分辨率宽度
+            "height" : '320'//视频的显示高度，请尽量使用视频分辨率高度
+        });
+    </script>
+</body>
+</html>
